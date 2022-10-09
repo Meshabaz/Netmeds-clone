@@ -1,0 +1,256 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #eee;
+
+}
+
+/* body a:active,
+body a:hover {
+    text-decoration: underline;
+} */
+
+.header {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    margin: auto;
+    background-color: rgb(6, 191, 191);
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#left {
+    width: 160px;
+    display: inline-block;
+    /* border: 1px solid blue; */
+    position: absolute;
+    left: 34px;
+    top: 22px;
+}
+
+#mid {
+    display: block;
+    width: 50%;
+    margin: 20px 220px;
+    /* border: 1px solid red; */
+
+}
+
+#mid input {
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    border: none;
+}
+
+#mid input::placeholder {
+    font-size: 15px;
+}
+
+#right {
+    position: absolute;
+    right: 34px;
+    top: 8px;
+    display: flex;
+    /* border: 1px solid green; */
+
+}
+
+#right img:not(#sign_in) {
+    width: 23px;
+    filter: invert(100%);
+}
+
+/* .navbar {
+        display: inline-block;
+    } */
+
+.navbar li {
+    display: inline-block;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    font-size: 15px;
+    display: flex;
+}
+
+/* #navbar>div {
+        width: auto;
+        display: flex;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    #precription_img,
+    #cart_img {
+        filter: invert(100%);
+    }
+
+    #sign_in {} */
+.navigatons {
+    /* border: 2px solid red; */
+    /* width: fit-content; */
+    height: 60px;
+    margin-top: 90px;
+    background-color: rgb(6, 191, 191);
+}
+
+.navigatons ul {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.navigatons ul a {
+    text-decoration: none;
+    color: white;
+    margin-top: 5px;
+}
+
+/* .navigatons li {
+        border: 2px solid black;
+    } */
+
+#conatainer {
+    height: 4032px;
+}
+
+#medicine_list,
+#healthcorner_list,
+#beauty_list {
+    position: relative;
+    display: inline-block;
+}
+
+#medicine_dd_list,
+#healthcorner_dd_list,
+#beauty_dd_list {
+    display: none;
+    position: absolute;
+    min-width: 158px;
+    z-index: 1;
+    background-color: #fff;
+    list-style-type: none;
+    font-size: small;
+}
+
+#medicine_dd_list a,
+#healthcorner_dd_list a,
+#beauty_dd_list a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+#medicine_dd_list a:hover,
+#healthcorner_dd_list a:hover,
+#beauty_dd_list a:hover {
+    background-color: white;
+    color: rgb(6, 191, 191);
+}
+
+#medicine_list:hover #medicine_dd_list,
+#healthcorner_list:hover #healthcorner_dd_list,
+#beauty_list:hover #beauty_dd_list {
+    display: block;
+    margin-top: 5px;
+}
+
+/* #medicine_list,
+#healthcorner_list,
+#beauty_list {
+    
+} */
+
+#medicine_list,
+#healthcorner_list,
+#beauty_list,
+#labtest_list,
+#wellness_list {
+    width: 170px;
+    flex-direction: row;
+
+}
+
+#_1 {
+    padding-top: 6px;
+}
+
+#dropdownbtn {
+    /* margin: 5px auto; */
+    width: 20px;
+    height: 15px;
+    filter: invert(100%);
+    /* border: 1px solid black; */
+}
+
+#dropdownbtn:hover {
+    transform: scaleY(-1);
+}
+
+.lastnavigation {
+    width: 100%;
+    /* border: 2px solid brown; */
+}
+
+.lastnavigation ul {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+    /* border: 1px solid black; */
+    padding: 10px;
+}
+
+/* .lastnavigation ul {
+        display: flex;
+        justify-content: space-evenly;
+    } */
+
+.lastnavigation ul li {
+    list-style-type: none;
+
+}
+
+.lastnavigation ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: small;
+}
+
+#logos {
+    height: 30px;
+    float: left;
+    /* border-radius: 50%; */
+}
+
+#check {
+    /* border: 2px solid #000; */
+    display: none;
+}
+
+.ckeckbtn {
+    /* width: 200px;
+    border: 2px solid #000;
+    color: #fff; */
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    margin-top: 30px;
+    cursor: pointer;
+}
