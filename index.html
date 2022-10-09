@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetMeds Clone</title>
+</head>
+<style>
+    body {
+        margin: 0px;
+        padding: 0px;
+        background-color: #eee;
+    }
+
+    .header {
+        width: 100%;
+        height: 90px;
+        display: flex;
+        margin: auto;
+        background-color: #32c8e9;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    #left {
+        width: 160px;
+        display: inline-block;
+        /* border: 1px solid blue; */
+        position: absolute;
+        left: 34px;
+        top: 22px;
+    }
+
+    #mid {
+        display: block;
+        width: 50%;
+        margin: 20px 220px;
+        /* border: 1px solid red; */
+
+    }
+
+    #mid input {
+        width: 100%;
+        padding: 16px;
+        border-radius: 8px;
+        border: none;
+    }
+
+    #mid input::placeholder {
+        font-size: 15px;
+    }
+
+    #right {
+        position: absolute;
+        right: 34px;
+        top: 8px;
+        display: flex;
+        /* border: 1px solid green; */
+
+    }
+
+    #right img {
+        width: 23px;
+        filter: invert(100%);
+    }
+
+    /* .navbar {
+        display: inline-block;
+    } */
+
+    .navbar li {
+        display: inline-block;
+    }
+
+    .navbar li a {
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+        font-size: 15px;
+        display: flex;
+    }
+
+    /* #navbar>div {
+        width: auto;
+        display: flex;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    #precription_img,
+    #cart_img {
+        filter: invert(100%);
+    }
+
+    #sign_in {} */
+    .navigatons {
+        border: 2px solid red;
+        /* width: fit-content; */
+        height: 60px;
+        margin-top: 90px;
+        background-color: #32c8e9;
+    }
+
+    .navigatons ul {
+        width: 80%;
+        display: flex;
+        margin: auto;
+        justify-content: space-evenly;
+        border: 1px solid black;
+    }
+
+    .navigatons ul a {
+        text-decoration: none;
+        color: white;
+    }
+
+    #conatainer {
+        height: 43032px;
+    }
+
+    #medicine_list,
+    #healthcorner_list,
+    #beauty_list {
+        position: relative;
+        display: inline-block;
+    }
+
+    #medicine_dd_list,
+    #healthcorner_dd_list,
+    #beauty_dd_list {
+        display: none;
+        position: absolute;
+        min-width: 158px;
+        /* z-index: 1; */
+        background-color: #fff;
+        list-style-type: none;
+    }
+
+    #medicine_dd_list a,
+    #healthcorner_dd_list a,
+    #beauty_dd_list a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    #medicine_dd_list a:hover,
+    #healthcorner_dd_list a:hover,
+    #beauty_dd_list a:hover {
+        background-color: white;
+        color: #32c8e9;
+    }
+
+    #medicine_list:hover #medicine_dd_list,
+    #healthcorner_list:hover #healthcorner_dd_list,
+    #beauty_list:hover #beauty_dd_list {
+        display: block;
+    }
+
+    #dropdownbtn {
+        /* margin: 5px auto; */
+        width: 20px;
+        height: 15px;
+        filter: invert(100%);
+        /* border: 1px solid black; */
+    }
+
+    #dropdownbtn:hover {
+        transform: scaleY(-1);
+    }
+
+    .lastnavigation {
+        width: 100%;
+        border: 2px solid brown;
+    }
+
+    .lastnavigation ul {
+        width: 80%;
+        display: flex;
+        margin: auto;
+        justify-content: space-evenly;
+        border: 1px solid black;
+        padding: 10px;
+    }
+
+    /* .lastnavigation ul {
+        display: flex;
+        justify-content: space-evenly;
+    } */
+
+    .lastnavigation ul li {
+        list-style-type: none;
+
+    }
+
+    .lastnavigation ul li a {
+        text-decoration: none;
+        color: #000;
+        font-size: small;
+    }
+
+    /* #menu-li-1 {} */
+</style>
+
+<body>
+    <div class="header">
+        <div id="left">
+            <img src="https://nms-assets.s3-ap-south-1.amazonaws.com/images/cms/aw_rbslider/slides/1663609483_netmeds-new-logo.svg"
+                alt="">
+        </div>
+        <div id="mid">
+            <input type="text" placeholder="  Search for medicine & wellness Products...">
+        </div>
+        <div id="right">
+
+            <ul class="navbar">
+                <li><a href=""><img id="precription_img"
+                            src="https://cdn.iconscout.com/icon/premium/png-64-thumb/medical-prescription-3356022-2794413.png"
+                            alt="">
+                        <div>Upload</div>
+                    </a></li>
+                <li><a href=""><img id="cart_img"
+                            src="https://cdn.iconscout.com/icon/free/png-64/cart-grocery-store-shopping-shop-30488.png"
+                            alt="">
+                        Cart</a></li>
+                <li><a href=""><img id="sign_in" src="https://www.iconpacks.net/icons/1/free-icon-user-276.png" alt="">
+                        Sign in / Sign Up</a></li>
+            </ul>
+            <!-- <div><a href=""><img id="precription_img"
+                        src="https://cdn.iconscout.com/icon/premium/png-64-thumb/medical-prescription-3356022-2794413.png"
+                        alt="">
+                    Upload
+            </div>
+            <div><a href="">
+                    <img id="cart_img"
+                        src="https://cdn.iconscout.com/icon/free/png-64/cart-grocery-store-shopping-shop-30488.png"
+                        alt="">
+                    Cart
+                </a>
+            </div>
+            <div><a href="">
+                    <img id="sign_in"
+                        src="https://img.icons8.com/external-flat-icons-inmotus-design/2x/external-login-telegram-flat-icons-inmotus-design.png"
+                        alt="">
+                    Sign in / Sign Up
+                </a>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="navigatons">
+        <div id="menu">
+            <ul>
+                <il id="medicine_list">
+                    <a href=""><img src="" alt="">Medicine
+                        <img id="dropdownbtn" src="https://icons.veryicon.com/png/o/miscellaneous/docs/dropdown-2.png"
+                            alt=""></a>
+                    <ul id="medicine_dd_list">
+                        <li><a href="">All Medicines</a></li>
+                        <li><a href="">Previously Ordered Products</a></li>
+                    </ul>
+                </il>
+
+                <il><a href=""><img src="" alt="">Wellness</a></il>
+
+
+                <il><a href=""><img src="" alt="">Lab Tests</a></il>
+
+
+                <il id="beauty_list"><a href=""><img src="" alt="">Beauty
+                        <img id="dropdownbtn" src="https://icons.veryicon.com/png/o/miscellaneous/docs/dropdown-2.png"
+                            alt=""></a>
+                    <ul id="beauty_dd_list">
+                        <li><a href="">Personal Care</a></li>
+                        <li><a href="">Make-Up</a></li>
+                        <li><a href="">Hair</a></li>
+                        <li><a href="">Skin Care</a></li>
+                        <li><a href="">Tools & Apliances</a></li>
+                        <li><a href="">Mom & Baby</a></li>
+                        <li><a href="">Fragrances</a></li>
+                        <li><a href="">Men's Grooming</a></li>
+                    </ul>
+                </il>
+
+
+                <il id="healthcorner_list"><a href=""><img src="" alt="">Health Corner
+                        <img id="dropdownbtn" src="https://icons.veryicon.com/png/o/miscellaneous/docs/dropdown-2.png"
+                            alt=""></a>
+                    <ul id="healthcorner_dd_list">
+                        <li><a href="">Health Library</a></li>
+                        <li><a href="">PatientsAlike</a></li>
+                        <li><a href="">Corona Awareness</a></li>
+                    </ul>
+                </il>
+
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="lastnavigation">
+        <div id="menu">
+            <ul>
+                <li><a href="">COVID Essentials</a></li>
+                <li><a href="">Diabetes</a></li>
+                <li><a href="">Eyewear</a></li>
+                <li><a href="">Ayush</a></li>
+                <li><a href="">Ayurvedic</a></li>
+                <li><a href="">Homeopathy</a></li>
+                <li><a href="">Fitness</a></li>
+                <li><a href="">Moms & Baby</a></li>
+                <li><a href="">Devices</a></li>
+                <li><a href="">Surgicals</a></li>
+                <li><a href="">Sexual Wellness</a></li>
+                <li><a href="">Treatment</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="conatainer"></div>
+</body>
+
+</html>
