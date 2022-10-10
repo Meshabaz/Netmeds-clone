@@ -297,6 +297,7 @@ hr {
     height: 62px;
     max-width: 170px;
     margin: 0 2px;
+    color: #151b39;
 }
 
 .productDetails>div:nth-child(1) {
