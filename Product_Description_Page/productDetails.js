@@ -13,40 +13,40 @@ let getElement = (id) => {
 }
 
 const obj = {
-    "id": 1,
-    "prod_name": "mCaffeine Naked & Raw Tan Removal Coffee Body Scrub 100 gm",
-    "categories_1": "Personal Care",
-    "categories_2": "Bath & Shower",
-    "best_price": 377.16,
-    "mrp": 499.00,
-    "mkf": "Pep Technologies Pvt. Ltd.",
-    "Brands": "mCaffeine",
-    "discount": 16,
-    "url_1": "https://www.netmeds.com/images/product-v1/600x600/959541/mcaffeine_naked_raw_tan_removal_coffee_body_scrub_100_gm_0_0.jpg",
-    "url_2": "https://www.netmeds.com/images/product-v1/150x150/959541/mcaffeine_naked_raw_tan_removal_coffee_body_scrub_100_gm_1_0.jpg",
-    "url_3": "https://www.netmeds.com/images/product-v1/150x150/959541/mcaffeine_naked_raw_tan_removal_coffee_body_scrub_100_gm_2_0.jpg",
+    "id": 7,
+    "prod_name": "Ciphands Rinse Free & Non-Sticky Antiseptic Hand Sanitizer Gel 500 ml",
+    "categories_1": "Business Essentials",
+    "categories_2": "Covid Essentials",
+    "best_price": 236.55,
+    "mrp": 249.00,
+    "mkf": "Cipla Ltd(Otc)",
+    "Brands": "Ciphands",
+    "discount": 5,
+    "url_1": "https://www.netmeds.com/images/product-v1/600x600/914763/ciphands_rinse_free_non_sticky_antiseptic_hand_sanitizer_gel_500_ml_0_1.jpg",
+    "url_2": "https://www.netmeds.com/images/product-v1/600x600/914763/ciphands_rinse_free_non_sticky_antiseptic_hand_sanitizer_gel_500_ml_1_0.jpg",
+    "url_3": "https://www.netmeds.com/images/product-v1/600x600/914763/ciphands_rinse_free_non_sticky_antiseptic_hand_sanitizer_gel_500_ml_2_0.jpg",
     "dis": null,
-    "hsn_code": null
+    "hsn_code": 38089400
 }
 localStorage.setItem("clicked", JSON.stringify(obj));
+let clicked = JSON.parse(localStorage.getItem("clicked"));
 //Set DATA to Ui start
 const setData = () => {
-    const obj = JSON.parse(localStorage.getItem("clicked"));
 
-    getElement("img1").src = obj.url_1;
-    getElement("img2").src = obj.url_2;
-    getElement("img3").src = obj.url_3;
-    getElement("pName").innerText = obj.prod_name;
-    getElement("cat1").innerText = obj.categories_1;
-    getElement("cat2").innerText = obj.categories_2;
-    getElement("cimg1").src = obj.url_1;
-    getElement("cimg2").src = obj.url_2;
-    getElement("cimg3").src = obj.url_3;
-    getElement("price").innerText = obj.best_price;
-    getElement("cutPrice").innerText = obj.mrp;
-    getElement("discount").innerText = `GET ${obj.discount}% OFF`;
-    getElement("company").innerText = `* Mkt: ${obj.mkf}`;
-    getElement("default").innerText = `You get ${obj.discount}% OFF on this product`;
+    getElement("img1").src = clicked.url_1;
+    getElement("img2").src = clicked.url_2;
+    getElement("img3").src = clicked.url_3;
+    getElement("pName").innerText = clicked.prod_name;
+    getElement("cat1").innerText = clicked.categories_1;
+    getElement("cat2").innerText = clicked.categories_2;
+    getElement("cimg1").src = clicked.url_1;
+    getElement("cimg2").src = clicked.url_2;
+    getElement("cimg3").src = clicked.url_3;
+    getElement("price").innerText = clicked.best_price;
+    getElement("cutPrice").innerText = clicked.mrp;
+    getElement("discount").innerText = `GET ${clicked.discount}% OFF`;
+    getElement("company").innerText = `* Mkt: ${clicked.mkf}`;
+    getElement("default").innerText = `You get ${clicked.discount}% OFF on this product`;
 }
 setData();
 //Set Data to ui end
@@ -148,3 +148,109 @@ getElement("dec5").onclick = () => {
     document.querySelector(".detailsBox").innerHTML = others();
 }
 //Description Click End
+
+//ADD TO CART START
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cartData = [];
+
+let flag = false;
+let quantity = 0;
+cart.forEach(element => {
+    if (element.prod_name === clicked.prod_name) {
+        flag = true;
+        quantity = element.quantity;
+    }
+});
+
+if (flag === true) {
+    getElement("addToCart").style.display = "none";
+    getElement("btnFlex").style.display = "flex";
+
+    getElement("quan").innerText = quantity;
+}
+
+document.getElementById("addToCart").addEventListener("click", () => {
+
+    let data = {
+        "id": clicked.id,
+        "prod_name": clicked.prod_name,
+        "best_price": clicked.best_price,
+        "mrp": clicked.mrp,
+        "mkf": clicked.mkf,
+        "url_1": clicked.url_1,
+        "quantity": 1
+    }
+
+    cartData.push(data);
+    localStorage.setItem("cart", JSON.stringify(cartData));
+    getElement("addToCart").style.display = "none";
+    getElement("btnFlex").style.display = "flex";
+
+    //getElement("quan").innerText = 1;
+});
+
+getElement("minus").addEventListener("click", () => {
+    if (getQuantity() === 1) {
+        getElement("addToCart").style.display = "grid";
+        getElement("btnFlex").style.display = "none";
+        cart.forEach((element, indx) => {
+            if (element.prod_name === clicked.prod_name) {
+                removeData(indx);
+            }
+        });
+    }
+    else {
+        getQuantity()--;
+        cart.forEach((element, indx) => {
+            if (element.prod_name === clicked.prod_name) {
+                updateData(indx);
+            }
+        });
+
+        getElement("quan").innerText = getQuantity();
+    }
+});
+
+getElement("plus").addEventListener("click", () => {
+    getQuantity()++;
+    cart.forEach((element, indx) => {
+        if (element.prod_name === clicked.prod_name) {
+            updateData(indx);
+        }
+    });
+
+    getElement("quan").innerText = getQuantity();
+});
+
+//only error in getQuantity;
+function updateData(indx) {
+    cart.splice(indx, 1);
+    let obj = {
+        "id": clicked.id,
+        "prod_name": clicked.prod_name,
+        "best_price": clicked.best_price,
+        "mrp": clicked.mrp,
+        "mkf": clicked.mkf,
+        "url_1": clicked.url_1,
+        "quantity": getQuantity()
+    }
+    cartData.push(obj);
+    localStorage.setItem("cart", JSON.stringify(cartData));
+}
+
+function removeData(indx) {
+    cart.splice(indx, 1);
+    localStorage.setItem("cart", JSON.stringify(cartData));
+}
+
+function getQuantity() {
+    let temp = 0;
+    cart.forEach(element => {
+        if (element.prod_name === clicked.prod_name) {
+            temp = element.quantity;
+        }
+    });
+
+    return temp;
+}
+//ADD TO CART END

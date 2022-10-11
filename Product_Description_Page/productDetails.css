@@ -477,6 +477,35 @@ ul>li {
     cursor: pointer;
 }
 
+#btnFlex {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    display: none;
+}
+
+#minus,
+#plus {
+    border-radius: 50%;
+    border: 1px solid #0000001a;
+    padding: 4px 10px;
+    text-align: center;
+    margin-top: 32px;
+    cursor: pointer;
+    color: #737688;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+#quan {
+    padding: 4px 0;
+    text-align: center;
+    margin-top: 32px;
+    color: black;
+    font-weight: 700;
+    font-size: 15px;
+}
+
 .others {
     width: 40%;
 }
