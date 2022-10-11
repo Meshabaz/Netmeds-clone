@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
+    <div id="preLoader"></div>
     <div class="mainContainer">
       <div class="left">
         <div class="verticalImg">
@@ -51,10 +52,12 @@
       </div>
 
       <div class="right">
-        <h1>Accu-Chek Active Glucose Monitor with Free 10 Test Strips</h1>
+        <h1 id="pName">
+          Accu-Chek Active Glucose Monitor with Free 10 Test Strips
+        </h1>
         <div class="category">
-          <p>Device</p>
-          <p>Measurements</p>
+          <p id="cat1">Device</p>
+          <p id="cat2">Measurements</p>
         </div>
 
         <!--crousal img tab and mobile start-->
@@ -89,6 +92,7 @@
                 alt="Los Angeles"
                 class="d-block"
                 style="width: 100%"
+                id="cimg1"
               />
             </div>
             <div class="carousel-item">
@@ -97,6 +101,7 @@
                 alt="Chicago"
                 class="d-block"
                 style="width: 100%"
+                id="cimg2"
               />
             </div>
             <div class="carousel-item">
@@ -105,6 +110,7 @@
                 alt="New York"
                 class="d-block"
                 style="width: 100%"
+                id="cimg3"
               />
             </div>
           </div>
@@ -128,7 +134,7 @@
           </p>
           <p>(Inclusive of all taxes)</p>
           <p>*This product cannot be returned for a refund or exchange.</p>
-          <p>* Mkt: Roche Diabetes Care India</p>
+          <p id="company">* Mkt: Roche Diabetes Care India</p>
           <p>* Country of Origin: Germany</p>
           <p>* Delivery charges if applicable will be applied at checkout</p>
 
@@ -154,7 +160,7 @@
           </div>
           <div>
             <p>Default Discount</p>
-            <p>You get 20% OFF on this product</p>
+            <p id="default">You get 20% OFF on this product</p>
           </div>
           <div>
             <p>Offer Applied</p>
