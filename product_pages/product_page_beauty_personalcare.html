@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Care - Non-Prescriptive</title>
+    <script src="https://kit.fontawesome.com/b4a455d26a.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="..\Images\JioMart Tab Image.png" />
+   
+    <!-- <link rel="stylesheet" href="navbar.css"> -->
+    <link rel="stylesheet" href="product_page.css">
+   
+</head>
+<body>
+        
+    <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>seperate -->
+    <div id="seperator"></div>
+    <!-- product page -->
+    <!--************1. Collaborators>> change header ***********  -->
+    <div id="headdiv">
+        <a href="C:\Users\Gladiator\Desktop\product_page\home_page.html">Home <span>></span></a>
+        <a href="">Non-Prescription <span>></span></a>
+        <a href="">Personal Care</a>
+    </div>
+    <!-- main product box -->
+    <div id="mainprodbox">
+        <!-- left of main box -->
+        <div id="leftbox">
+            <div id="categoryfilterbox">
+                <h2>Categories</h2>
+            </div>
+
+            <div id="filterbox">
+                <h2>Filters</h2>
+                <div id="searchbox">
+                    <input id="search" type="search" placeholder="Search...">
+                    <button id="searchbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <!--************2. Collaborators make your input boxes here ***********  -->
+                <div class="prodcategory">
+                    <input id="apple" type="radio" name="btn" value="Apple">
+                    <p>Patanjali</p>
+                </div>
+                <div class="prodcategory">
+                    <input id="pear" type="radio" name="btn" value="Pear">
+                    <p>mCaffeine</p>
+                </div>
+            </div>
+        </div>
+        <!-- right of main box -->
+        <div id="rightbox">
+        <!--************3. Collaborators>> change image ***********  -->
+            <div id="bannerimg">
+                <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1665064240_Netmeds_Cat_1000X200_Melts_Range.jpg" alt="bannerimg">
+            </div>
+            <div id="tooldisplay">
+                <div id="TotProdonPage">Showing <span id="num"></span> of <span id="totalcount"></span>items</div>
+                <div id="sorting">
+                    Sort by:
+                    <button id="popular" onclick="popular()" name="sorting">Popularity</button>
+                    <button id="hightolow" onclick="hightolow()" name="sorting">High to Low</button>
+                    <button id="lowtohigh" onclick="lowtohigh()" name="sorting">Low to High</button>
+                    <button id="discount" onclick="discount()" name="sorting">Discount</button>
+                </div>
+            </div>
+            <!-- product display -->
+            <div id="productdisplay">
+                <div id="displayid">
+                <h4>All Products</h4>
+                </div>
+                <div id="gridbox">
+                            
+                    </div>
+                </div>
+                <div>
+            </div>
+        </div>
+    </div>
+    <!-- ///////////////////////////////////////////// -->
+</body>
+
+</html>
+
+
+<script src="./product_page.js">
+
+</script>
+
+
+
