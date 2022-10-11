@@ -39,7 +39,7 @@ function navbar() {
                             <div><img id="logos"
                                     src="https://www.netmeds.com/assets/version1663621997/gloryweb/images/icons/medicine.svg"
                                     alt=""></div>
-                            <div id="_1">Medicine<img id="dropdownbtn"
+                            <div id="_12">Medicine<img id="dropdownbtn"
                                 src="https://icons.veryicon.com/png/o/miscellaneous/docs/dropdown-2.png" alt="">
                             </div>
 
@@ -53,7 +53,7 @@ function navbar() {
                     <il id="wellness_list"><a href="">
                             <div><img id="logos" src="https://www.netmeds.com/assets/gloryweb/images/icons/wellness.svg"
                                     alt=""></div>
-                            <div id="_1">Wellness</div>
+                            <div id="_12">Wellness</div>
 
                         </a></il>
 
@@ -62,7 +62,7 @@ function navbar() {
                             <div><img id="logos"
                                     src="https://www.netmeds.com/assets/gloryweb/images/icons/diagnostics.svg" alt="">
                             </div>
-                            <div id="_1">Lab Tests</div>
+                            <div id="_12">Lab Tests</div>
                         </a></il>
 
 
@@ -70,7 +70,7 @@ function navbar() {
                             <div><img id="logos" src="https://www.netmeds.com/assets/gloryweb/images/icons/beauty.svg"
                                     alt="">
                             </div>
-                            <div id="_1">Beauty
+                            <div id="_12">Beauty
                                 <img id="dropdownbtn"
                                     src="https://icons.veryicon.com/png/o/miscellaneous/docs/dropdown-2.png" alt="">
                             </div>
@@ -92,7 +92,7 @@ function navbar() {
                             <div><img id="logos"
                                 src="https://www.netmeds.com/assets/version1663621997/gloryweb/images/icons/health-library.svg"
                                     alt=""></div>
-                            <div id="_1">Health Corner
+                            <div id="_12">Health Corner
                                 <img id="dropdownbtn"
                                 src="https://icons.veryicon.com/png/o/miscellaneous/docs/dropdown-2.png" alt="">
                             </div>
