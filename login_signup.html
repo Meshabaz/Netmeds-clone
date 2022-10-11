@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetMeds Sign In / Sign Up</title>
+    <link rel="shortcut icon" href="https://www.netmeds.com/assets/gloryweb/favicon.png" type="image/png">
+    <!-- navbar css -->
+    <link rel="stylesheet" href="styles/navbar.css">
+
+    <!-- login_sigup css -->
+    <link rel="stylesheet" href="./styles/login_signup.css">
+    <style>
+        .navigatons{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- navbar -->
+    <nav id="navbar"></nav>
+
+    <!-- main body section -->
+   <div class="login_container">
+        <div class="login_content">
+            <div class="left_side_container">
+                <img src="https://www.netmeds.com/images/cms/wysiwyg/cms/1588773798_sign-in-banner-new.png" alt="Not found" />
+            </div>
+
+            <div class="right_side_container">
+                
+                <div id="right_first">
+                    <h2 >Sign In / Sign Up</h2>
+                <p>Sign up or Sign in to access your orders, special offers, <br> health tips and more!</p>
+
+                <div>
+                    <p>PHONE NUMBER</p>
+                    <div class="number_field">
+                       <b>+91 |</b>  <input type="number" placeholder="Enter your mobile no" id="mobile_number">
+                    </div>
+                </div>
+
+                <button id="use_otp">USE OTP</button>
+                <div class="social_buttons">
+                    <button> <img src="img/google.png" alt="not found"> Google</button> <button> <img src="img/facebook.png" alt="not found">Facebook</button>
+                </div>
+
+                </div>
+
+               <div id="loading_container">
+                <div id="loading">
+                    <img src="img/icons8-spinner.gif" alt="not found" / >
+                </div>
+               </div>
+                <div class="details_section" id="cheking">
+                    <h2>Create Account</h2>
+
+                    <div>
+                    <p>EMAIL ID</p>
+                    <input type="email" placeholder="Enter your Email Id" id="email">
+                    </div>
+
+                    <div>
+                        <p>FIRST NAME</p>
+                        <input type="text" placeholder="Your First Name" id="fname">
+                    </div>
+
+                        <div>
+                            <p>LAST NAME</p>
+                            <input type="text" placeholder="Enter your Last Name" id="lname">
+                        </div>
+
+                        <p class="verify_number">VERIFYING NUMBER</p>
+
+                        <div class="change">
+                            <p><span> We have sent 6 digit OTP on </span>+91- <span id="local_num">8210679644</span></p>
+                            <span>Change</span>
+                        </div>
+
+                        <div class="otp_boxes">
+                            <input type="number" maxlength=1 >
+                            <input type="number" maxlength="1" />
+                            <input type="number" maxlength="1" >
+                            <input type="number" maxlength="1" >
+                            <input type="number" maxlength="1" >
+                            <input type="number" maxlength="1" >
+                        </div>
+
+                        <div class="change">
+                            <p><span> Waiting for OTP... </span><span id="otp_time">35</span> Sec</p>
+                        </div>
+
+                        <button id="verify" >VERIFY</button>
+                </div>
+            </div>
+        </div>
+   </div>
+
+
+   <!-- script -->
+    <script type="module" src="./scripts/login_signup.js"></script>
+</body>
+</html>

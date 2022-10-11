@@ -4,12 +4,6 @@ body {
     background-color: #eee;
 
 }
-
-/* body a:active,
-body a:hover {
-    text-decoration: underline;
-} */
-
 .header {
     width: 100%;
     height: 90px;
@@ -26,7 +20,6 @@ body a:hover {
 #left {
     width: 160px;
     display: inline-block;
-    /* border: 1px solid blue; */
     position: absolute;
     left: 34px;
     top: 22px;
@@ -36,7 +29,6 @@ body a:hover {
     display: block;
     width: 50%;
     margin: 20px 220px;
-    /* border: 1px solid red; */
 
 }
 
@@ -56,7 +48,6 @@ body a:hover {
     right: 34px;
     top: 8px;
     display: flex;
-    /* border: 1px solid green; */
 
 }
 
@@ -65,9 +56,6 @@ body a:hover {
     filter: invert(100%);
 }
 
-/* .navbar {
-        display: inline-block;
-    } */
 
 .navbar li {
     display: inline-block;
@@ -81,24 +69,8 @@ body a:hover {
     display: flex;
 }
 
-/* #navbar>div {
-        width: auto;
-        display: flex;
-    }
 
-    a {
-        text-decoration: none;
-    }
-
-    #precription_img,
-    #cart_img {
-        filter: invert(100%);
-    }
-
-    #sign_in {} */
 .navigatons {
-    /* border: 2px solid red; */
-    /* width: fit-content; */
     height: 60px;
     margin-top: 90px;
     background-color: rgb(6, 191, 191);
