@@ -190,8 +190,8 @@
         display(productDataArray);
 
         let popular = document.getElementById("popular")
-        popular.style.border="1px solid #70cef7"
-        popular.style.color="#70cef7"
+        popular.style.border="1px solid #32aeb1"
+        popular.style.color="#32aeb1"
 
         let hightolow  = document.getElementById("hightolow")
         hightolow .style.border="none"
@@ -209,8 +209,8 @@
         })
         display(sorted);
         let hightolow = document.getElementById("hightolow")
-        hightolow.style.border="1px solid #70cef7"
-        hightolow.style.color="#70cef7"
+        hightolow.style.border="1px solid #32aeb1"
+        hightolow.style.color="#32aeb1"
 
         let popular = document.getElementById("popular")
         popular.style.border="none"
@@ -229,8 +229,8 @@
         })
         display(sorted);
         let lowtohigh = document.getElementById("lowtohigh");
-        lowtohigh.style.border="1px solid #70cef7";
-        lowtohigh.style.color="#70cef7";
+        lowtohigh.style.border="1px solid #32aeb1";
+        lowtohigh.style.color="#32aeb1";
 
         let popular = document.getElementById("popular");
         popular.style.border="none";
@@ -249,8 +249,8 @@
         })
         display(sorted);
         let discount= document.getElementById("discount");
-        discount.style.border="1px solid #70cef7";
-        discount.style.color="#70cef7";
+        discount.style.border="1px solid #32aeb1";
+        discount.style.color="#32aeb1";
 
         let lowtohigh = document.getElementById("lowtohigh");
         lowtohigh.style.border="none";
