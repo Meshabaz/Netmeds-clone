@@ -39,7 +39,90 @@ function showbrands(data) {
     })
 }
 
+// const trendingcontainer = [...document.querySelectorAll(".trending_container")];
+// const nxtbtn = [...document.querySelectorAll('.nxt_btn')];
+// const prebtn = [...document.querySelectorAll('.pre_btn')];
+// console.log('len', trendingcontainer.length);
+// trendingcontainer.forEach((e, i) => {
+//     let conatinerDimensions = e.getBoundingClientRect();
+//     let containerWidth = conatinerDimensions.width;
 
+//     nxtbtn[i] = addEventListener('click', () => {
+//         e.scrollLeft += containerWidth;
+//         console.log(i);
+
+//     })
+//     prebtn[i] = addEventListener('click', () => {
+//         console.log(i);
+//         e.scrollLeft -= containerWidth;
+//     })
+// })
+//  // //
+document.querySelector("#checkbtnheader").addEventListener('click', () => {
+    alert("opening ?? OPEN BTN");
+    document.querySelector(".navbar").style.left = 0;
+    document.querySelector(".navbar").style.transition = "1s";
+    document.querySelector("#checkbtnheader").style.display = "none";
+    document.querySelector("#closebtnheader").style.display = "block";
+})
+document.querySelector("#closebtnheader").addEventListener('click', () => {
+    alert("closing ?? CLOSE BTN");
+    document.querySelector(".navbar").style.left = "-100%";
+    document.querySelector(".navbar").style.transition = "1s";
+    document.querySelector("#checkbtnheader").style.display = "block";
+    document.querySelector("#closebtnheader").style.display = "none";
+})
+
+// // //
+
+
+// // //
+document.querySelector("#checkbtnnavigatons").addEventListener('click', () => {
+    alert("opening nav2 ?? OPEN BTN");
+    document.querySelector(".mid_ul").style.left = 0;
+    document.querySelector(".mid_ul").style.transition = "1s";
+    document.querySelector("#checkbtnnavigatons").style.display = "none";
+    document.querySelector("#closebtnnavigatons").style.display = "block";
+})
+
+document.querySelector("#closebtnnavigatons").addEventListener('click', () => {
+    alert("closing nav2 ?? Close BTN");
+    document.querySelector(".mid_ul").style.left = "-100%";
+    document.querySelector(".mid_ul").style.transition = "1s";
+    document.querySelector("#closebtnnavigatons").style.display = "none";
+    document.querySelector("#checkbtnnavigatons").style.display = "block";
+})
+
+
+// // //
+
+document.querySelector("#checkbtn").addEventListener('click', () => {
+    alert("opening");
+    document.querySelector(".error").style.left = 0;
+    document.querySelector(".error").style.transition = "0.5s";
+    document.querySelector("#checkbtn").style.display = "none";
+    document.querySelector("#closebtn").style.display = "block";
+})
+
+document.querySelector("#closebtn").addEventListener('click', () => {
+    alert("closing");
+    document.querySelector(".error").style.left = "-100%";
+    document.querySelector(".error").style.transition = "1s";
+    document.querySelector("#checkbtn").style.display = "block";
+    document.querySelector("#closebtn").style.display = "none";
+})
+
+
+
+
+// const mobile_nav = document.querySelector(".mobile_navbar_btn");
+// const lastnavbar = document.querySelector(".lastnavigation");
+
+// const togglelastnav = () => {
+//     lastnavbar.classList.toggle("active")
+// }
+
+// mobile_nav.addEventListener('click', () => togglelastnav())
 
 // getdataagain(url);
 

@@ -9,10 +9,10 @@ function navbar() {
                 <input type="text" placeholder="  Search for medicine & wellness Products...">
             </div>
             <div id="right">
-
+                
                 <ul class="navbar">
                     <li><a href=""><img id="precription_img"
-                                src="https://cdn.iconscout.com/icon/premium/png-64-thumb/medical-prescription-3356022-2794413.png"
+                                src="https://www.netmeds.com/assets/gloryweb/images/icons/upload_rx.svg"
                                 alt="">
                             <div id="_1">Upload</div>
                         </a></li>
@@ -26,13 +26,15 @@ function navbar() {
                             <div id="_1">Sign in / Sign Up</div>
                         </a></li>
                 </ul>
-                
+                <input type="checkbox" id="checkheader">
+<label for="checkheader" id="checkbtnheader"><i class="fas fa-bars"></i></label>
+<label for="checkheader" id="closebtnheader" style="display: none;"><i class="fas fa-bars"></i></label>
             </div>
         </div>
 
         <div class="navigatons">
             <div id="menu">
-                <ul>
+                <ul class="mid_ul">
                     <il id="medicine_list">
                         <a href="">
 
@@ -107,11 +109,17 @@ function navbar() {
 
                 </ul>
             </div>
+            <input type="checkbox" id="checknavigatons">
+<label for="checknavigatons" id="checkbtnnavigatons"><i class="fas fa-bars"></i></label>
+<label for="checknavigatons" id="closebtnnavigatons" style="display: none;"><i class="fas fa-bars"></i></label>
         </div>
 
         <div class="lastnavigation">
+        <input type="checkbox" id="check">
+<label for="check" id="checkbtn"><i class="fas fa-bars"></i></label>
+<label for="check" id="closebtn" style="display: none;"><i class="fas fa-bars"></i></label>
             <div id="menu">
-                <ul>
+                <ul class="error">
                     <li><a href="">COVID Essentials</a></li>
                     <li><a href="">Diabetes</a></li>
                     <li><a href="">Eyewear</a></li>
@@ -125,8 +133,15 @@ function navbar() {
                     <li><a href="">Sexual Wellness</a></li>
                     <li><a href="">Treatment</a></li>
                 </ul>
-            </div>
-        </div>`
+                </div>
+                </div>`
 }
 
 export default navbar;
+
+
+
+    //             <div class="maobile_navbar_btn">
+    //     <ion-icon name="grid-outline" class="mobile_nav_icon"></ion-icon>
+    // <ion-icon name="close-circle-outline" class="mobile_nav_icon"></ion-icon>
+    // </div>
