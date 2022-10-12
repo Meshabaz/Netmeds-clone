@@ -6,147 +6,352 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NetMeds Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <!-- CRAUSAL FOR FIRST SLIDER START -->
+
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!-- CRAUSAL FOR FIRST SLIDER END -->
+
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
 </head>
 <link rel="stylesheet" href="../Netmeds-clone/styles/navbar.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link rel="stylesheet" href="../Netmeds-clone/styles/index.css">
+
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" /> -->
+
+<!-- CRAUSAL FOR GROUP SLIDER START -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- CRAUSAL FOR GROUP SLIDER END -->
+
+
+
+<!-- STYLE TAG FOR FIRST SLIDER START -->
+<style>
+    .carousel-cell {
+        width: 100%;
+        height: 300px;
+        margin: 10px;
+        border-radius: 10px;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .carousel-cell:before {
+        display: block;
+    }
+
+    .carousel.is-fullscreen .carousel-cell {
+        height: 100%;
+    }
+
+    .carousel-cell img {
+        display: block;
+        max-height: 100%;
+    }
+</style>
+<!-- STYLE TAG FOR FIRST SLIDER END -->
+
+
 
 <body>
-    <div id="navbar">
-        <!-- <div class="header">
-            <div id="left">
-                <img src="https://nms-assets.s3-ap-south-1.amazonaws.com/images/cms/aw_rbslider/slides/1663609483_netmeds-new-logo.svg"
-                    alt="">
-            </div>
-            <div id="mid">
-                <input type="text" placeholder="  Search for medicine & wellness Products...">
-            </div>
-            <div id="right">
-
-                <ul class="navbar">
-                    <li><a href=""><img id="precription_img"
-                                src="https://cdn.iconscout.com/icon/premium/png-64-thumb/medical-prescription-3356022-2794413.png"
-                                alt="">
-                            <div id="_1">Upload</div>
-                        </a></li>
-                    <li><a href=""><img id="cart_img"
-                                src="https://cdn.iconscout.com/icon/free/png-64/cart-grocery-store-shopping-shop-30488.png"
-                                alt="">
-                            <div id="_1">Cart</div>
-                        </a></li>
-                    <li><a href=""><img id="sign_in"
-                                src="https://www.netmeds.com/assets/gloryweb/images/icons/profile_icon.svg" alt="">
-                            <div id="_1">Sign in / Sign Up</div>
-                        </a></li>
-                </ul>
-                
-            </div>
+    <div id="navbar"> </div>
+    <!-- <div>
+        <div class="swiper mySwiper" id="deals">
+            <div class="swiper-wrapper"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
-
-        <div class="navigatons">
-            <div id="menu">
-                <ul>
-                    <il id="medicine_list">
-                        <a href="">
-
-                            <div><img id="logos"
-                                    src="https://www.netmeds.com/assets/version1663621997/gloryweb/images/icons/medicine.svg"
-                                    alt=""></div>
-                            <div id="_1">Medicine<img id="dropdownbtn"
-                                src="https://icons.veryicon.com/png/o/miscellaneous/docs/dropdown-2.png" alt="">
-                            </div>
-
-                        </a>
-                        <ul id="medicine_dd_list">
-                            <li><a href="">All Medicines</a></li>
-                            <li><a href="">Previously Ordered Products</a></li>
-                        </ul>
-                    </il>
-
-                    <il id="wellness_list"><a href="">
-                            <div><img id="logos" src="https://www.netmeds.com/assets/gloryweb/images/icons/wellness.svg"
-                                    alt=""></div>
-                            <div id="_1">Wellness</div>
-
-                        </a></il>
+    </div> -->
 
 
-                    <il id="labtest_list"><a href="">
-                            <div><img id="logos"
-                                    src="https://www.netmeds.com/assets/gloryweb/images/icons/diagnostics.svg" alt="">
-                            </div>
-                            <div id="_1">Lab Tests</div>
-                        </a></il>
-
-
-                    <il id="beauty_list"><a href="">
-                            <div><img id="logos" src="https://www.netmeds.com/assets/gloryweb/images/icons/beauty.svg"
-                                    alt="">
-                            </div>
-                            <div id="_1">Beauty
-                                <img id="dropdownbtn"
-                                    src="https://icons.veryicon.com/png/o/miscellaneous/docs/dropdown-2.png" alt="">
-                            </div>
-                        </a>
-                        <ul id="beauty_dd_list">
-                            <li><a href="">Personal Care</a></li>
-                            <li><a href="">Make-Up</a></li>
-                            <li><a href="">Hair</a></li>
-                            <li><a href="">Skin Care</a></li>
-                            <li><a href="">Tools & Apliances</a></li>
-                            <li><a href="">Mom & Baby</a></li>
-                            <li><a href="">Fragrances</a></li>
-                            <li><a href="">Men's Grooming</a></li>
-                        </ul>
-                    </il>
-
-
-                    <il id="healthcorner_list"><a href="">
-                            <div><img id="logos"
-                                src="https://www.netmeds.com/assets/version1663621997/gloryweb/images/icons/health-library.svg"
-                                    alt=""></div>
-                            <div id="_1">Health Corner
-                                <img id="dropdownbtn"
-                                src="https://icons.veryicon.com/png/o/miscellaneous/docs/dropdown-2.png" alt="">
-                            </div>
-                        </a>
-                        <ul id="healthcorner_dd_list">
-                            <li><a href="">Health Library</a></li>
-                            <li><a href="">PatientsAlike</a></li>
-                            <li><a href="">Corona Awareness</a></li>
-                        </ul>
-                    </il>
-                    
-
-                </ul>
-            </div>
+    <!-- <div class="swiper mySwiper" id="brands">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div> -->
+    <div class="carousel" data-flickity='{"autoPlay":true}'>
+        <div class="carousel-cell"
+            style="background-image: url('https://www.netmeds.com/images/cms/aw_rbslider/slides/1664555976_Home_Bannerklkkk.jpg') ;">
         </div>
-
-        <div class="lastnavigation">
-            <div id="menu">
-                <ul>
-                    <li><a href="">COVID Essentials</a></li>
-                    <li><a href="">Diabetes</a></li>
-                    <li><a href="">Eyewear</a></li>
-                    <li><a href="">Ayush</a></li>
-                    <li><a href="">Ayurvedic</a></li>
-                    <li><a href="">Homeopathy</a></li>
-                    <li><a href="">Fitness</a></li>
-                    <li><a href="">Moms & Baby</a></li>
-                    <li><a href="">Devices</a></li>
-                    <li><a href="">Surgicals</a></li>
-                    <li><a href="">Sexual Wellness</a></li>
-                    <li><a href="">Treatment</a></li>
-                </ul>
-            </div>
-        </div> -->
+        <div class="carousel-cell"
+            style="background-image: url('https://www.netmeds.com/images/cms/aw_rbslider/slides/1663166809_1680x320_copy.jpg') ;">
+        </div>
+        <div class="carousel-cell"
+            style="background-image: url('https://www.netmeds.com/images/cms/aw_rbslider/slides/1664556289_Home_Bannerfdssds.jpg') ;">
+        </div>
+        <div class="carousel-cell"
+            style="background-image: url('https://www.netmeds.com/images/cms/aw_rbslider/slides/1664979078_Home_Bannerlmkkkk.jpg') ;">
+        </div>
     </div>
 
-    <div id="conatainer"></div>
+    <div class="options">
+        <a href="">
+            <div id="optiondiv">
+                <div>
+                    <img src="https://www.netmeds.com/assets/gloryweb/images/icons/Wellnessnew.svg" alt="">
+                </div>
+                <div id="strdiv">
+                    <h3>Order Medicine</h3> <span id="strspan">Save upto 25% off</span>
+                </div>
+            </div>
+        </a>
+        <a href="">
+            <div id="optiondiv">
+                <div>
+                    <img src="https://www.netmeds.com/assets/gloryweb/images/icons/Beautynew.svg" alt="">
+                </div>
+                <div id="strdiv">
+
+                    <h3>Beauty</h3> <span id="strspan">Save upto 40% off</span>
+                </div>
+            </div>
+        </a>
+        <a href="">
+            <div id="optiondiv">
+                <div>
+                    <img src="https://www.netmeds.com/assets/gloryweb/images/icons/ordermedicinnew.svg" alt="">
+                </div>
+                <div id="strdiv">
+                    <h3>Wellness</h3> <span id="strspan">Save upto 15% off</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="payment">
+
+        <div class="some">
+            <h2>Payment Partner Offers</h2>
+            <h5 id="viewall">View All ><h5>
+        </div>
+        <div class="paydiv">
+            <a href="">
+                <div id="payoptiondiv">
+                    <div>
+                        <img src="https://www.netmeds.com/images/cms/offers/1657030565_Simpl_Icon.png" alt="">
+                    </div>
+                    <div id="paystrdiv">
+                        <h5>Get up to Rs. 1000 Simple Cashback*!..</h5>
+                        <span id="paystrspan">
+                            <p>
+                                Get up to Rs. 1000 Simpl
+                                Cashback (5%) on your FIRST-EVER payment via Simpl for ANY purchases* of AN..
+                            </p>
+                        </span>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div id="payoptiondiv">
+                    <div>
+                        <img src="https://www.netmeds.com/images/cms/offers/1654235738_Icon_256x256.png" alt="">
+                    </div>
+                    <div id="paystrdiv">
+
+                        <h5>Use Pay with Rewards, Get max. Rs. 1000 Cashback!..</h5>
+                        <span id="paystrspan">
+                            <p>
+                                Get assured
+                                cashback of max. Rs. 1000, when you pay using the “Pay with Rewards” payment option
+                                ..
+                            </p>
+                        </span>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div id="payoptiondiv">
+                    <div>
+                        <img src="https://www.netmeds.com/images/cms/offers/1616682689_paytm.png" alt="">
+                    </div>
+                    <div id="paystrdiv">
+                        <h5>Get up to Rs. 300 Paytm Cashback!..</h5>
+                        <span id="paystrspan">
+                            <p>
+                                Get Paytm Cashback of max. Rs.
+                                300 on a minimum purchase of ANY products* worth Rs. 599, when you pa..
+                            </p>
+
+                        </span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="no_3">
+        <div id="no_3div1">
+            <div id="no_3div1_1">
+                <h2>Previous Orders</h2>
+                <p>Your previously ordered products</p>
+                <button id="no_3orderbtn">
+                    View Orders <button id="no_3orderbtnspan">></button>
+                </button>
+            </div>
+            <div id="no_3div1_2">
+                <img src="https://www.netmeds.com/assets/gloryweb/images/icons/new-icons/previous_orders.svg" alt="">
+            </div>
+        </div>
+        <div id="no_3div2">
+            <div id="no_3div2_1">
+                <h2>Beauty Products</h2>
+                <p>Save Upto 40% off</p>
+                <button id="no_3orderbtn2">
+                    Explore Beauty
+                </button>
+            </div>
+            <div id="no_3div2_2">
+                <img src="https://www.netmeds.com/assets/gloryweb/images/icons/new-icons/beauty_products.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- 
+    <div class="trending">
+        <h2 class="trending_category">Trending Today</h2>
+        <button class="pre_btn">
+            <img src="https://img.icons8.com/ios-glyphs/2x/chevron-right.png" alt="">
+        </button>
+        <button class="nxt_btn">
+            <img src="https://img.icons8.com/ios-glyphs/2x/chevron-right.png" alt="">
+        </button>
+        <div class="trending_container">
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1663178001_Axiom_Mini_banner_web.jpg"
+                        alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1665135184_Revital_Mini_banner_web.jpg"
+                        alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1657045910_Mini-436-x-224-A.jpg"
+                        alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1663139989_436x224_copy.jpg" alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1660911310_Beato_Mini_banner_web.jpg"
+                        alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1656588409_Home_Page_Mini_Banner-436X224_w.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1662570473_Maxirich_Mini_banner_web_m45.jpg"
+                        alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1665137724_MOODS_Mini_banner_web.jpg"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+    <div class="brands"></div>
+
+    <!-- HAMBURGUER MENU SCRIPT-->
+
+
+    <!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
+    <!--  -->
+
+
+
+    <!-- SCRIPT TAG LINKS FOR GROUP SLIDER START -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- SCRIPT TAG LINKS FOR GROUP SLIDER END -->
 </body>
 
 </html>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script> -->
+<!-- <script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 5,
+        spaceBetween: 20,
+        slidesPerGroup: 2,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script> -->
 <script type="module" src="scripts/index.js"></script>
+
+
+<!-- SCRIPT TAG FOR GROUP SLIDER START -->
+<script>
+    $('.brands').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+</script>
+<!-- SCRIPT TAG FOR GROUP SLIDER END -->
+
+
 
 
 
@@ -160,3 +365,63 @@
 <!-- <input type="checkbox" id="check">
 <label for="check" class="ckeckbtn"></label>
 <i class="fas fa-bars ckeckbtn" aria-hidden="true"></i> -->
+
+
+
+
+
+
+<!-- 
+#brands {
+width: 100%;
+height: 400px;
+border: 2px solid black;
+padding-top: 100px;
+}
+
+.swiper-wrapper>div {
+width: 200px;
+border: 2px solid black;
+height: 300px;
+margin: 20px;
+display: block;
+padding-left: 10px;
+padding-bottom: 10px;
+border-radius: 10px;
+
+}
+
+.swiper-slide img {
+width: auto;
+height: 150px;
+display: block;
+margin: auto;
+cursor: pointer;
+}
+
+.swiper-slide button {
+width: 100%;
+display: block;
+margin: auto -5px;
+padding: 3px;
+position: relative;
+cursor: pointer;
+}
+
+.swiper-slide {
+text-align: left;
+font-size: 14px;
+background: #fff;
+display: -webkit-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+-webkit-box-pack: center;
+-ms-flex-pack: center;
+-webkit-justify-content: center;
+justify-content: center;
+-webkit-box-align: center;
+-ms-flex-align: center;
+-webkit-align-items: center;
+align-items: center;
+}  -->
