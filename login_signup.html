@@ -15,6 +15,13 @@
         .navigatons{
             display: none;
         }
+
+        input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+     -webkit-appearance: none;
+  margin: 0;
+}
+
     </style>
 </head>
 <body>
@@ -75,25 +82,36 @@
                         <p class="verify_number">VERIFYING NUMBER</p>
 
                         <div class="change">
-                            <p><span> We have sent 6 digit OTP on </span>+91- <span id="local_num">8210679644</span></p>
-                            <span>Change</span>
+                            <p><span> We have sent 6 digit OTP on </span>+91- <span id="local_num"></span></p>
+                            <span id="change_button">Change</span>
                         </div>
 
                         <div class="otp_boxes">
-                            <input type="number" maxlength=1 >
-                            <input type="number" maxlength="1" />
-                            <input type="number" maxlength="1" >
-                            <input type="number" maxlength="1" >
-                            <input type="number" maxlength="1" >
-                            <input type="number" maxlength="1" >
+                            <input type="number" maxlength="1" id="input_one">
+                            <input type="number" maxlength="1" id="input_two">
+                            <input type="number" maxlength="1" id="input_three">
+                            <input type="number" maxlength="1" id="input_four">
+                            <input type="number" maxlength="1" id="input_five">
+                            <input type="number" maxlength="1" id="input_six">
                         </div>
 
                         <div class="change">
-                            <p><span> Waiting for OTP... </span><span id="otp_time">35</span> Sec</p>
+                            <p id="waiting_otp"><span> Waiting for OTP... </span><span id="otp_time">60</span> Sec</p>
                         </div>
 
                         <button id="verify" >VERIFY</button>
                 </div>
+
+
+                <div id="verified_container">
+                    <div id="verified">
+                        <img src="img/shield.gif" alt="not found" / >
+                    </div>
+                   </div>
+
+                   <div id="wrong"><img src="img/cross.png" alt="Error"></div>
+
+
             </div>
         </div>
    </div>

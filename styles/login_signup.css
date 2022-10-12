@@ -167,9 +167,11 @@ font-weight: 900;
     padding: 10px;
     display: flex;
     justify-content: cetner;
+    text-align: center;
+    font-size: 18px;
 }
 
-#loading{
+#loading , #verified , #wrong{
     display: none;
 }
 
@@ -178,6 +180,13 @@ font-weight: 900;
     height: 100%;
     margin-top: 30%;
     margin-left: 20%;
+}
+
+#verified> img , #wrong > img {
+    margin: auto;
+    width: 50%;
+    margin-top: 30%;
+    margin-left: 15%;
 }
 
 @media screen and (max-width : 923px) {
