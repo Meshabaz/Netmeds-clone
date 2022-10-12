@@ -1,12 +1,12 @@
-var cartArr = JSON.parse(localStorage.getItem("cartData")) || [];
-console.log(cartArr);
-displayCart(cartArr);
+var cart = JSON.parse(localStorage.getItem("cartitems")) || [];
+console.log(cart);
+displayCart(cart);
 
-function displayCart(cartArr) {
+function displayCart(cart) {
   var price1 = 0;
   var discount = 0;
 
-  document.querySelector("#cartdata").innerHTML = "";
+  document.querySelector("#cartitems").innerHTML = "";
   document.querySelector("#MRP").innerText = "Rs." + 0;
   document.querySelector("#netmeddiscount").innerText = "Rs." + 0;
   document.querySelector("#netmed").innerText = "Rs." + 0;
@@ -16,16 +16,16 @@ function displayCart(cartArr) {
   var uniqueCartItems = [];
   var itemsQuantity = [];
 
-  cartArr.forEach(function (ele) {
+  cart.forEach(function (ele) {
     var flag = false;
     for (var i = 0; i < uniqueCartItems.length; i++) {
       var obj = uniqueCartItems[i];
       if (
-        obj.image_src === ele.image_src &&
-        obj.product_name === ele.product_name &&
-        obj.price === ele.price &&
-        obj.strikedoffprice === ele.strikedoffprice &&
-        obj.manufacturer === ele.manufacturer
+        obj.url_1 === ele.url_1 &&
+        obj.prod_name === ele.prod_name &&
+        obj.best_price === ele.best_price &&
+        obj.mrp === ele.mrp &&
+        obj.mkf === ele.mkf
       ) {
         flag = true;
         break;
@@ -49,7 +49,7 @@ function displayCart(cartArr) {
     // card1.style.width = "100px";
 
     var image = document.createElement("img");
-    image.setAttribute("src", elem.image_src);
+    image.setAttribute("src", elem.url_1);
 
     card1.append(image);
 
@@ -57,10 +57,10 @@ function displayCart(cartArr) {
     card2.setAttribute("class", "boxCard2");
 
     var details = document.createElement("p"); //details p tag  card2
-    details.innerText = elem.product_name;
+    details.innerText = elem.prod_name;
 
     var details1 = document.createElement("p"); //  card2
-    details1.innerText = elem.manufacturer;
+    details1.innerText = elem.mkf;
 
     var card3 = document.createElement("div"); //details     //card 2
     card3.setAttribute("class", "boxCard3");
@@ -70,15 +70,15 @@ function displayCart(cartArr) {
     card31.setAttribute("class", "boxCard31");
 
     var price = document.createElement("span");
-    price.innerText = "Rs." + elem.price;
+    price.innerText = "Rs." + elem.best_price;
 
     var Sprice = document.createElement("span");
-    Sprice.innerText = "Rs." + elem.strikedoffprice;
-    price1 = price1 + elem.strikedoffprice * itemsQuantity[index];
+    Sprice.innerText = "Rs." + elem.mrp;
+    price1 = price1 + elem.mrp * itemsQuantity[index];
     document.querySelector("#MRP").innerText = "Rs." + price1;
 
-    if (elem.strikedoffprice) {
-      var discounted = elem.strikedoffprice - elem.price;
+    if (elem.mrp) {
+      var discounted = elem.mrp - elem.best_price;
       discount = discount + itemsQuantity[index] * discounted;
     }
     document.querySelector("#netmeddiscount").innerText = "-Rs." + discount;
@@ -154,20 +154,20 @@ function displayCart(cartArr) {
     card2.append(details, details1, card3, hr);
     // card1.append(hr)
     card.append(card1, card2);
-    document.querySelector("#cartdata").append(card);
+    document.querySelector("#cartitems").append(card);
   });
 }
 
 function addItems(elem) {
-  cartArr.push(elem);
-  localStorage.setItem("cartData", JSON.stringify(cartArr));
-  displayCart(cartArr);
-  console.log(cartArr);
+  cart.push(elem);
+  localStorage.setItem("cartitems", JSON.stringify(cart));
+  displayCart(cart);
+  console.log(cart);
 }
 
 function delItems(elem, index) {
-  for (var i = cartArr.length - 1; i >= 0; i--) {
-    var ele = cartArr[i];
+  for (var i = cart.length - 1; i >= 0; i--) {
+    var ele = cart[i];
     if (
       ele.img === elem.img &&
       ele.name === elem.name &&
@@ -177,28 +177,28 @@ function delItems(elem, index) {
       break;
     }
   }
-  cartArr.splice(i, 1);
-  localStorage.setItem("cartData", JSON.stringify(cartArr));
-  displayCart(cartArr);
-  console.log(cartArr);
+  cart.splice(i, 1);
+  localStorage.setItem("cartitems", JSON.stringify(cart));
+  displayCart(cart);
+  console.log(cart);
 }
 
 function removeFromCart(elem, index) {
   event.target.parentNode.remove();
   var newCartArr = [];
-  cartArr.forEach(function (ele) {
+  cart.forEach(function (ele) {
     if (
-      ele.image_url !== elem.image_url ||
+      ele.url_1 !== elem.url_1 ||
       ele.name !== elem.name ||
-      ele.price !== elem.price ||
-      ele.strikedoffprice !== elem.strikedoffprice
+      ele.best_price !== elem.best_price ||
+      ele.mrp !== elem.mrp
     ) {
       newCartArr.push(ele);
     }
   });
-  cartArr = newCartArr;
-  localStorage.setItem("cartData", JSON.stringify(cartArr));
-  displayCart(cartArr);
+  cart = newCartArr;
+  localStorage.setItem("cartitems", JSON.stringify(cart));
+  displayCart(cart);
 }
 
 var bbc = document.querySelector("#promo");
@@ -221,7 +221,7 @@ function myfunc() {
 }
 
 document.querySelector("#empty").addEventListener("click", myfunc3);
-var k = JSON.parse(localStorage.getItem("cartData"));
+var k = JSON.parse(localStorage.getItem("cartitems"));
 function myfunc3() {
   if (k == null) {
     window.location.href = "emptycart.html";
