@@ -30,6 +30,7 @@
 /* left box css */
 #mainprodbox #leftbox{
      width: 20%;
+     /* display: none; */
       /* border: 1px solid red; */
  }
 
@@ -88,6 +89,8 @@
 /* >>>>>>>>>>>>>>>tool display<<<<<<<<<<<<<<<<<< */
  #tooldisplay{
      display: flex;
+     flex-direction: row;
+     /* float: left; */
      font-family: sans-serif;
      align-items: center;
      margin-bottom: 20px;

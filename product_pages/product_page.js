@@ -34,7 +34,7 @@
         }
     getData();
     
-  
+//   console.log(productDataArray[0]);
     document.getElementById("num").append(productDataArray.length);
     
     // display(productDataArray);
@@ -127,6 +127,9 @@
             anchor.append(divimg,headdiv)
             divmain.append(anchor,categorydiv,madybycompanydiv,divmrp,divbtn)
             document.getElementById("gridbox").append(divmain);
+            divimg.addEventListener("click",()=>{
+                gotoDescriptionPage(arr,ind)
+            })
             btn.addEventListener("click",function(){
                 addtocart(arr,ind);
             })
@@ -265,6 +268,10 @@
 
     }
 
+    // **************************** go to description page ************************************************************************
+    function gotoDescriptionPage(arr,ind){
+        localStorage.setItem("productDescription",JSON.stringify(arr[ind]));
+    }
     
     // total product on page count>>>>>>>>>>>>>>
     // document.getElementById("num").append(totalproductonpage);
@@ -283,13 +290,30 @@
             // alert("Item already in cart");
         } else{
             cart.push(prod[0]);
-            addcart(i);
+            addcart(arr,i);
             // alert("Item successfully added to cart")
             
         }
         localStorage.setItem("cartitems",JSON.stringify(cart)); 
         let addcartbutton = document.querySelectorAll(".divbtn")
-        let addcartdiv = document.querySelector(".divbtn")
+        // let addcartdiv = document.querySelector(".divbtn")
+        let index=-1;
+        for(let j=0; j<changecartprodquant.length; j++){
+            if(changecartprodquant[j].id===arr[i].id){
+                index=j;
+            }
+        }
+        let changedqty = changecartprodquant[index].productquantity;
+        // console.log(index);
+        changeAddtoCartbuttonOnclick(arr,i,addcartbutton, changedqty);
+        // let returnedelement = [...addcartbutton].map((ele,ind)=>{
+        //         return i;
+        //     }
+        // })
+        // console.log(returnedelement);
+    }
+
+    function changeAddtoCartbuttonOnclick(arr,i,addcartbutton,changedqty){
         for(let j=0; j<addcartbutton.length;j++){
             if(j===i){
                 // console.log(addcartbutton[i]);
@@ -307,7 +331,7 @@
                 plus.style.height="40px"
                 minus.style.height="40px"
                 qtydiv.style.width="20%"
-                qtydiv.innerText=1
+                qtydiv.innerText=changedqty
                 qtydiv.style.fontWeight="bold"
                 plus.style.backgroundColor="white"
                 minus.style.backgroundColor="white"
@@ -325,33 +349,79 @@
                 change.append(plus,qtydiv,minus);
 
                 plus.addEventListener("click",()=>{
-                    plusqty()
+                    plusqty(j,qtydiv,arr);
                 })
+                minus.addEventListener("click",()=>{
+                    minusqty(j,qtydiv,arr,addcartbutton,i);
+                })
+                break;
             }
         }
+    }
 
-        function plusqty(){
-            let qty = document.getElementById("qtydiv")
-            qty.innerText="";
-            console.log(1);
+    let changecartprodquant = JSON.parse(localStorage.getItem("presentquantity")) || [];
+    function plusqty(j,qtydiv,arr){
+        qtydiv.innerText="";
+        let index=-1;
+        for(let i=0; i<changecartprodquant.length; i++){
+            if(changecartprodquant[i].id===arr[j].id){
+                index=i;
+            }
         }
-        // let returnedelement = [...addcartbutton].map((ele,ind)=>{
-            
-        //         return i;
-        //     }
-            
-        // })
-        // console.log(returnedelement);
+        let changedqty = changecartprodquant[index].productquantity;
+        console.log(changedqty);
+        changedqty++;
+        if(changedqty<=5){
+            changecartprodquant[index].productquantity = changedqty;
+            localStorage.setItem("presentquantity",JSON.stringify(changecartprodquant));
+        }
+        qtydiv.innerText=changecartprodquant[index].productquantity;
+        console.log(index);
+    }
+
+    function minusqty(j,qtydiv,arr,addcartbutton,i){
+        qtydiv.innerText="";
+        let index=-1;
+        for(let i=0; i<changecartprodquant.length; i++){
+            if(changecartprodquant[i].id===arr[j].id){
+                index=i;
+            }
+        }
+        let changedqty = changecartprodquant[index].productquantity;
+        changedqty--;
+        if(changedqty>=1){
+            changecartprodquant[index].productquantity = changedqty;
+            localStorage.setItem("presentquantity",JSON.stringify(changecartprodquant));
+        }
+        // else if(changedqty==0){
+        //     addcartbutton[i].innerHTML=""
+        //     console.log(addcartbutton[i]);
+        //     let btn = document.createElement("button");
+        //     let span1 = document.createElement("span");
+        //     span1.innerText="ADD TO CART"
+        //     btn.append(span1);
+        //     addcartbutton[i].append(btn)
+        //     changecartprodquant.splice(index,1);
+        //     cart.splice(index,1)
+        //     localStorage.setItem("cartitems",JSON.stringify(cart)); 
+        //     localStorage.setItem("presentquantity",JSON.stringify(changecartprodquant));
+        //     btn.addEventListener("click",function(){
+        //         addtocart(arr,ind);
+        //     })
+        // }
+        qtydiv.innerText=changecartprodquant[index].productquantity;
+        console.log(index);
     }
 
     let cartprodquant = JSON.parse(localStorage.getItem("presentquantity")) || [];
     let count=0;
-    function addcart(ind){
+    function addcart(arr, ind){
         event.preventDefault();
         let prodquantobj = {
-            detail: productDataArray[ind].detail,
-            productquantity:"1"
+            id: arr[ind].id,
+            productquantity:1
         }
+        console.log(prodquantobj);
         let p = cartprodquant.push(prodquantobj);
         localStorage.setItem("presentquantity",JSON.stringify(cartprodquant));
     }
