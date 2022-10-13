@@ -1,7 +1,7 @@
 let searchKey = JSON.parse(localStorage.getItem("search"));
 let cartLength = JSON.parse(localStorage.getItem("cartItem"));
 
-let keyword = "mask";
+let keyword = "lens";
 let finalKey = keyword.toLowerCase();
 const searchedData = async () => {
   let responce = await fetch("https://mr-raaz.github.io/NetmedsClone_data/data.json");
@@ -24,7 +24,7 @@ function showData(data) {
           id="img"
         />
         <div class="details">
-          <h1 id="title">
+          <h1 id="title" onclick="setToStorage(${idx})">
           ${ele.prod_name}
           </h1>
           <p id="category">${ele.categories_1} ${ele.categories_2}</p>
@@ -52,4 +52,16 @@ function showData(data) {
 
     document.querySelector(".grid").append(img);
   }
+}
+
+async function setToStorage(ele) {
+  let responce = await fetch("https://mr-raaz.github.io/NetmedsClone_data/data.json");
+  let data = await responce.json();
+  console.log(data.products[ele]);
+  localStorage.setItem("clicked", JSON.stringify(data.products[ele]));
+  openDescriptionPage();
+}
+
+function openDescriptionPage() {
+  location.href = "../Product_Description_Page/productDetails.html";
 }

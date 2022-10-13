@@ -12,23 +12,6 @@ let getElement = (id) => {
     return tag;
 }
 
-const obj = {
-    "id": 7,
-    "prod_name": "Ciphands Rinse Free & Non-Sticky Antiseptic Hand Sanitizer Gel 500 ml",
-    "categories_1": "Business Essentials",
-    "categories_2": "Covid Essentials",
-    "best_price": 236.55,
-    "mrp": 249.00,
-    "mkf": "Cipla Ltd(Otc)",
-    "Brands": "Ciphands",
-    "discount": 5,
-    "url_1": "https://www.netmeds.com/images/product-v1/600x600/914763/ciphands_rinse_free_non_sticky_antiseptic_hand_sanitizer_gel_500_ml_0_1.jpg",
-    "url_2": "https://www.netmeds.com/images/product-v1/600x600/914763/ciphands_rinse_free_non_sticky_antiseptic_hand_sanitizer_gel_500_ml_1_0.jpg",
-    "url_3": "https://www.netmeds.com/images/product-v1/600x600/914763/ciphands_rinse_free_non_sticky_antiseptic_hand_sanitizer_gel_500_ml_2_0.jpg",
-    "dis": null,
-    "hsn_code": 38089400
-}
-localStorage.setItem("clicked", JSON.stringify(obj));
 let clicked = JSON.parse(localStorage.getItem("clicked"));
 //Set DATA to Ui start
 const setData = () => {
@@ -149,99 +132,14 @@ getElement("dec5").onclick = () => {
 }
 //Description Click End
 
-//ADD TO CART START
+
+
+//ADD TO CART FUNCTIONALITY START
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
-let cartData = [];
 
-let flag = false;
-let quantity = 0;
-cart.forEach(element => {
-    if (element.prod_name === clicked.prod_name) {
-        flag = true;
-        quantity = element.quantity;
-    }
+let title = cart.filter((a) => {
+    return a.prod_name === clicked.prod_name;
 });
-
-if (flag === true) {
-    getElement("addToCart").style.display = "none";
-    getElement("btnFlex").style.display = "flex";
-
-    getElement("quan").innerText = quantity;
-}
-
-document.getElementById("addToCart").addEventListener("click", () => {
-
-    let data = {
-        "id": clicked.id,
-        "prod_name": clicked.prod_name,
-        "best_price": clicked.best_price,
-        "mrp": clicked.mrp,
-        "mkf": clicked.mkf,
-        "url_1": clicked.url_1,
-        "quantity": 1
-    }
-
-    cartData.push(data);
-    localStorage.setItem("cart", JSON.stringify(cartData));
-    getElement("addToCart").style.display = "none";
-    getElement("btnFlex").style.display = "flex";
-
-    //getElement("quan").innerText = 1;
-});
-
-getElement("minus").addEventListener("click", () => {
-    if (getQuantity() === 1) {
-        getElement("addToCart").style.display = "grid";
-        getElement("btnFlex").style.display = "none";
-        cart.forEach((element, indx) => {
-            if (element.prod_name === clicked.prod_name) {
-                removeData(indx);
-            }
-        });
-    }
-    else {
-        getQuantity()--;
-        cart.forEach((element, indx) => {
-            if (element.prod_name === clicked.prod_name) {
-                updateData(indx);
-            }
-        });
-
-        getElement("quan").innerText = getQuantity();
-    }
-});
-
-getElement("plus").addEventListener("click", () => {
-    getQuantity()++;
-    cart.forEach((element, indx) => {
-        if (element.prod_name === clicked.prod_name) {
-            updateData(indx);
-        }
-    });
-
-    getElement("quan").innerText = getQuantity();
-});
-
-//only error in getQuantity;
-function updateData(indx) {
-    cart.splice(indx, 1);
-    let obj = {
-        "id": clicked.id,
-        "prod_name": clicked.prod_name,
-        "best_price": clicked.best_price,
-        "mrp": clicked.mrp,
-        "mkf": clicked.mkf,
-        "url_1": clicked.url_1,
-        "quantity": getQuantity()
-    }
-    cartData.push(obj);
-    localStorage.setItem("cart", JSON.stringify(cartData));
-}
-
-function removeData(indx) {
-    cart.splice(indx, 1);
-    localStorage.setItem("cart", JSON.stringify(cartData));
-}
 
 function getQuantity() {
     let temp = 0;
@@ -250,7 +148,97 @@ function getQuantity() {
             temp = element.quantity;
         }
     });
-
     return temp;
 }
-//ADD TO CART END
+
+if (title.length === 0) {
+    document.getElementById("addToCart").addEventListener("click", () => {
+
+        let data = {
+            "id": clicked.id,
+            "prod_name": clicked.prod_name,
+            "best_price": clicked.best_price,
+            "mrp": clicked.mrp,
+            "mkf": clicked.mkf,
+            "url_1": clicked.url_1,
+            "quantity": 1
+        }
+
+        cart.push(data);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        getElement("addToCart").style.display = "none";
+        getElement("btnFlex").style.display = "flex";
+        getElement("quan").innerText = 1;
+        location.reload();
+    });
+}
+else {
+    getElement("addToCart").style.display = "none";
+    getElement("btnFlex").style.display = "flex";
+
+    getElement("quan").innerText = getQuantity();
+
+    getElement("plus").addEventListener("click", () => {
+        let quan = getQuantity();
+        if (quan === 5) {
+            alert("you can't add more than 5 products");
+        }
+        else {
+            quan++;
+            cart.forEach((element, indx) => {
+                if (element.prod_name === clicked.prod_name) {
+                    updateData(indx, quan);
+                }
+            });
+        }
+    });
+
+    getElement("minus").addEventListener("click", () => {
+        let quan = getQuantity();
+        if (quan === 1) {
+            getElement("addToCart").style.display = "grid";
+            getElement("btnFlex").style.display = "none";
+            cart.forEach((element, indx) => {
+                if (element.prod_name === clicked.prod_name) {
+                    removeData(indx);
+                }
+            });
+            location.reload();
+        }
+        else {
+            quan--;
+            cart.forEach((element, indx) => {
+                if (element.prod_name === clicked.prod_name) {
+                    updateData(indx, quan);
+                }
+            });
+        }
+    });
+
+}
+
+function updateData(indx, quan) {
+    console.log(quan);
+    cart.splice(indx, 1);
+    let obj = {
+        "id": clicked.id,
+        "prod_name": clicked.prod_name,
+        "best_price": clicked.best_price,
+        "mrp": clicked.mrp,
+        "mkf": clicked.mkf,
+        "url_1": clicked.url_1,
+        "quantity": quan
+    }
+    cart.push(obj);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    getElement("quan").innerText = getQuantity();
+}
+
+
+function removeData(indx) {
+    cart.splice(indx, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+//ADD TO CART FUNCTIONALITY END

@@ -479,7 +479,6 @@ ul>li {
 
 #btnFlex {
     display: flex;
-    justify-content: center;
     gap: 16px;
     display: none;
 }
@@ -638,6 +637,13 @@ ul>li {
 
     #preLoader {
         background-size: 6%;
+    }
+
+    #btnFlex {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        display: none;
     }
 }
 
