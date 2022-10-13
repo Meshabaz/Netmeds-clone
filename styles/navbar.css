@@ -35,17 +35,60 @@ body a:hover {
 #mid {
     display: block;
     width: 50%;
+    /* height: 250px; */
     margin: 20px 220px;
     /* border: 1px solid red; */
-
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
 }
 
 #mid input {
-    width: 100%;
-    padding: 16px;
+    width: 88.6%;
+    padding: 17px;
     border-radius: 8px;
+    outline: none;
     border: none;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 }
+
+#mid .sugg_box {
+    padding: 0px 50px;
+    max-height: 280px;
+    overflow-y: auto;
+    overflow-x: auto;
+    text-align: justify;
+    background-color: white;
+    margin-top: -2px;
+    /* border-radius: 8px; */
+    /* opacity: 0;
+    pointer-events: none; */
+}
+
+.search_input.active .sugg_box {
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sugg_box li {
+    list-style: none;
+    padding: 8px 25px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none;
+}
+
+.search_input.active .sugg_box li {
+    display: block;
+}
+
+
+.sugg_box li:hover {
+    background: #efefef;
+}
+
 
 #mid input::placeholder {
     font-size: 15px;
