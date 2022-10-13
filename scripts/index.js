@@ -133,14 +133,16 @@ async function getsugg(dataurl) {
             // console.log(url);
             let item = e.target.value;
             let a = url.products;
-            let arr = []
+            let arr = [];
+            let arrtopass = [];
             // console.log(a);
             if (item) {
                 var c = 0;
                 const result = a.filter((el) => {
                     if (el.prod_name[0].toLowerCase() === item) {
-
+                        // console.log(el.prod_name[0].toLowerCase().startWith(item.toLowerCase()));
                         arr.push(el.prod_name);
+                        arrtopass.push(el);
                         // console.log(el.prod_name, c++);
                     }
                 });
@@ -152,7 +154,11 @@ async function getsugg(dataurl) {
                 show_to_sugg(arr);
                 let allList = suggbox.querySelectorAll("li");
                 for (let i = 0; i < allList.length; i++) {
-                    allList[i].setAttribute("onclick", "select(this)");
+                    // console.log("data:", e);
+                    // allList[i].setAttribute("onclick", "select()");
+                    allList[i].addEventListener("click", () => {
+                        select(arrtopass[i]);
+                    });
                 }
             }
             else {
@@ -165,13 +171,13 @@ async function getsugg(dataurl) {
 }
 
 function select(e) {
-    let geteverything = e.textContent;
-    console.log(geteverything);
+    console.log((" hello", e));
+    localStorage.setItem("ToShowInSearchPage", JSON.stringify(e));
 }
 
 
 function show_to_sugg(list) {
-    console.log(list);
+    // console.log(list);
     let data;
     if (!list.length) {
         nitem = search.value;
