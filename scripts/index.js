@@ -190,6 +190,23 @@ function show_to_sugg(list) {
 }
 
 
+
+// ON ENTER SHOW IN SEARCHPAGE FUNCTION
+document.querySelector("#inp").addEventListener("keypress", (e) => {
+    if (e.key === 'Enter') {
+        let searhTerm = document.querySelector("#inp").value;
+        console.log(searhTerm);
+        alert("hello")
+        localStorage.setItem("search", searhTerm);
+        document.querySelector("#inp").value = ""
+        window.location.href = "./SearchedPage/search.html";
+    }
+    // console.log("hhheelloooo");
+})
+
+
+
+
 // document.querySelector("#inp").addEventListener("input", () => {
 //     debouncefind();
 // })
