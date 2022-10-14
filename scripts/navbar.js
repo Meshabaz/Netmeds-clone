@@ -6,9 +6,9 @@
 function navbar() {
 
     return `<div class="header">
-            <div id="left">
+            <div id="left"><a href="../index.html">
                 <img src="https://nms-assets.s3-ap-south-1.amazonaws.com/images/cms/aw_rbslider/slides/1663609483_netmeds-new-logo.svg"
-                    alt="">
+                    alt=""></a>
             </div> 
             <div id="mid" class="search_input">
                 <input type="text" id="inp" placeholder="  Search for medicine & wellness Products...">
