@@ -1,5 +1,15 @@
 import { description, keyBenifits, uses, information, others } from "../Product_Description_Page/description.js";
 
+// console.log("hello");
+// WE GOT THE ITEM FROM SUGGESTIONS IN HOME PAGE & NEED TO SHOW HERE // 
+
+let arr = JSON.parse(localStorage.getItem("ToShowInSearchPage"));
+console.log((arr));
+
+// WE GOT THE ITEM FROM SUGGESTIONS IN HOME PAGE & NEED TO SHOW HERE // 
+
+
+
 
 
 //PReLoadEr
