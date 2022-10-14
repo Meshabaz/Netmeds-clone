@@ -16,6 +16,7 @@
 </head>
 <link rel="stylesheet" href="../Netmeds-clone/styles/navbar.css">
 <link rel="stylesheet" href="../Netmeds-clone/styles/index.css">
+<link rel="stylesheet" href="styles/footer.css">
 
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" /> -->
 
@@ -284,359 +285,11 @@
 
     <!-- FOOTER SECTION STARTED -->
     <style>
-        footer {
-            background-color: #fff;
-        }
-
-        /* SECTION 'A' CSS FOR FOOTER */
-        .section_A {
-            width: 100%;
-            display: flex;
-            padding: 30px;
-            border-bottom: 1.7px solid lightgray;
-        }
-
-        .section_A .footer_logo {
-            display: flex;
-            flex: 2.5;
-            /* border: 2px solid red; */
-            /* justify-content: center; */
-            align-items: center;
-        }
-
-        .section_A .footer_logo img {
-            width: 200px;
-        }
-
-        .section_A .footer_description {
-            display: flex;
-            flex: 7.5;
-            color: gray;
-            /* border: 2px solid red; */
-
-        }
-
-        .section_A .footer_description p {
-            width: 700px;
-            pointer-events: none;
-            /* border: 2px solid black; */
-        }
-
-        /* SECTION 'B' CSS FOR FOOTER */
-
-        .section_B {
-            width: 100%;
-            /* height: 200px; */
-            /* border: 2px solid red; */
-            border-bottom: 1.7px solid lightgray;
-
-        }
-
-        .section_B .footer_lists {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        /* .section_B .footer_lists ul {
-            border: 1px solid teal;
-        } */
-
-        .section_B .footer_lists h4:not(.subscribe h4) {
-            width: 100px;
-            margin-left: -30px;
-            /* border: 1px solid black; */
-        }
-
-        .section_B .footer_lists h4 {
-            pointer-events: none;
-        }
-
-        .section_B .footer_lists ul li {
-            list-style: none;
-            padding: 10px;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .section_B .footer_lists ul li:hover {
-            color: rgb(6, 191, 191);
-        }
-
-        .subscribe {
-            width: 300px;
-            height: 400px;
-            margin: 20px 0;
-            /* border: 2px solid yellowgreen; */
-        }
-
-        .subscribe p {
-            font-size: 14px;
-            width: 250px;
-            font-weight: 600;
-            pointer-events: none;
-        }
-
-        .subscribe form {
-            /* border: 1px dashed darkblue; */
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .subscribe form .Inp_Subscribe_Email {
-            width: 250px;
-            height: 50px;
-            background: transparent;
-            opacity: 0.4;
-            color: black;
-            border: none;
-            border-bottom: 1.7px solid lightgray;
-        }
-
-        .subscribe form .Inp_Subscribe_Email:hover {
-            /* background-color: burlywood; */
-            /* color: black; */
-            opacity: 1;
-
-        }
-
-        .subscribe form .gobtn {
-            width: 25px;
-            height: 20px;
-            background-image: url('https://www.netmeds.com/assets/version1665682643/gloryweb/images/icons/send-icon.svg');
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-        }
-
-        /* .span_subscribe {
-            display: none;
-        } */
-
-        /* .span_subscribe .active {
-            display: block;
-        } */
-
-        /* .span_subscribe .error,
-        .span_subscribe .success {
-            display: none;
-        } */
-
-        .span_subscribe .errorsubs img,
-        .span_subscribe .success img {
-            /* background-image: transparent; */
-            width: 25px;
-            height: 25px;
-            padding: 5px;
-        }
-
-        .span_subscribe .errorsubs {
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 5px;
-            /* border: 2px solid black; */
-            background-color: rgb(245, 111, 111);
-            /* color: white; */
-            font-size: 15px;
-        }
-
-        .span_subscribe .success {
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 5px;
-            /* border: 2px solid black; */
-            background-color: rgb(21, 206, 21);
-            /* color: white; */
-            font-size: 15px;
-        }
-
-        .subscribe .images {
-            margin: 20px 10px;
-        }
-
-        .subscribe .images img {
-            width: 120px;
-            height: 35px;
-            cursor: pointer;
-        }
-
-        /* SECTION 'B' CSS FOR FOOTER */
-
-
-
-        /* SECTION 'C' CSS FOR FOOTER */
-
-        .section_C {
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-            padding: 20px;
-        }
-
-        .section_C a {
-            text-decoration: none;
-        }
-
-        .section_C a li {
-            list-style: none;
-            color: gray;
-            font-size: 17px;
-            font-weight: 500;
-        }
-
-        .section_C li {
-            pointer-events: none;
-            list-style: none;
-            color: gray;
-        }
-
-
         /* SECTION 'C' CSS FOR FOOTER */
     </style>
 
 
-    <footer>
-        <section class="section_A">
-            <div class="footer_logo">
-                <a href="index.html">
-                    <img src="https://www.netmeds.com/assets/gloryweb/images/netmeds-footer-logo.svg" alt="">
-                </a>
-            </div>
-            <div class="footer_description">
-                <p>
-                    Netmeds.com is one of India’s most trusted pharmacies, dispensing quality medicines at reasonable
-                    prices to over 7
-                    million happy customers – PAN India.
-                </p>
-            </div>
-        </section>
-        <!-- <hr> -->
-        <section class="section_B">
-            <div class="footer_lists">
-                <ul class="company">
-                    <h4>COMPANY</h4>
-                    <li>About Ntemeds</li>
-                    <li>Customer Speak</li>
-                    <li>In the News</li>
-                    <li>Career</li>
-                    <li>Terms and Conditions</li>
-                    <li>Privacy Policy</li>
-                    <li>Fees and Payment policy</li>
-                    <li>Shipping and Delivery Policy</li>
-                    <li>Return, Refund and Cancellation Policy</li>
-                    <li>Contact</li>
-                </ul>
-                <ul class="shopping">
-                    <h4>SHOPPING</h4>
-                    <li> Browse by A-Z</li>
-                    <li>Browse by Manufacturers</li>
-                    <li>Health Articles</li>
-                    <li>Offers / Coupons</li>
-                    <li>FAQs</li>
-                </ul>
-                <ul class="social">
-                    <h4>SOCIAL</h4>
-
-                    <li>Patients Alike</li>
-                    <li>Facebook</li>
-                    <li>Twitter</li>
-                    <li>LinkedIn</li>
-                    <li>Youtube</li>
-                    <li>Refer & Earn</li>
-                </ul>
-                <div class="subscribe">
-                    <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
-                    <p>Get a free subscription to our health and fitness tip and stay tuned to our latest offers</p>
-                    <form>
-                        <input type="email" placeholder="Enter your email address" class="Inp_Subscribe_Email" required>
-                        <button type="submit" class="gobtn" onclick="subscribe()"></button>
-                    </form>
-                    <span class="span_subscribe">
-                        <div class="errorsubs" style="display: none;">
-                            <img src="https://cdn.iconscout.com/icon/free/png-64/attention-5763897-4827419.png" alt="">
-                            Looks like you have already subscribed!
-                        </div>
-                        <div class="success" style="display: none;">
-                            <img src="https://cdn.iconscout.com/icon/free/png-64/check-verified-successful-accept-tick-yes-success-2516.png"
-                                alt="">
-                            Thank you for your subscription.
-                        </div>
-                        <div></div>
-                    </span>
-                    <div class="images">
-                        <img src="https://www.netmeds.com/assets/gloryweb/images/icons/play_store.png" alt="">
-                        <img src="https://www.netmeds.com/assets/gloryweb/images/icons/app_store.png" alt="">
-                    </div>
-                    </ul>
-                </div>
-        </section>
-
-        <section class="section_C">
-            <a href="">
-                <li>Medicine</li>
-            </a>
-            <a href="">
-                <li>Wellness</li>
-            </a>
-            <a href="">
-                <li>Lab Tests</li>
-            </a>
-            <a href="">
-                <li>Beauty</li>
-            </a>
-
-            <li>Copyright© 2022. All Rights Reserved.</li>
-
-        </section>
-        <script>
-            const subscription_arr = []
-            function subscribe() {
-                event.preventDefault();
-                // alert("got")
-                let subs_obj = {
-                    email: document.querySelector(".Inp_Subscribe_Email").value
-                }
-                console.log(subs_obj);
-                const check = subscription_arr.filter((e) => {
-                    return e.email == subs_obj.email;
-                    // if (subs_obj.email === subscription_arr.e) {
-                    //     alert("you alreay subscribed!")
-                    // } else {
-                    //     subscription_arr.push(subs_obj.email);
-                    //     localStorage.setItem("subscribed", subscription_arr)
-                    //     alert("subscribed!")
-                    // }
-                })
-                console.log(check.length);
-
-                if (check.length >= 1) {
-                    document.querySelector(".errorsubs").style.display = "flex"
-                    document.querySelector(".success").style.display = "none"
-                    alert("you alreay subscribed!");
-                    // do
-                    // document.querySelector(".span_subscribe").classList.add("active");
-                    // document.querySelector(".span_subscribe").style.display = "block";
-                    // document.querySelector(".error").classList.add("active");
-                } else {
-                    subscription_arr.push(subs_obj);
-                    localStorage.setItem("subscribed", subscription_arr)
-                    alert("subscribed!")
-                    // do
-                    document.querySelector(".errorsubs").style.display = "none"
-                    document.querySelector(".success").style.display = "flex"
-                    // document.querySelector(".success").classList.add("active");
-                    // document.querySelector(".span_subscribe").classList.add("active");
-                }
-                document.querySelector(".Inp_Subscribe_Email").value = ""
-            }
-        </script>
-    </footer>
+    <footer class="footer"></footer>
     <!-- FOOTER SECTION ENDED -->
 
 
@@ -669,6 +322,51 @@
         },
     });
 </script> -->
+
+<script>
+
+    const subscription_arr = []
+    function subscribeToNetmedsClone() {
+        event.preventDefault();
+        // alert("got")
+        let subs_obj = {
+            email: document.querySelector(".Inp_Subscribe_Email").value
+        }
+        console.log(subs_obj);
+        const check = subscription_arr.filter((e) => {
+            return e.email == subs_obj.email;
+            // if (subs_obj.email === subscription_arr.e) {
+            //     alert("you alreay subscribed!")
+            // } else {
+            //     subscription_arr.push(subs_obj.email);
+            //     localStorage.setItem("subscribed", subscription_arr)
+            //     alert("subscribed!")
+            // }
+        })
+        console.log(check.length);
+
+        if (check.length >= 1) {
+            document.querySelector(".errorsubs").style.display = "flex"
+            document.querySelector(".success").style.display = "none"
+            alert("you alreay subscribed!");
+            // do
+            // document.querySelector(".span_subscribe").classList.add("active");
+            // document.querySelector(".span_subscribe").style.display = "block";
+            // document.querySelector(".error").classList.add("active");
+        } else {
+            subscription_arr.push(subs_obj);
+            localStorage.setItem("subscribed", subscription_arr)
+            alert("subscribed!")
+            // do
+            document.querySelector(".errorsubs").style.display = "none"
+            document.querySelector(".success").style.display = "flex"
+            // document.querySelector(".success").classList.add("active");
+            // document.querySelector(".span_subscribe").classList.add("active");
+        }
+        document.querySelector(".Inp_Subscribe_Email").value = ""
+    }
+</script>
+
 <script type="module" src="scripts/index.js"></script>
 
 

@@ -3,6 +3,9 @@ import navbar from "./navbar.js";
 console.log(navbar);
 document.getElementById("navbar").innerHTML = navbar();
 
+import { footer } from "./footer.js";
+document.querySelector('.footer').innerHTML = footer();
+
 const url = "https://mr-raaz.github.io/NetmedsClone_data/landingPage_data.json";
 
 getdata(url);
@@ -203,6 +206,54 @@ document.querySelector("#inp").addEventListener("keypress", (e) => {
     }
     // console.log("hhheelloooo");
 })
+
+
+
+// FOOTER SECTION JAVASCRIPT
+const subscription_arr = []
+function subscribeToNetmedsClone() {
+    event.preventDefault();
+    // alert("got")
+    let subs_obj = {
+        email: document.querySelector(".Inp_Subscribe_Email").value
+    }
+    console.log(subs_obj);
+    const check = subscription_arr.filter((e) => {
+        return e.email == subs_obj.email;
+        // if (subs_obj.email === subscription_arr.e) {
+        //     alert("you alreay subscribed!")
+        // } else {
+        //     subscription_arr.push(subs_obj.email);
+        //     localStorage.setItem("subscribed", subscription_arr)
+        //     alert("subscribed!")
+        // }
+    })
+    console.log(check.length);
+
+    if (check.length >= 1) {
+        document.querySelector(".errorsubs").style.display = "flex"
+        document.querySelector(".success").style.display = "none"
+        alert("you alreay subscribed!");
+        // do
+        // document.querySelector(".span_subscribe").classList.add("active");
+        // document.querySelector(".span_subscribe").style.display = "block";
+        // document.querySelector(".error").classList.add("active");
+    } else {
+        subscription_arr.push(subs_obj);
+        localStorage.setItem("subscribed", subscription_arr)
+        alert("subscribed!")
+        // do
+        document.querySelector(".errorsubs").style.display = "none"
+        document.querySelector(".success").style.display = "flex"
+        // document.querySelector(".success").classList.add("active");
+        // document.querySelector(".span_subscribe").classList.add("active");
+    }
+    document.querySelector(".Inp_Subscribe_Email").value = ""
+}
+// FOOTER SECTION JAVASCRIPT
+
+
+
 
 
 
