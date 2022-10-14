@@ -1,7 +1,20 @@
 import { description, keyBenifits, uses, information, others } from "../Product_Description_Page/description.js";
 import navbar from "../scripts/navbar.js";
 
+<<<<<<< HEAD
 document.getElementById("navbar").innerHTML = navbar();
+=======
+// console.log("hello");
+// WE GOT THE ITEM FROM SUGGESTIONS IN HOME PAGE & NEED TO SHOW HERE // 
+
+let arr = JSON.parse(localStorage.getItem("ToShowInSearchPage"));
+console.log((arr));
+
+// WE GOT THE ITEM FROM SUGGESTIONS IN HOME PAGE & NEED TO SHOW HERE // 
+
+
+
+>>>>>>> bdba86a931680918116e7d2504da952f08a4afe6
 
 
 //PReLoadEr
