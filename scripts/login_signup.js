@@ -7,39 +7,38 @@ document.getElementById("navbar").innerHTML = navbar();
 document.getElementById("use_otp").addEventListener("click", validate);
 
 function validate() {
+
+
   let number = document.getElementById("mobile_number").value;
 
   if (number.length != 10) {
+
     alert("please enter correct number");
+
     return;
+
   } else {
-    if (
-      localStorage.getItem("user_fname") &&
-      localStorage.getItem("user_number") == number
-    ) {
+
+    if (localStorage.getItem("user_fname") && localStorage.getItem("user_number") == number) {
+
       document.getElementById("right_first").style.display = "none";
+      
       document.getElementById("loading").style.display = "block";
 
       setTimeout(() => {
         document.getElementById("loading_container").style.display = "none";
       }, 500);
 
-      document.getElementById("local_num2").innerText =
-        localStorage.getItem("user_number");
-      document.getElementById("login_name").innerText =
-        localStorage.getItem("user_fname");
+      document.getElementById("local_num2").innerText =localStorage.getItem("user_number");
+      document.getElementById("login_name").innerText =localStorage.getItem("user_fname");
       let j = 60;
       let test = setInterval(() => {
         if (j == 0) {
           clearInterval(test);
-          document.getElementById(
-            "waiting_otp2"
-          ).innerHTML = `<P>RESEND OTP</P>`;
+          document.getElementById("waiting_otp2").innerHTML = `<P>RESEND OTP</P>`;
           document.querySelector("#waiting_otp2 > p").style.color = "red";
           document.getElementById("waiting_otp2").style.cursor = "pointer";
-          document
-            .querySelector("#waiting_otp2")
-            .addEventListener("click", () => {
+          document.querySelector("#waiting_otp2").addEventListener("click", () => {
               check();
             });
         } else {
@@ -61,6 +60,7 @@ function validate() {
           document.getElementById("login_otp_verify").style.display = "none";
           document.getElementById("verified").style.display = "block";
           setTimeout(() => {
+            localStorage.setItem("login_status" , true);
             window.location.href = "./index.html";
           }, 2000);
         } else {
@@ -76,18 +76,18 @@ function validate() {
         }
       });
     } else {
+
       localStorage.setItem("user_number", number);
+
       document.getElementById("right_first").style.display = "none";
 
       document.getElementById("loading").style.display = "block";
 
       setTimeout(() => {
-        document.getElementById("local_num").innerText =
-          localStorage.getItem("user_number");
 
-        document
-          .getElementById("change_button")
-          .addEventListener("click", () => {
+        document.getElementById("local_num").innerText =localStorage.getItem("user_number");
+
+        document.getElementById("change_button").addEventListener("click", () => {
             window.location.reload();
           });
 
@@ -95,14 +95,10 @@ function validate() {
         let test = setInterval(() => {
           if (i == 0) {
             clearInterval(test);
-            document.getElementById(
-              "waiting_otp"
-            ).innerHTML = `<P>RESEND OTP</P>`;
+            document.getElementById("waiting_otp").innerHTML = `<P>RESEND OTP</P>`;
             document.querySelector("#waiting_otp > p").style.color = "red";
             document.getElementById("waiting_otp").style.cursor = "pointer";
-            document
-              .querySelector("#waiting_otp")
-              .addEventListener("click", () => {
+            document.querySelector("#waiting_otp").addEventListener("click", () => {
                 check();
               });
           } else {
@@ -139,12 +135,15 @@ function validate() {
           if (otp == "123456") {
             document.getElementById("cheking").style.display = "none";
             document.getElementById("verified").style.display = "block";
+            document.getElementById("login_otp_verify").style.display = "none";
+            localStorage.setItem("login_status" , true);
             setTimeout(() => {
               window.location.href = "./index.html";
             }, 2000);
           } else {
             document.getElementById("cheking").style.display = "none";
             document.getElementById("wrong").style.display = "block";
+            document.getElementById("login_otp_verify").style.display = "none";
 
             // document.getElementById("verified").style.display = "block";
             setTimeout(() => {
