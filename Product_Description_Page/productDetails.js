@@ -1,5 +1,7 @@
 import { description, keyBenifits, uses, information, others } from "../Product_Description_Page/description.js";
+import navbar from "../scripts/navbar.js";
 
+document.getElementById("navbar").innerHTML = navbar();
 
 
 //PReLoadEr
