@@ -227,10 +227,6 @@
 
 }
 
-.popup_input{
-    /* border: 1px solid red; */
-    
-}
 .popup_input > p {
     color: rgb(6, 191, 191);
     font-size: 12px;
@@ -474,7 +470,7 @@
                 <div><p id="no_data">No Data</p></div>
               </div>
 
-              <button id="modify_btn" onclick="openPopup()">Modify</button>
+              <button id="modify_btn">Modify</button>
             </div>
           </div>
         </div>
@@ -513,15 +509,17 @@
         </select>
       </div>
 
-      <button id="save_changes" onclick="closePopup()">SAVE CHANGES</button>
+      <button id="save_changes">SAVE CHANGES</button>
     </div>
 
     <div id="check2"></div>
+
+    <script type="module" src="profile.js"></script>
   </body>
 </html>
 
 <script type="module">
-    import navbar from "../scripts/navbar.js";
+import navbar from "../scripts/navbar.js";
 
 document.getElementById("navbar").innerHTML = navbar();
 
@@ -554,6 +552,10 @@ document.getElementById("navbar").innerHTML = navbar();
     name2.value = "Raj";
     email2.value = "fakereal477@gmail.com";
   }
+
+
+  document.getElementById("modify_btn").addEventListener("click" , openPopup);
+
 
   function closePopup() {
     document.getElementById("check2").style.display = "none";
@@ -591,4 +593,7 @@ document.getElementById("navbar").innerHTML = navbar();
       localStorage.setItem("user_email", email22);
     }
   }
-</script>
+
+  document.getElementById("save_changes").addEventListener("click" , closePopup);
+  
+</script> -->
