@@ -436,7 +436,7 @@
                 src="https://www.netmeds.com/msassets/images/icons/lock_grey.svg"
                 alt="not found"
               />
-              <div class="check" style="border: none">
+              <div class="check" style="border: none" id="logOut_cliked">
                 <p>Logout</p>
                 <img
                   src="https://www.netmeds.com/msassets/images/icons/keyboard_arrow_big_right.svg"
@@ -522,6 +522,10 @@
 import navbar from "../scripts/navbar.js";
 
 document.getElementById("navbar").innerHTML = navbar();
+
+document.getElementById("logOut_cliked").addEventListener("click" , ()=>{
+  localStorage.setItem("login_status" , false);
+})
 
   let see = document.getElementById("popup");
   let name = document.getElementById("popup_fname");
