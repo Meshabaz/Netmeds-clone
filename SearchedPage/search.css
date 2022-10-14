@@ -231,6 +231,17 @@ hr {
     font-size: 14px;
 }
 
+#btnFlex {
+    display: flex;
+    gap: 16px;
+    display: none;
+}
+
+#plus,
+#minus {
+    cursor: pointer;
+}
+
 @media all and (min-width: 0px) and (max-width: 499px) {
     .right {
         order: 1;
@@ -311,6 +322,13 @@ hr {
         line-height: normal;
         vertical-align: bottom;
     }
+
+    #btnFlex {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        display: none;
+    }
 }
 
 @media all and (min-width: 500px) and (max-width: 898px) {
@@ -336,6 +354,13 @@ hr {
     }
 
     .left .div2 {
+        display: none;
+    }
+
+    #btnFlex {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
         display: none;
     }
 }
