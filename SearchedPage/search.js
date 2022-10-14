@@ -1,8 +1,8 @@
-let searchKey = JSON.parse(localStorage.getItem("search"));
+let searchKey = localStorage.getItem("search");
 let cartLength = JSON.parse(localStorage.getItem("cartItem"));
-console.log(searchKey);
-let keyword = `mask`;
-let finalKey = keyword.toLowerCase();
+//console.log(searchKey);
+//let keyword = `mask`;
+let finalKey = searchKey.toLowerCase();
 const searchedData = async () => {
   let responce = await fetch("https://mr-raaz.github.io/NetmedsClone_data/data.json");
   let data = await responce.json();
