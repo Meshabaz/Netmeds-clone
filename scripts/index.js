@@ -172,7 +172,7 @@ async function getsugg(dataurl) {
 
 function select(e) {
     console.log((" hello", e));
-    localStorage.setItem("ToShowInSearchPage", JSON.stringify(e));
+    localStorage.setItem("clicked", JSON.stringify(e));
     window.location.href = "./Product_Description_Page/productDetails.html";
 }
 
