@@ -33,9 +33,13 @@ body a:hover {
     top: 22px;
 }
 
+#left:hover {
+    background-color: rgb(2, 100, 100);
+}
+
 #mid {
     display: block;
-    width: 50%;
+    width: 40%;
     /* height: 250px; */
     margin: 20px 220px;
     /* border: 1px solid red; */
@@ -45,12 +49,12 @@ body a:hover {
 }
 
 #mid input {
-    width: 88.6%;
+    width: 95%;
     padding: 17px;
     border-radius: 8px;
     outline: none;
     border: none;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 5px 0;
 }
 
 #mid .sugg_box {
@@ -59,7 +63,7 @@ body a:hover {
     overflow-y: auto;
     overflow-x: auto;
     text-align: justify;
-    background-color: white;
+    background-color: #eee;
     margin-top: -2px;
     /* border-radius: 8px; */
     /* opacity: 0;
@@ -74,10 +78,13 @@ body a:hover {
 
 .sugg_box li {
     list-style: none;
-    padding: 8px 25px;
-    width: 100%;
+    padding: 12px 25px;
+    width: 120%;
+    height: 30px;
+    margin: 10px -10px;
     cursor: pointer;
     border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     display: none;
 }
 
@@ -87,7 +94,7 @@ body a:hover {
 
 
 .sugg_box li:hover {
-    background: #efefef;
+    background: rgb(6, 191, 191);
 }
 
 
@@ -101,6 +108,7 @@ body a:hover {
     position: absolute;
     right: 34px;
     top: 8px;
+    /* justify-content: space-around; */
     /* border: 1px solid green; */
 
 }
@@ -151,6 +159,10 @@ body a:hover {
     font-size: 15px;
     display: flex;
     /* border: 1px solid black; */
+}
+
+.navbar li a:hover {
+    background-color: rgb(2, 100, 100);
 }
 
 .navbar li a .cart_counter {
@@ -267,13 +279,13 @@ body a:hover {
     margin: auto;
     justify-content: space-evenly;
     align-items: center;
-    /* border: 1px solid black; */
 }
 
 .navigatons ul a {
     text-decoration: none;
     color: white;
     margin-top: 5px;
+    /* border: 1px solid black; */
 }
 
 /* .navigatons li {
@@ -477,9 +489,18 @@ li:not(.navbar li) {
     } */
 
 .lastnavigation ul li {
+    height: 30px;
+    display: flex;
+    padding-top: 10px;
+    align-items: center;
     list-style-type: none;
-
+    /* border: 1px solid black; */
 }
+
+.lastnavigation ul li:hover {
+    background-color: rgb(7, 196, 196);
+}
+
 
 .lastnavigation ul li a {
     text-decoration: none;
@@ -488,9 +509,14 @@ li:not(.navbar li) {
 }
 
 .lastnavigation ul li a:hover {
+    color: #fff;
+    font-weight: 800px;
+}
+
+/* .lastnavigation ul li a:hover {
     text-decoration: underline;
     color: rgb(6, 191, 191);
-}
+} */
 
 #logos {
     height: 30px;
