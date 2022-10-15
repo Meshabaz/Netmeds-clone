@@ -296,6 +296,8 @@ hr {
 
     .details .end {
         width: 100%;
+        display: flex;
+        justify-content: center;
         vertical-align: bottom;
     }
 
@@ -328,6 +330,10 @@ hr {
         justify-content: center;
         gap: 16px;
         display: none;
+    }
+
+    .details #category {
+        white-space: initial;
     }
 }
 
