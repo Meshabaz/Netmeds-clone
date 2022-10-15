@@ -260,7 +260,6 @@ function productPages(pageName){
             divbtn.classList.add("divbtn")
             let btn = document.createElement("button");
             let span1 = document.createElement("span");
-
         // <<<<<<<<<<<< Object Input Values >>>>>>>>>>>>>>>>>>>>
             anchor.href=`../../Product_Description_Page/productDetails.html`;
             // span2.innerHTML='<i class="fa-thin fa-plus"></i>'
@@ -275,7 +274,8 @@ function productPages(pageName){
             spanBestPrice.innerText = "  ₹"+ele.best_price;
             prodDiscount.innerText=ele.discount+" % OFF";
             span1.innerText="ADD TO CART"
-        // <<<<<<<<<<<< Append >>>>>>>>>>>>>>>>>>>>
+
+        // <<<<<<<<<<<< Append >>>>>>>>>>>>>>>>>>
             discountdiv.append(prodDiscount);
             divimg.append(discountdiv,image);
             

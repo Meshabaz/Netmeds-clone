@@ -20,7 +20,6 @@
          });
 
 //  Filtering filterbox elements >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
         // let uniqueBrandFilterElementArray = [...new Set(categoryfilteredArray.map(item => item.Brands))];
         //  console.log(unique);
 // Brand Filter >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
