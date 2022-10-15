@@ -321,9 +321,7 @@ body a:hover {
     /* border: solid black; */
 }
 
-li:not(.navbar li) {
-    margin-left: -40px;
-}
+
 
 #medicine_dd_list a,
 #healthcorner_dd_list a,
@@ -524,10 +522,6 @@ li:not(.navbar li) {
     font-weight: 800px;
 }
 
-/* .lastnavigation ul li a:hover {
-    text-decoration: underline;
-    color: rgb(6, 191, 191);
-} */
 
 #logos {
     height: 30px;
