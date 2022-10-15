@@ -1,5 +1,6 @@
-
-    let page = "Covid Essentials";
+function productPages(pageName){
+    
+    let page = pageName;
   
     let categoryfilteredArray=[]
     let uniqueBrandFilterElementArrayWithCount = []
@@ -731,3 +732,7 @@
     }
 
 
+
+}
+
+export default productPages;
