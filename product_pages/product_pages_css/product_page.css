@@ -353,9 +353,9 @@ input[type="range"]::-moz-range-thumb{
      margin-top: 20px;
      /* border: 1px solid red; */
  }
- #TotProdonPage{
-    /* margin: auto; */
- }
+ /* #TotProdonPage{
+    margin: auto;
+ } */
  #TotProdonPage>span{
     font-size: 100%;
      font-weight: bold;
