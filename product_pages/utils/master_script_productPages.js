@@ -261,7 +261,7 @@ function productPages(pageName){
             let btn = document.createElement("button");
             let span1 = document.createElement("span");
         // <<<<<<<<<<<< Object Input Values >>>>>>>>>>>>>>>>>>>>
-            anchor.href=`../../../Product_Description_Page/productDetails.html`;
+            anchor.href=`../../Product_Description_Page/productDetails.html`;
             // span2.innerHTML='<i class="fa-thin fa-plus"></i>'
             image.setAttribute("src",ele.url_1)
             h5.innerText = ele.prod_name;
