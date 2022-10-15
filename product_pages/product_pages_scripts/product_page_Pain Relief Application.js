@@ -1,4 +1,4 @@
-let page = "Immunity Booster";
+let page = "Pain Relief Application";
 
 let loc1 = "Home"
 let loc2 = "Non-Prescription"
@@ -14,4 +14,3 @@ document.getElementById("subFilterBox").innerHTML = categoryFilter();
 
 import productPages from "../utils/master_script_productPages.js";
 productPages(page);
-

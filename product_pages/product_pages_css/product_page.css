@@ -102,7 +102,7 @@
  .prodcategory-mkf,
  .prodcategory-categories,#subFilterBox{
     width: 100%;
-    height: 200px;
+    max-height: 200px;
     margin-top: 10px;
     margin-bottom: 20px;
     overflow-y: auto;
@@ -665,7 +665,7 @@ p{
          font-weight: bold;
      }
      #tooldisplay #sorting{
-        width: 80%;
+        width: 83%;
         flex-wrap: nowrap;
         font-size: 12px;
         /* border: 1px solid red ; */

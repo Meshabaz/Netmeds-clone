@@ -1,5 +1,11 @@
 let page = "Personal Care";
 
+let loc1 = "Home"
+let loc2 = "Non-Prescription"
+
+import displayPageLocationOnBanner from "../utils/page_location_display.js";
+document.getElementById("headdiv").innerHTML=displayPageLocationOnBanner(loc1,loc2,page);
+
 import shopByCategoryCards from "../utils/shop_by_category_cards.js";
 document.getElementById("main-shopbyCategoryDiv").innerHTML = shopByCategoryCards();
 
