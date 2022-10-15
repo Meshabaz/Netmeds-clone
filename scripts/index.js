@@ -6,14 +6,15 @@ document.getElementById("navbar").innerHTML = navbar();
 import { footer } from "./footer.js";
 document.querySelector('.footer').innerHTML = footer();
 
-const url = "https://mr-raaz.github.io/NetmedsClone_data/landingPage_data.json";
 
+const url = "https://mr-raaz.github.io/NetmedsClone_data/landingPage_data.json";
+// https://mr-raaz.github.io/NetmedsClone_data/landingPage_data.json
 getdata(url);
 
 async function getdata(url) {
     let res = await fetch(url);
     let data = await res.json();
-
+    showlimited_time(data.Limited_time_deals);
     showbrands(data.Brand_days);
 }
 
@@ -34,6 +35,7 @@ function showbrands(data) {
         const discount = document.createElement("p");
         discount.innerText = e.discount;
         const addtocartbtn = document.createElement("button");
+        addtocartbtn.classList = "slide_btn";
         addtocartbtn.innerHTML = "ADD TO CART";
 
 
@@ -41,6 +43,86 @@ function showbrands(data) {
         document.querySelector(".brands").append(div);
     })
 }
+
+
+let cardContainers = [...document.querySelectorAll(".brands, .limited_time, .trending_container")];
+let preBtns = [...document.querySelectorAll(".pre-btn")];
+let nxtBtns = [...document.querySelectorAll(".nxt-btn")];
+cardContainers.forEach((items, i) => {
+    let containerDimensions = items.getBoundingClientRect();
+    let containerWidth = containerDimensions.width;
+    nxtBtns[i].addEventListener("click", () => {
+        items.scrollLeft += containerWidth - 200;
+    });
+    preBtns[i].addEventListener("click", () => {
+        items.scrollLeft -= containerWidth + 200;
+    });
+});
+
+
+
+
+function showlimited_time(data) {
+    console.log(data);
+
+    data.forEach((e) => {
+
+        const div = document.createElement("div");
+        div.className = "slide";
+        const image = document.createElement("img");
+        image.src = e.url_one;
+        // image.cla
+        const name = document.createElement("p");
+        name.innerText = e.prod_name;
+        const price = document.createElement("p");
+        price.innerText = `₹${e.mrp}`;
+        const discount = document.createElement("p");
+        discount.innerText = e.discount;
+        const addtocartbtn = document.createElement("button");
+        addtocartbtn.classList = "slide_btn";
+        addtocartbtn.innerHTML = "ADD TO CART";
+
+
+        div.append(image, name, price, discount, addtocartbtn);
+        document.querySelector(".limited_time").append(div);
+    })
+}
+
+// const url = "https://mr-raaz.github.io/NetmedsClone_data/landingPage_data.json";
+
+// getdata(url);
+
+// async function getdata(url) {
+//     let res = await fetch(url);
+//     let data = await res.json();
+
+//     showbrands(data.Brand_days);
+// }
+
+// function showbrands(data) {
+//     console.log(data);
+
+//     data.forEach((e) => {
+
+//         const div = document.createElement("div");
+//         div.className = "slide";
+//         const image = document.createElement("img");
+//         image.src = e.url_one;
+//         // image.cla
+//         const name = document.createElement("p");
+//         name.innerText = e.prod_name;
+//         const price = document.createElement("p");
+//         price.innerText = `₹${e.mrp}`;
+//         const discount = document.createElement("p");
+//         discount.innerText = e.discount;
+//         const addtocartbtn = document.createElement("button");
+//         addtocartbtn.innerHTML = "ADD TO CART";
+
+
+//         div.append(image, name, price, discount, addtocartbtn);
+//         document.querySelector(".brands").append(div);
+//     })
+// }
 
 // const trendingcontainer = [...document.querySelectorAll(".trending_container")];
 // const nxtbtn = [...document.querySelectorAll('.nxt_btn')];
@@ -149,12 +231,12 @@ async function getsugg(dataurl) {
                         // console.log(el.prod_name, c++);
                     }
                 });
-                arr = arr.map((e) => {
+                let dis = arr.map((e) => {
                     return a = `<li>` + e + `</li>`;
                 })
                 // console.log("array:", arr);
                 searchdiv.classList.add("active");
-                show_to_sugg(arr);
+                show_to_sugg(dis);
                 let allList = suggbox.querySelectorAll("li");
                 for (let i = 0; i < allList.length; i++) {
                     // console.log("data:", e);
@@ -179,7 +261,7 @@ function select(e) {
     window.location.href = "./Product_Description_Page/productDetails.html";
 }
 
-
+// let nonsenseInp = document.querySelector("#inp");
 function show_to_sugg(list) {
     // console.log(list);
     let data;

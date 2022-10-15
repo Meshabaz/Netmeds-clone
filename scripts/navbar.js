@@ -23,7 +23,9 @@ function navbar() {
                                 alt="">
                             <div id="_1">Upload</div>
                         </a></li>
-                    <li><a href=""><img id="cart_img"
+                    <li><a href="">
+                        <span class="cart_counter">0</span>
+                        <img id="cart_img"
                                 src="https://cdn.iconscout.com/icon/free/png-64/cart-grocery-store-shopping-shop-30488.png"
                                 alt="">
                             <div id="_1">Cart</div>
