@@ -15,7 +15,7 @@ function footer() {
                 </p>
             </div>
         </section>
-        <!-- <hr> -->
+        
         <section class="section_B">
             <div class="footer_lists">
                 <ul class="company">

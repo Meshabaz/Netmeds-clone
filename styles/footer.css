@@ -4,7 +4,7 @@
 
   /* SECTION 'A' CSS FOR FOOTER */
   .section_A {
-      width: 100%;
+      width: auto;
       display: flex;
       padding: 30px;
       border-bottom: 1.7px solid lightgray;
@@ -39,7 +39,7 @@
 
   @media(max-width: 900px) {
       .section_A {
-          width: 100%;
+          width: auto;
           display: block;
           margin: auto;
       }
@@ -55,7 +55,7 @@
   /* SECTION 'B' CSS FOR FOOTER */
 
   .section_B {
-      width: 100%;
+      width: auto;
       /* height: 200px; */
       /* border: 2px solid red; */
       border-bottom: 1.7px solid lightgray;
@@ -214,7 +214,7 @@
   /* SECTION 'C' CSS FOR FOOTER */
 
   .section_C {
-      width: 100%;
+      width: auto;
       display: flex;
       justify-content: space-around;
       padding: 20px;

@@ -286,7 +286,7 @@
 }
 
 .category .category_header {
-    width: 100%;
+    width: auto;
     display: flex;
     margin: auto;
     justify-content: space-between;

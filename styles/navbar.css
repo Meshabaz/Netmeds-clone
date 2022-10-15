@@ -2,7 +2,8 @@ body {
     margin: 0px;
     padding: 0px;
     background-color: rgba(237, 248, 247, 0.715);
-    /* overflow-x: hidden; */
+    overflow-x: none;
+    overflow-y: none;
 }
 
 /* body a:active,
@@ -11,7 +12,7 @@ body a:hover {
 } */
 
 .header {
-    width: 100vw;
+    width: 100%;
     height: 90px;
     display: flex;
     margin: auto;
@@ -187,6 +188,7 @@ body a:hover {
 
     #sign_in {} */
 .navigatons {
+    width: 100%;
     height: 60px;
     margin-top: 90px;
     background-color: rgb(6, 191, 191);
