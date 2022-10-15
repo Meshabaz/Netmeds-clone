@@ -7,11 +7,12 @@
   }
   #container {
     width: 80%;
-    height: 80px;
+    height: 90px;
     margin: auto;
     margin-top: 150px;
+    /* border: 1px solid red; */
     color: #151b39;
-    margin-bottom: -10px;
+    /* margin-bottom: -10px; */
     font-size: 14px;
     background-color: rgb(240, 233, 233);
   }
@@ -31,19 +32,26 @@
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
+    /* border: 1px solid black; */
     background-color: rgb(240, 233, 233);
   }
   #bag1 {
     width: 67%;
     height: 100%;
+  
+    /* border: 1px solid black; */
   }
   #bag2 {
     width: 30%;
     height: 100%;
+    /* border: 1px solid black; */
   }
+  
+  /* doubt */
   #bag11 {
     width: 100%;
     height: 88px;
+    /* border: 1px solid black; */
     border-radius: 4px;
     margin-bottom: 10px;
     background-color: white;
@@ -57,6 +65,7 @@
   #bag12 {
     width: 98%;
     height: 100%;
+    /* border: 1px solid black; */
     padding: 0px 0px 8px 16px;
     border-radius: 4px;
     margin-bottom: 10px;
@@ -71,7 +80,7 @@
     font-weight: bold;
   }
   
-  #cartitems {
+  #cartdata {
     margin-top: 0px;
   }
   
@@ -88,6 +97,7 @@
   }
   .cc1 {
     margin-left: 48px;
+    /* background-color: #f6f6f7; */
     color: #151b3999;
     border: 0px;
     border-radius: 4px;
@@ -97,12 +107,14 @@
     font-weight: 900;
     height: 25px;
   }
+  
   .cc2:hover {
     background-color: #151b3999;
     color: white;
   }
   .cc2 {
     margin-left: 10px;
+    /* background-color: #f6f6f7; */
     color: #151b3999;
     border: 0px;
     border-radius: 4px;
@@ -112,8 +124,10 @@
     font-weight: 900;
     height: 25px;
   }
+  
   .boxCard321 > button {
     margin-left: 15px;
+  
     font-size: 14px;
     font-weight: 900;
     height: 100%;
@@ -121,31 +135,130 @@
     border: 0px;
     border-radius: 4px;
   }
+  
   #bag13 {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    width: 98%;
+    justify-content: space-around;
+    width: 100%;
+    height:170px;
+    /* border: 1px solid black; */
     margin-bottom: 10px;
     background-color: white;
     border-radius: 4px;
   }
-  #bag14 {
-    width: 98%;
+  #bag16 {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    width: 100%;
+    height:80px;
+    /* border: 1px solid black; */
     margin-bottom: 10px;
     background-color: white;
     border-radius: 4px;
   }
-  #delivery{
-    height:100%;
+  #bag16>input[type="checkbox"]{
+    height: 25px;
+    width: 25px;
+    margin-top: 30px;
+    margin-left: 50px;
+  }
+  #bag16>p{
+    font-weight: bolder;
+    font-size: 16px;
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+  #bag15{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+    width: 100%;
+    height:120px;
+    /* border: 1px solid black; */
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 4px;
   }
   #bag131{
     display: flex;
+    margin-top: -20px;
+    margin-left: 20px;
     flex-direction: row;
     justify-content: space-between;
+  }
+  #bag151{
+    display: flex;
+    margin-top: -20px;
+    margin-left: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #bag132{
+    width:90%;
+    height:35px;
+    margin-top: -40px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #bag142{
+    width:90%;
+    height:35px;
+    margin-top: -40px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  #bag1321{
+    width:30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  #bag1421{
+    text-align: center;
+    gap: 10px;
+  }
+  #bag1321>p{
+    font-weight: bolder;
+    font-size: 20px;
+  }
+  #bag132>input[type="checkbox"]{
+    /* width:20px;
+    height:20px; */
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  #bag133{
+    width:90%;
+    height:40px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  #bag143{
+    width:90%;
+    height:30px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #bag143>select{
+    width:200px;
+    margin-left: 50px;
+  }
+  #bag133>button{
+    width: 100px;
+    margin-right: -20px;
+    border: none;
+    background-color: #24aeb1;
+    color: white;
+    border-radius: 5px;
   }
   #plus{
     margin-right:100px;
@@ -158,39 +271,46 @@
     color: black;
     font-size: 20px;
   }
-  #bag13 p {
+  #bag131> p {
     padding-top: 10px;
     margin-left: 12px;
     color: #151b3999;
     letter-spacing: 1px;
     font-size: 14px;
   }
-  #bag14 p {
+  #bag151> p {
     padding-top: 10px;
     margin-left: 12px;
+    margin-top: 20px;
     color: #151b3999;
     letter-spacing: 1px;
     font-size: 14px;
   }
-  
+  #bag15>hr{
+    width:90%;
+    color: black;
+  }
+  #bag15>p{
+    text-align: center;
+    color: #24aeb1;
+    font-size: 16px;
+    margin-top: -10px;
+  }
   input[type="textarea"] {
     margin-left: 12px;
     width: 700px;
     height: 100px;
     margin-bottom: 20px;
   }
-  #delivery{
-    margin-left: 12px;
-    width: 700px;
-    height: 100px;
-    margin-bottom: 20px;
-  }
+  
   #bag14 {
     width: 100%;
     height: 100%;
+    /* border: 1px solid black; */
     border-radius: 4px;
     background-color: white;
-  } 
+  }
+  
   #bag14 > div {
     padding: 10px;
   }
@@ -198,6 +318,7 @@
     display: block;
     margin-top: 10px;
     margin-left: 10px;
+    /* margin-left: 40px; */
     color: #151b3999;
     font-weight: bold;
     font-size: 16px;
@@ -212,28 +333,35 @@
   #bag21 {
     width: 100%;
     height: 85px;
+    /* border: 1px solid red; */
     margin-bottom: 10px;
     display: flex;
     background-color: white;
     border-radius: 4px;
     border-radius: 8px;
   }
+  
   #bag21 > div {
     width: 20%;
     height: 100%;
+    /* border: 1px solid black; */
     background-color: #f85caa;
     color: white;
     border-radius: 4px 0px 0px 4px;
   }
+  
   #bag21 > div ~ div {
     width: 65%;
     height: 100%;
+    /* border: 1px solid black; */
     background-color: #f85caa;
     border-radius: 0px 0px 0px 0px;
   }
+  
   #bag21 > div ~ div ~ div {
     width: 15%;
     height: 100%;
+    /* border: 1px solid black; */
     background-color: #df3679;
     border-radius: 0px 4px 4px 0px;
   }
@@ -241,6 +369,7 @@
   #bag21 > div > div > img {
     width: 60%;
     height: 80%;
+    /* border: 1px solid black; */
     display: block;
     margin: auto;
     margin-top: 22px;
@@ -257,6 +386,18 @@
     font-size: 10px;
     color: rgb(235, 226, 226);
   }
+  
+  /* #bag21 > div :nth-child(3) > img {
+          width: 20%; 
+          height: 30%;
+          border: 1px solid black;
+          display: block;
+          margin: auto;
+          margin-top: 30px;
+          border-radius: 90%;
+        }
+        */
+  
   #bag22 {
     width: 100%;
     height: 100%;
@@ -266,6 +407,7 @@
     background-color: white;
     border-radius: 4px;
   }
+  
   #bag22 > p {
     color: #151b3999;
     font-size: 14px;
@@ -273,6 +415,7 @@
     margin-left: 28px;
     padding-top: 10px;
   }
+  
   summary > span {
     color: #151b3999;
     font-size: 14px;
@@ -291,16 +434,21 @@
   #bag23 {
     width: 100%;
     height: 100%;
+    /* border: 1px solid red; */
+    /* margin-bottom: 10px; */
     border-radius: 4px;
     background-color: white;
   }
+  
   #bag24 > div {
     font-size: 10px;
+    /* line-height: 0px; */
     font-style: italic;
     line-height: 12px;
     color: grey;
     margin: 12px;
     border-radius: 1px solid black;
+    /* background-color: white; */
   }
   span {
     color: #007bff;
@@ -308,6 +456,7 @@
   h5 {
     color: rgba(21, 27, 57, 0.6);
     line-height: 16px;
+    /* letter-spacing: 1px; */
     font-size: 12px;
     margin: 10px 0px 16px 10px;
   }
@@ -322,6 +471,7 @@
     font: 14px;
     width: 200px;
   }
+  
   #dotbox {
     border: 1px dotted black;
     background-color: #f3f7fb;
@@ -341,11 +491,13 @@
   #coupon1 {
     font-family: Lato;
     font-size: 12px;
+    /* border: 1px solid black; */
     margin-bottom: 20px;
     color: rgba(21, 27, 57, 0.6);
     line-height: 15px;
     padding: 7px 4px 10px 4px;
     margin-top: -5px;
+    /* margin-left: 22px; */
   }
   #abcd {
     margin-bottom: 5px;
@@ -400,10 +552,18 @@
   #saving > span {
     color: #378f30;
   }
+  
   #amount {
     margin-top: 10px;
     display: flex;
+    /* border: 1px solid blue; */
   }
+  #amount>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
   #amount > div > p {
     color: #151b3999;
     font-size: 12px;
@@ -412,12 +572,13 @@
     margin-top: 22px;
     font-weight: 700;
   }
+  
   #amount > div > p ~ p {
     color: #151b39;
     font-size: 18px;
     letter-spacing: 1px;
-    margin-left: 6px;
-    margin-top: -8px;
+    margin-left: 150px;
+    margin-top: 20px;
   }
   
   #amount > div ~ div {
@@ -442,9 +603,11 @@
   }
   
   .boxCard1 {
+    /* border: 1px solid black; */
     width: 5%;
   }
   .boxCard2 {
+    /* border: 1px solid red; */
     width: 90%;
     margin-left: 5px;
   }
@@ -463,6 +626,7 @@
   }
   
   .boxCard3 {
+    /* border: 1px solid blue; */
     display: flex;
     justify-content: space-between;
   }
@@ -577,9 +741,8 @@
 }
 .modal-title, .btn btn-default{
     margin-left:-200px;
-    font-display: bold;
 }
-.toggle {
+#toggle {
 border-top: 0px;
 border-left: 0px;
 border-right: 0px;
