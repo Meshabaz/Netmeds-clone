@@ -260,9 +260,8 @@ function productPages(pageName){
             divbtn.classList.add("divbtn")
             let btn = document.createElement("button");
             let span1 = document.createElement("span");
-
         // <<<<<<<<<<<< Object Input Values >>>>>>>>>>>>>>>>>>>>
-            anchor.href=`../Product_Description_Page/productDetails.html`;
+            anchor.href=`../../Product_Description_Page/productDetails.html`;
             // span2.innerHTML='<i class="fa-thin fa-plus"></i>'
             image.setAttribute("src",ele.url_1)
             h5.innerText = ele.prod_name;
@@ -275,7 +274,8 @@ function productPages(pageName){
             spanBestPrice.innerText = "  ₹"+ele.best_price;
             prodDiscount.innerText=ele.discount+" % OFF";
             span1.innerText="ADD TO CART"
-        // <<<<<<<<<<<< Append >>>>>>>>>>>>>>>>>>>>
+
+        // <<<<<<<<<<<< Append >>>>>>>>>>>>>>>>>>
             discountdiv.append(prodDiscount);
             divimg.append(discountdiv,image);
             
@@ -457,7 +457,7 @@ function productPages(pageName){
 
     // **************************** go to description page ************************************************************************
     function gotoDescriptionPage(arr,ind){
-        localStorage.setItem("productDescPage",JSON.stringify(arr[ind]));
+        localStorage.setItem("clicked",JSON.stringify(arr[ind]));
     }
     
     // <<<<<<<<<<<<<<<<<<<<<<<<<   local storage to add to cart      >>>>>>>>>>>>>>>>>>>>>>
