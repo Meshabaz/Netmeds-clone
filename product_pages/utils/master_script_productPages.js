@@ -293,11 +293,15 @@ function productPages(pageName){
             divimg.addEventListener("click",()=>{
                 gotoDescriptionPage(arr,ind)
             })
-            btn.addEventListener("click",function(){
-                addtocart(arr,ind);
-            })
+            setTimeout(()=>{
+                btn.addEventListener("click",function(){
+                    addtocart(arr,ind);
+                })
+            },0)
+            
         })
     }
+
 
 // dislplay sorting elements in filter box>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -369,6 +373,7 @@ function productPages(pageName){
             lable.innerHTML=`${ele.categories} <span>(${ele.count})</span>`
             prodcategoryCategoriesnamesDiv.append(input,lable)
             prodcategoryCategories.append(prodcategoryCategoriesnamesDiv)
+            
             input.addEventListener("click",()=>{
                 filterCategories(ele,ind,input.checked,input.value,input);
             })
@@ -470,11 +475,9 @@ function productPages(pageName){
         })
 
         if(cart.some(cart => cart.id=== prod[0].id)){
-            // alert("Item already in cart");
         } else{
             cart.push(prod[0]);
             addcart(arr,i);
-            // alert("Item successfully added to cart")
         }
 
         localStorage.setItem("cartitems",JSON.stringify(cart)); 
@@ -486,9 +489,13 @@ function productPages(pageName){
                 index=j;
             }
         }
-
+        console.log("x");
         let changedqty = changecartprodquant[index].productquantity;
-        changeAddtoCartbuttonOnclick(arr,i,addcartbutton, changedqty);
+        console.log(changedqty);
+        setTimeout(()=>{
+            changeAddtoCartbuttonOnclick(arr,i,addcartbutton, changedqty);
+        },10)
+        
     }
 
     function changeAddtoCartbuttonOnclick(arr,i,addcartbutton,changedqty){
