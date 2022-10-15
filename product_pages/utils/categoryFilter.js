@@ -10,6 +10,11 @@ function categoryFilter(){
                 </a>
             </div>
             <div class="prodcategory">
+            <a href="./product_page_Cough&Cold.html">
+                <p><i class="fa-solid fa-angle-right"></i>Cough & Cold</p>
+            </a>
+        </div>
+            <div class="prodcategory">
                 <a href="./product_page_beauty_personalcare.html">
                     <p><i class="fa-solid fa-angle-right"></i>Personal Care</p>
                 </a>
@@ -40,7 +45,7 @@ function categoryFilter(){
                 </a>
             </div>
             <div class="prodcategory">
-                <a href="./roduct_page_Treatments.html">
+                <a href="./product_page_Treatments.html">
                     <p><i class="fa-solid fa-angle-right"></i>Treatments</p>
                 </a>
             </div>
