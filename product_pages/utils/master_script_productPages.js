@@ -466,6 +466,7 @@ function productPages(pageName){
     }
     
     // <<<<<<<<<<<<<<<<<<<<<<<<<   local storage to add to cart      >>>>>>>>>>>>>>>>>>>>>>
+    let changecartprodquant = JSON.parse(localStorage.getItem("presentquantity")) || [];
     let cart = JSON.parse(localStorage.getItem("cartitems")) || [];
     function addtocart(arr, i){
         event.preventDefault();
@@ -544,7 +545,7 @@ function productPages(pageName){
         }
     }
 
-    let changecartprodquant = JSON.parse(localStorage.getItem("presentquantity")) || [];
+    
     function plusqty(j,qtydiv,arr){
         qtydiv.innerText="";
         let index=-1;
