@@ -3,6 +3,9 @@ let page = "Covid Essentials";
 let loc1 = "Home"
 let loc2 = "Non-Prescription"
 
+import navbar from "../../scripts/navbar.js";
+document.getElementById("navbar-netmeds").innerHTML=navbar();
+
 import displayPageLocationOnBanner from "../utils/page_location_display.js";
 document.getElementById("headdiv").innerHTML=displayPageLocationOnBanner(loc1,loc2,page);
 
