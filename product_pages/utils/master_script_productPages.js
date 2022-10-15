@@ -490,8 +490,15 @@ function productPages(pageName){
                 index=j;
             }
         }
-        console.log("x");
-        let changedqty = changecartprodquant[index].productquantity;
+        let changedqty=0;
+        if(index===-1){
+            changedqty=1;
+        }
+        else
+        {
+            changedqty = changecartprodquant[index].productquantity;
+        }
+        
         console.log(changedqty);
         setTimeout(()=>{
             changeAddtoCartbuttonOnclick(arr,i,addcartbutton, changedqty);

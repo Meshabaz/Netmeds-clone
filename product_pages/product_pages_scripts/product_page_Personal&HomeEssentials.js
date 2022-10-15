@@ -1,4 +1,4 @@
-let page = "Eye Glasses";
+let page = "Personal & Home Essentials";
 
 let loc1 = "Home"
 let loc2 = "Non-Prescription"

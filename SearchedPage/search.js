@@ -1,5 +1,5 @@
 let searchKey = localStorage.getItem("search");
-let cartLength = JSON.parse(localStorage.getItem("cartItem"));
+//let cartLength = JSON.parse(localStorage.getItem("cartitems"));
 //console.log(searchKey);
 //let keyword = `mask`;
 let finalKey = searchKey.toLowerCase();
@@ -113,7 +113,7 @@ function openDescriptionPage() {
   location.href = "../Product_Description_Page/productDetails.html";
 }
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cart = JSON.parse(localStorage.getItem("cartitems")) || [];
 function checkQuan(ele, button, btnFlex, plus, quan, minus) {
   let title = cart.filter((a) => {
     return a.prod_name === ele.prod_name;
@@ -133,11 +133,12 @@ function checkQuan(ele, button, btnFlex, plus, quan, minus) {
       }
 
       cart.push(data);
-      localStorage.setItem("cart", JSON.stringify(cart));
+      localStorage.setItem("cartitems", JSON.stringify(cart));
       button.style.display = "none";
       btnFlex.style.display = "flex";
       quan.innerText = 1;
       location.reload();
+      document.getElementById("length").innerText = cart.length + " " + "items";
     });
   }
   else {
@@ -178,6 +179,7 @@ function elsePart(ele, button, btnFlex, plus, quan, minus) {
         }
       });
       location.reload();
+      document.getElementById("length").innerText = cart.length + " " + "items";
     }
     else {
       temp--;
@@ -205,14 +207,14 @@ function updateData(indx, quan, ele, ttt) {
     "quantity": quan
   }
   cart.push(obj);
-  localStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem("cartitems", JSON.stringify(cart));
 
   ttt.innerText = getQuantity(ele);
 }
 
 function removeData(indx) {
   cart.splice(indx, 1);
-  localStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem("cartitems", JSON.stringify(cart));
 }
 function getQuantity(ele) {
   let temp = 0;
@@ -223,3 +225,8 @@ function getQuantity(ele) {
   });
   return temp;
 }
+
+document.getElementById("length").innerText = cart.length + " " + "items";
+document.getElementById("checkout").addEventListener("click", () => {
+  location.href = "../cart&checkout/checkout.html";
+});
