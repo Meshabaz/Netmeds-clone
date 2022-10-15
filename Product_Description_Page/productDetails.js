@@ -26,7 +26,7 @@ const setData = () => {
     getElement("cimg1").src = clicked.url_1;
     getElement("cimg2").src = clicked.url_2;
     getElement("cimg3").src = clicked.url_3;
-    getElement("price").innerText = clicked.best_price;
+    getElement("price").innerText = "₹" + clicked.best_price;
     getElement("cutPrice").innerText = clicked.mrp;
     getElement("discount").innerText = `GET ${clicked.discount}% OFF`;
     getElement("company").innerText = `* Mkt: ${clicked.mkf}`;
@@ -136,7 +136,7 @@ getElement("dec5").onclick = () => {
 
 
 //ADD TO CART FUNCTIONALITY START
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cart = JSON.parse(localStorage.getItem("cartitems")) || [];
 
 let title = cart.filter((a) => {
     return a.prod_name === clicked.prod_name;
@@ -166,7 +166,7 @@ if (title.length === 0) {
         }
 
         cart.push(data);
-        localStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem("cartitems", JSON.stringify(cart));
         getElement("addToCart").style.display = "none";
         getElement("btnFlex").style.display = "flex";
         getElement("quan").innerText = 1;
@@ -231,7 +231,7 @@ function updateData(indx, quan) {
         "quantity": quan
     }
     cart.push(obj);
-    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("cartitems", JSON.stringify(cart));
 
     getElement("quan").innerText = getQuantity();
 }
@@ -239,7 +239,9 @@ function updateData(indx, quan) {
 
 function removeData(indx) {
     cart.splice(indx, 1);
-    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("cartitems", JSON.stringify(cart));
 }
 
 //ADD TO CART FUNCTIONALITY END
+
+document.querySelector("title").innerText = clicked.prod_name;
