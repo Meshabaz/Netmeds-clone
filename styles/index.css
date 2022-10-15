@@ -74,7 +74,8 @@
 } */
 
 /* .swiper-slide {} */
-.list {
+.list,
+.Tlist {
     width: 100%;
     height: auto;
     position: relative;
@@ -84,7 +85,12 @@
 
 }
 
-.list h2 {
+.Tlist {
+    background: linear-gradient(to bottom, rgb(223, 223, 26) 60%, #eee 70%)
+}
+
+.list h2,
+.Tlist h2 {
     color: #fff;
     padding: 20px 10px;
     margin: 20px auto;
@@ -318,7 +324,7 @@
 
 @media(max-width: 900px) {
     .category .category_body {
-        width: 100%;
+        width: auto;
         display: block;
         margin: auto;
     }

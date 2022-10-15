@@ -200,7 +200,7 @@
 
   @media(max-width: 600px) {
       .section_B .footer_lists {
-          width: 600px;
+          width: auto;
           display: block;
           margin: auto;
           padding: -50px;
@@ -239,7 +239,7 @@
 
   @media(max-width: 600px) {
       .section_C {
-          width: 600px;
+          width: auto;
           display: block;
           margin: auto;
           gap: 20px;

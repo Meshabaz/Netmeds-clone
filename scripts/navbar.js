@@ -24,11 +24,11 @@ function navbar() {
                             <div id="_1">Upload</div>
                         </a></li>
                     <li><a href="">
-                        <span class="cart_counter">0</span>
-                        <img id="cart_img"
-                                src="https://cdn.iconscout.com/icon/free/png-64/cart-grocery-store-shopping-shop-30488.png"
-                                alt="">
-                            <div id="_1">Cart</div>
+                    <img id="cart_img"
+                    src="https://cdn.iconscout.com/icon/free/png-64/cart-grocery-store-shopping-shop-30488.png"
+                    alt="">
+                    <div id="_1">Cart</div>
+                    <span class="cart_counter">0</span>
                         </a></li>
                     <li><a href=""><img id="sign_in"
                     src="https://www.netmeds.com/assets/gloryweb/images/icons/profile_icon.svg" alt="">
@@ -36,8 +36,8 @@ function navbar() {
                         </a></li>
                 </ul>
                 <input type="checkbox" id="checkheader">
-<label for="checkheader" id="checkbtnheader"><i class="fas fa-bars"></i></label>
-<label for="checkheader" id="closebtnheader" style="display: none;"><i class="fas fa-bars"></i></label>
+                <label for="checkheader" id="checkbtnheader"><i class="fas fa-bars"></i></label>
+                <label for="checkheader" id="closebtnheader" style="display: none;"><i class="fas fa-bars"></i></label>
             </div>
         </div>
 
@@ -129,7 +129,7 @@ function navbar() {
 <label for="check" id="closebtn" style="display: none;"><i class="fas fa-bars"></i></label>
             <div id="menu">
                 <ul class="error">
-                    <li><a href="">COVID Essentials</a></li>
+                    <li><a href="../product_pages/product_pages_html/product_page_beauty_personalcare.html">COVID Essentials</a></li>
                     <li><a href="">Diabetes</a></li>
                     <li><a href="">Eyewear</a></li>
                     <li><a href="">Ayush</a></li>
