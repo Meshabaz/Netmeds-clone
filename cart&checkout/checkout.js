@@ -39,11 +39,11 @@ function displayCart(cart) {
             }
         });
         
-    document.querySelector("#pdone").addEventListener("click", func);
-    function func() {
-        alert("Congratulations payment done. Your product will get deliever to the mentioned address soon.");
-        window.location.href = "landing.html";
-    }
+    // document.querySelector("#pdone").addEventListener("click", func);
+    // function func() {
+    //     alert("Congratulations payment done. Your product will get deliever to the mentioned address soon.");
+    //     window.location.href = "landing.html";
+    // }
      uniqueCartItems.forEach(function (elem, index) {
         var card = document.createElement("div");
         card.setAttribute("class", "boxCard");
@@ -75,10 +75,28 @@ function displayCart(cart) {
         var discounted = elem.mrp - elem.best_price;
         discount = discount + itemsQuantity[index] * discounted;
     }
-    document.querySelector("#netmeddiscount").innerText = "-Rs." + discount;
-    document.querySelector("#netmed").innerText = "Rs." + discount;
-    document.querySelector("#total").innerText = "Rs." + (price1 - discount);
-    document.querySelector("#total1").innerText = "Rs." + (price1 - discount);
+    // 
+    
+    document.querySelector("#pdone").addEventListener("click", func);
+    function func() {
+      window.location.href="pay.html";
+    }
+    let paydetails=JSON.parse(localStorage.getItem("pay")) || [];
+    let x=document.querySelector("#MRP").innerText = "Rs." + price1;
+    let a=document.querySelector("#netmeddiscount").innerText = "-Rs." + discount;
+    let b=document.querySelector("#netmed").innerText = "Rs." + discount;
+    let c=document.querySelector("#total").innerText = "Rs." + (price1 - discount);
+    let d=document.querySelector("#total1").innerText = "Rs." + (price1 - discount);
+    function Payment(){
+        this.x=x;
+      this.a=a;
+      this.b=b;
+      this.c=c;
+      this.d=d;
+    }
+    let paydet=new Payment(x,a,b,c,d);
+    paydetails.push(paydet);
+    localStorage.setItem("pay", JSON.stringify(paydetails));
     var Delievery = document.createElement("p");
     Delievery.innerText = "Delivery between Oct-9 6PM - Oct-14 10PM";
     card31.append(price, Sprice, Delievery);
