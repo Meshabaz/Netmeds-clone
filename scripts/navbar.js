@@ -6,7 +6,7 @@
 function navbar() {
 
     return `<div class="header">
-            <div id="left"><a href="../index.html">
+            <div id="left"><a href="./index.html">
                 <img src="https://nms-assets.s3-ap-south-1.amazonaws.com/images/cms/aw_rbslider/slides/1663609483_netmeds-new-logo.svg"
                     alt=""></a>
             </div> 
@@ -23,16 +23,17 @@ function navbar() {
                                 alt="">
                             <div id="_1">Upload</div>
                         </a></li>
-                    <li><a href="">
+                    <li><a href="./cart&checkout/cart.html">
                     <img id="cart_img"
                     src="https://cdn.iconscout.com/icon/free/png-64/cart-grocery-store-shopping-shop-30488.png"
                     alt="">
                     <div id="_1">Cart</div>
                     <span class="cart_counter">0</span>
                         </a></li>
-                    <li><a href=""><img id="sign_in"
+                    <li><a class="profile_links"><img id="sign_in"
                     src="https://www.netmeds.com/assets/gloryweb/images/icons/profile_icon.svg" alt="">
-                            <div id="_1">Sign in / Sign Up</div>
+                            <div id="_1" class="withoutlogin">Sign in / Sign Up</div>
+                            <div id="_1" class="withlogin">Im </div>
                         </a></li>
                 </ul>
                 <input type="checkbox" id="checkheader">
@@ -129,7 +130,7 @@ function navbar() {
 <label for="check" id="closebtn" style="display: none;"><i class="fas fa-bars"></i></label>
             <div id="menu">
                 <ul class="error">
-                    <li><a href="../product_pages/product_pages_html/product_page_beauty_personalcare.html">COVID Essentials</a></li>
+                    <li><a href="./product_pages/product_pages_html/product_page_beauty_personalcare.html">COVID Essentials</a></li>
                     <li><a href="">Diabetes</a></li>
                     <li><a href="">Eyewear</a></li>
                     <li><a href="">Ayush</a></li>

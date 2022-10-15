@@ -196,7 +196,7 @@
     display: none;
 }
 
-.slide_btn {
+.slidecart_btn {
     width: 240px;
     display: flex;
     align-items: center;
@@ -298,6 +298,11 @@
     justify-content: space-between;
     color: #fff;
     padding: 10px;
+}
+
+.category .category_header a {
+    text-decoration: none;
+    color: #fff;
 }
 
 .category .category_header p {

@@ -35,9 +35,11 @@ function showbrands(data) {
         const discount = document.createElement("p");
         discount.innerText = e.discount;
         const addtocartbtn = document.createElement("button");
-        addtocartbtn.classList = "slide_btn";
+        addtocartbtn.classList = "slidecart_btn";
         addtocartbtn.innerHTML = "ADD TO CART";
-
+        addtocartbtn.addEventListener('click', () => {
+            addtocart(e);
+        })
 
         div.append(image, name, price, discount, addtocartbtn);
         document.querySelector(".brands").append(div);
@@ -61,12 +63,32 @@ cardContainers.forEach((items, i) => {
 
 
 
+const user_name = localStorage.getItem("user_fname");
+const user_login_status = localStorage.getItem("login_status");
+console.log(user_name, user_login_status);
 
 function showlimited_time(data) {
     console.log(data);
+    if (user_login_status == 'true') {
+        document.querySelector(".withoutlogin").style.display = "none";
+        document.querySelector(".withlogin").innerText = `${user_name}`
+        document.querySelector(".withlogin").style.display = "block"
+        document.querySelector(".withlogin").addEventListener("click", () => {
+            window.location.href = "profile/profile.html";
+            // document.querySelector(".profile_links").location.href = "./profile/profile.html";
+        })
+    } else {
+        document.querySelector(".cart_counter").style.display = "none";
+        document.querySelector(".withlogin").innerText = ``;
+        document.querySelector(".withlogin").style.display = "none"
+        document.querySelector(".withoutlogin").style.display = "block";
+        document.querySelector(".withoutlogin").addEventListener("click", () => {
+            window.location.href = "login_signup.html";
+        })
+    }
 
     data.forEach((e) => {
-
+        // console.log(e);
         const div = document.createElement("div");
         div.className = "slide";
         const image = document.createElement("img");
@@ -79,14 +101,51 @@ function showlimited_time(data) {
         const discount = document.createElement("p");
         discount.innerText = e.discount;
         const addtocartbtn = document.createElement("button");
-        addtocartbtn.classList = "slide_btn";
+        addtocartbtn.classList = "slidecart_btn";
         addtocartbtn.innerHTML = "ADD TO CART";
-
+        addtocartbtn.addEventListener('click', () => {
+            addtocart(e);
+        })
 
         div.append(image, name, price, discount, addtocartbtn);
         document.querySelector(".limited_time").append(div);
     })
 }
+
+// const countitemsaddedincart = 0;
+// const c = localStorage.getItem("countcartitrms");
+const cartArr = JSON.parse(localStorage.getItem("cartitems")) || [];
+// console.log("itemsAdded:", cartArr.length);
+// cartItemsCount = cartArr.length;
+// console.log(cartArr);
+function addtocart(e) {
+    // alert("adding")
+    console.log(e);
+    if (user_login_status == 'true') {
+        // alert("Hello");
+        const c = cartArr.push(e);
+        document.querySelector(".cart_counter").innerHTML = c;
+        localStorage.setItem("countcartitrms", c)
+        console.log(c);
+        localStorage.setItem("cartitems", json.stringify(cartArr));
+    }
+    else {
+        alert("Please Login First!")
+    }
+}
+
+
+// checkLoginStatus();
+
+// function checkLoginStatus() {
+//     return user_login_status;
+
+//     // if (user_login_status === true) {
+//     //     console.log("decl:", user_login_status);
+
+//     // }
+// }
+
 
 // const url = "https://mr-raaz.github.io/NetmedsClone_data/landingPage_data.json";
 
@@ -144,14 +203,14 @@ function showlimited_time(data) {
 // })
 //  // //
 document.querySelector("#checkbtnheader").addEventListener('click', () => {
-    alert("opening ?? OPEN BTN");
+    // alert("opening ?? OPEN BTN");
     document.querySelector(".navbar").style.left = 0;
     document.querySelector(".navbar").style.transition = "1s";
     document.querySelector("#checkbtnheader").style.display = "none";
     document.querySelector("#closebtnheader").style.display = "block";
 })
 document.querySelector("#closebtnheader").addEventListener('click', () => {
-    alert("closing ?? CLOSE BTN");
+    // alert("closing ?? CLOSE BTN");
     document.querySelector(".navbar").style.left = "-100%";
     document.querySelector(".navbar").style.transition = "1s";
     document.querySelector("#checkbtnheader").style.display = "block";
@@ -163,7 +222,7 @@ document.querySelector("#closebtnheader").addEventListener('click', () => {
 
 // // //
 document.querySelector("#checkbtnnavigatons").addEventListener('click', () => {
-    alert("opening nav2 ?? OPEN BTN");
+    // alert("opening nav2 ?? OPEN BTN");
     document.querySelector(".mid_ul").style.left = 0;
     document.querySelector(".mid_ul").style.transition = "1s";
     document.querySelector("#checkbtnnavigatons").style.display = "none";
@@ -171,7 +230,7 @@ document.querySelector("#checkbtnnavigatons").addEventListener('click', () => {
 })
 
 document.querySelector("#closebtnnavigatons").addEventListener('click', () => {
-    alert("closing nav2 ?? Close BTN");
+    // alert("closing nav2 ?? Close BTN");
     document.querySelector(".mid_ul").style.left = "-100%";
     document.querySelector(".mid_ul").style.transition = "1s";
     document.querySelector("#closebtnnavigatons").style.display = "none";
@@ -182,7 +241,7 @@ document.querySelector("#closebtnnavigatons").addEventListener('click', () => {
 // // //
 
 document.querySelector("#checkbtn").addEventListener('click', () => {
-    alert("opening");
+    // alert("opening");
     document.querySelector(".error").style.left = 0;
     document.querySelector(".error").style.transition = "0.5s";
     document.querySelector("#checkbtn").style.display = "none";
@@ -190,7 +249,7 @@ document.querySelector("#checkbtn").addEventListener('click', () => {
 })
 
 document.querySelector("#closebtn").addEventListener('click', () => {
-    alert("closing");
+    // alert("closing");
     document.querySelector(".error").style.left = "-100%";
     document.querySelector(".error").style.transition = "1s";
     document.querySelector("#checkbtn").style.display = "block";
@@ -281,7 +340,7 @@ document.querySelector("#inp").addEventListener("keypress", (e) => {
     if (e.key === 'Enter') {
         let searhTerm = document.querySelector("#inp").value;
         console.log(searhTerm);
-        alert("hello")
+        // alert("hello")
         localStorage.setItem("search", searhTerm);
         document.querySelector("#inp").value = ""
         window.location.href = "./SearchedPage/search.html";

@@ -165,11 +165,14 @@ body a:hover {
     background-color: rgb(2, 100, 100);
 }
 
-.navbar li a .cart_counter {
+/* .navbar li a .cart_counter {
+} */
+
+.withlogin {
     display: none;
 }
 
-.navbar li a .cart_counter .active {
+.navbar li a .cart_counter {
     width: 24px;
     height: 17px;
     display: flex;
@@ -224,7 +227,7 @@ body a:hover {
         display: block;
     }
 
-    .navbar li a .cart_counter .active {
+    .navbar li a .cart_counter {
         width: 26px;
         height: 22px;
         display: flex;
@@ -405,6 +408,14 @@ li:not(.navbar li) {
     color: white;
 }
 
+#closebtnnavigatons {
+    display: none;
+}
+
+#checkbtnnavigatons {
+    display: none;
+}
+
 
 
 
@@ -538,6 +549,14 @@ li:not(.navbar li) {
     font-size: 30px;
     line-height: 50px;
     margin-right: 40px;
+    display: none;
+}
+
+#closebtn {
+    display: none;
+}
+
+#checkbtn {
     display: none;
 }
 
