@@ -295,7 +295,7 @@ function productPages(pageName){
             })
             setTimeout(()=>{
                 btn.addEventListener("click",function(){
-                    addtocart(arr,ind);
+                    addtocart(arr,ind,btn);
                 })
             },0)
             
@@ -466,52 +466,57 @@ function productPages(pageName){
     }
     
     // <<<<<<<<<<<<<<<<<<<<<<<<<   local storage to add to cart      >>>>>>>>>>>>>>>>>>>>>>
-    let changecartprodquant = JSON.parse(localStorage.getItem("presentquantity")) || [];
+   
     let cart = JSON.parse(localStorage.getItem("cartitems")) || [];
-    function addtocart(arr, i){
+    function addtocart(arr, i,btn){
         event.preventDefault();
-        
         let prod = arr.filter(function(ele,ind){
             return ind===i;
         })
 
         if(cart.some(cart => cart.id=== prod[0].id)){
-        } else{
+        } 
+        else{
+            prod[0].quantity = 1;
             cart.push(prod[0]);
-            addcart(arr,i);
         }
-
+        console.log(cart);
         localStorage.setItem("cartitems",JSON.stringify(cart)); 
         let addcartbutton = document.querySelectorAll(".divbtn")
 
         let index=-1;
-        for(let j=0; j<changecartprodquant.length; j++){
-            if(changecartprodquant[j].id===arr[i].id){
+        for(let j=0; j<cart.length; j++){
+            if(cart[j].id===arr[i].id){
                 index=j;
             }
         }
         let changedqty=0;
-        if(index===-1){
-            changedqty=1;
-        }
-        else
-        {
-            changedqty = changecartprodquant[index].productquantity;
-        }
-        
+        // if(index===-1){
+        //     changedqty=1;
+            
+        // }
+        // else
+        // {
+            
+            
+
+        // }
+        changedqty = cart[index].quantity;
+        changeAddtoCartbuttonOnclick(arr,i,addcartbutton, changedqty,btn);
         console.log(changedqty);
-        setTimeout(()=>{
-            changeAddtoCartbuttonOnclick(arr,i,addcartbutton, changedqty);
-        },10)
+        
         
     }
 
-    function changeAddtoCartbuttonOnclick(arr,i,addcartbutton,changedqty){
+    function changeAddtoCartbuttonOnclick(arr,i,addcartbutton,changedqty,btn){
         for(let j=0; j<addcartbutton.length;j++){
             if(j===i){
+                console.log(btn);
+                btn.style.display="none"
+                
                 // console.log(addcartbutton[i]);
                 let change = addcartbutton[i];
-                change.innerHTML="";
+                // change.innerHTML="";
                 let plus = document.createElement("button")
                 let qtydiv = document.createElement("div")
                 qtydiv.className="qtydiv"
@@ -545,7 +550,7 @@ function productPages(pageName){
                     plusqty(j,qtydiv,arr);
                 })
                 minus.addEventListener("click",()=>{
-                    minusqty(j,qtydiv,arr,addcartbutton,i);
+                    minusqty(j,arr,addcartbutton,i,btn,plus,qtydiv,minus);
                 })
                 break;
             }
@@ -556,69 +561,51 @@ function productPages(pageName){
     function plusqty(j,qtydiv,arr){
         qtydiv.innerText="";
         let index=-1;
-        for(let i=0; i<changecartprodquant.length; i++){
-            if(changecartprodquant[i].id===arr[j].id){
+        for(let i=0; i<cart.length; i++){
+            if(cart[i].id===arr[j].id){
                 index=i;
             }
         }
-        let changedqty = changecartprodquant[index].productquantity;
-        console.log(changedqty);
+        let changedqty = cart[index].quantity;
         changedqty++;
+        console.log(changedqty);
         if(changedqty<=5){
-            changecartprodquant[index].productquantity = changedqty;
-            localStorage.setItem("presentquantity",JSON.stringify(changecartprodquant));
+            cart[index].quantity = changedqty;
+            localStorage.setItem("cartitems",JSON.stringify(cart));
         }
-        qtydiv.innerText=changecartprodquant[index].productquantity;
-        console.log(index);
+        else{
+            alert("Exceeded the maximum quantity limit per order!")
+        }
+        qtydiv.innerText=cart[index].quantity;
+        // console.log(index);
     }
 
-    function minusqty(j,qtydiv,arr,addcartbutton,i){
-        qtydiv.innerText="";
+    function minusqty(j,arr,addcartbutton,i,btn,plus,qtydiv,minus){
+       
         let index=-1;
-        for(let i=0; i<changecartprodquant.length; i++){
-            if(changecartprodquant[i].id===arr[j].id){
+        for(let i=0; i<cart.length; i++){
+            if(cart[i].id===arr[j].id){
                 index=i;
             }
         }
-        let changedqty = changecartprodquant[index].productquantity;
+        let changedqty = cart[index].quantity;
         changedqty--;
         if(changedqty>=1){
-            changecartprodquant[index].productquantity = changedqty;
-            localStorage.setItem("presentquantity",JSON.stringify(changecartprodquant));
+            qtydiv.innerText="";
+            qtydiv.innerText=changedqty;
+            cart[index].quantity = changedqty;
+            localStorage.setItem("cartitems",JSON.stringify(cart));
         }
         else if(changedqty==0){
-            // console.log(i);
-            // addcartbutton[i].innerHTML=""
-            // console.log(addcartbutton[i]);
-            // let btn = document.createElement("button");
-            // let span1 = document.createElement("span");
-            // span1.innerText="ADD TO CART"
-            // btn.append(span1);
-            // addcartbutton[i].append(btn)
-            // changecartprodquant.splice(index,1);
-            // cart.splice(index,1)
-            // localStorage.setItem("cartitems",JSON.stringify(cart)); 
-            // localStorage.setItem("presentquantity",JSON.stringify(changecartprodquant));
-            // btn.addEventListener("click",function(){
-            //     addtocart(arr,ind);
-            // })
+            plus.style.display="none";
+            qtydiv.style.display="none"
+            minus.style.display="none"
+            btn.style.display="flex"
+            cart.splice(index,1);
+            localStorage.setItem("cartitems",JSON.stringify(cart));
         }
-        qtydiv.innerText=changecartprodquant[index].productquantity;
-        console.log(index);
     }
 
-    let cartprodquant = JSON.parse(localStorage.getItem("presentquantity")) || [];
-    let count=0;
-    function addcart(arr, ind){
-        event.preventDefault();
-        let prodquantobj = {
-            id: arr[ind].id,
-            productquantity:1
-        }
-        console.log(prodquantobj);
-        let p = cartprodquant.push(prodquantobj);
-        localStorage.setItem("presentquantity",JSON.stringify(cartprodquant));
-    }
     
 
     // *************************** price range filter ****************************
