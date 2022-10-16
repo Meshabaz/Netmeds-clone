@@ -119,14 +119,15 @@ function checkQuan(ele, cartPlus, cartMinus, cartQuantity, indx, quantity) {
 }
 function plus(ele, plus, indx, quantity, cartQuantity) {
   plus.addEventListener("click", () => {
-    if (quantity === 5) {
+    let quaaa = getQuantity(indx);
+    if (quaaa === 5) {
       alert("you can't add more than 5 products");
     }
     else {
-      quantity++;
-      updateData(indx, quantity, ele);
-      cartQuantity.innerText = "QTY: " + cart[indx].quantity;
-      location.reload();
+      quaaa++;
+      updateData(indx, quaaa, ele);
+      cartQuantity.innerText = "QTY: " + quaaa;
+      updatePrice();
     }
   });
 }
@@ -134,31 +135,23 @@ function plus(ele, plus, indx, quantity, cartQuantity) {
 
 function minus(ele, minus, indx, quantity, cartQuantity) {
   minus.addEventListener("click", () => {
-    if (quantity === 1) {
+    let quaaa = getQuantity(indx);
+    console.log(quaaa);
+    if (quaaa === 1) {
       removeFromStorage(indx);
       location.reload();
     }
     else {
-      quantity--;
-      updateData(indx, quantity, ele);
-      cartQuantity.innerText = "QTY: " + cart[indx].quantity;
-      location.reload();
+      quaaa--;
+      updateData(indx, quaaa, ele);
+      cartQuantity.innerText = "QTY: " + quaaa;
+      updatePrice();
     }
   });
 }
 
 function updateData(indx, quan, ele) {
-  cart.splice(indx, 1);
-  let obj = {
-    "id": ele.id,
-    "prod_name": ele.prod_name,
-    "best_price": ele.best_price,
-    "mrp": ele.mrp,
-    "mkf": ele.mkf,
-    "url_1": ele.url_1,
-    "quantity": quan
-  }
-  cart.push(obj);
+  ele.quantity = quan;
   localStorage.setItem("cartitems", JSON.stringify(cart));
 }
 
@@ -170,9 +163,15 @@ function calculateTotal() {
 
   return total.toFixed(2);
 }
-document.getElementById("Carttotal").innerText = "Rs. " + calculateTotal();
-document.getElementById("finalTotal").innerText = "Rs. " + calculateTotal();
-document.getElementById("grandTotal").innerText = "Rs. " + calculateTotal();
+
+
+
+function updatePrice() {
+  document.getElementById("Carttotal").innerText = "Rs. " + calculateTotal();
+  document.getElementById("finalTotal").innerText = "Rs. " + calculateTotal();
+  document.getElementById("grandTotal").innerText = "Rs. " + calculateTotal();
+}
+updatePrice();
 function promoClick(id1, id2, percentage) {
   document.getElementById(id2).addEventListener("click", () => {
     let promo = document.getElementById(id2).innerText;
@@ -200,3 +199,8 @@ document.getElementById("proceed").addEventListener("click", () => {
     location.href = "../login_signup.html";
   }
 });
+
+
+function getQuantity(indx) {
+  return cart[indx].quantity;
+}
