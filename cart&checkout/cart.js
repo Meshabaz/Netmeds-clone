@@ -6,9 +6,24 @@ document.getElementById("footer").innerHTML = footer();
 let cart = JSON.parse(localStorage.getItem("cartitems")) || [];
 
 if (cart.length === 0) {
-  let h3 = document.createElement("h3");
-  h3.innerText = "Cart is empty...";
-  document.querySelector(".productsDiv").append(h3);
+  let div = document.createElement("div");
+  div.style.display = "grid";
+  div.style.justifyContent = "center"
+  let h3 = document.createElement("img");
+  h3.src = "https://www.netmeds.com/msassets/images/emptycart.svg";
+  h3.style.width = "300px";
+  h3.style.width = "200px";
+  h3.style.margin = "auto";
+
+  let h2 = document.createElement("h2");
+  h2.innerText = "Your cart is empty";
+  h2.style.verticalAlign = "middle";
+  h2.style.color = "rgb(6, 191, 191)";
+  h2.style.marginTop = "24px";
+  div.append(h3, h2);
+  document.querySelector(".productsDiv").append(div);
+  let ss = document.querySelector(".cartRight");
+  ss.style.display = "none";
 }
 else {
   displayProduct();
