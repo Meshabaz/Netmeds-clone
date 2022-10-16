@@ -1,185 +1,202 @@
-var cart = JSON.parse(localStorage.getItem("cartitems")) || [];
-console.log(cart);
-displayCart(cart);
-function displayCart(cart) {
-  var price1 = 0;
-  var discount = 0;
-  document.querySelector("#cartitems").innerHTML = "";
-  document.querySelector("#MRP").innerText = "Rs." + 0;
-  document.querySelector("#netmeddiscount").innerText = "Rs." + 0;
-  document.querySelector("#netmed").innerText = "Rs." + 0;
-  document.querySelector("#total").innerText = "Rs." + 0;
-  document.querySelector("#total1").innerText = "Rs." + 0;
-  var uniqueCartItems = [];
-  var itemsQuantity = [];
+import navbar from "../scripts/navbar.js";
+import { footer } from "../scripts/footer.js";
+document.getElementById("navbar").innerHTML = navbar();
+document.getElementById("footer").innerHTML = footer();
 
-  cart.forEach(function (ele) {
-    var flag = false;
-    for (var i = 0; i < uniqueCartItems.length; i++) {
-      var obj = uniqueCartItems[i];
-      if (
-        obj.url_1 === ele.url_1 &&
-        obj.prod_name === ele.prod_name &&
-        obj.best_price === ele.best_price &&
-        obj.mrp === ele.mrp &&
-        obj.mkf === ele.mkf
-      ) {
-        flag = true;
-        break;
-      }
-    }
-    if (flag) {
-      itemsQuantity[i] = itemsQuantity[i] + 1;
-    } else {
-      uniqueCartItems.push(ele);
-      itemsQuantity.push(1);
-    }
-  });
-  
-  uniqueCartItems.forEach(function (elem, index) {
-    var card = document.createElement("div");
-    card.setAttribute("class", "boxCard");
-    card.style.display = "flex";
-    var card1 = document.createElement("div");
-    card1.setAttribute("class", "boxCard1");
-    var image = document.createElement("img");
-    image.setAttribute("src", elem.url_1);
-    card1.append(image);
-    var card2 = document.createElement("div");
-    card2.setAttribute("class", "boxCard2");
-    var details = document.createElement("p");
-    details.innerText = elem.prod_name;
-    var details1 = document.createElement("p"); 
-    details1.innerText = elem.mkf;
-    var card3 = document.createElement("div"); 
-    card3.setAttribute("class", "boxCard3");
-    card3.style.display = "flex";
-    var card31 = document.createElement("div");
-    card31.setAttribute("class", "boxCard31");
-    var price = document.createElement("span");
-    price.innerText = "Rs." + elem.best_price;
-    var Sprice = document.createElement("span");
-    Sprice.innerText = "Rs." + elem.mrp;
-    price1 = price1 + elem.mrp * itemsQuantity[index];
-    document.querySelector("#MRP").innerText = "Rs." + price1;
-    if (elem.mrp) {
-      var discounted = elem.mrp - elem.best_price;
-      discount = discount + itemsQuantity[index] * discounted;
-    }
-    document.querySelector("#netmeddiscount").innerText = "-Rs." + discount;
-    document.querySelector("#netmed").innerText = "Rs." + discount;
-    document.querySelector("#total").innerText = "Rs." + (price1 - discount);
-    document.querySelector("#total1").innerText = "Rs." + (price1 - discount);
-    var Delievery = document.createElement("p");
-    Delievery.innerText = "Delivery between Oct-14 6PM - Oct-9 10PM";
-    card31.append(price, Sprice, Delievery);
-    var card32 = document.createElement("div");
-    card32.setAttribute("class", "boxCard32");
-    var quantityIncre = document.createElement("button");
-    quantityIncre.setAttribute("class", "cc1");
-    quantityIncre.innerText = "+";
-    quantityIncre.addEventListener("click", function () {
-      addItems(elem);
-    });
-    var quantityDecre = document.createElement("button");
-    quantityDecre.innerText = "-";
-    quantityDecre.setAttribute("class", "cc2");
-    quantityDecre.addEventListener("click", function () {
-      delItems(elem, index);
-    });
-    var quantityValue = document.createElement("span");
-    quantityValue.innerText = " QTY:" + itemsQuantity[index];
-    var card321 = document.createElement("div");
-    card321.setAttribute("class", "boxCard321");
-    card321.style.display = "flex";
-    var remove = document.createElement("button");
+let cart = JSON.parse(localStorage.getItem("cartitems")) || [];
+
+if (cart.length === 0) {
+  let h3 = document.createElement("h3");
+  h3.innerText = "Cart is empty...";
+  document.querySelector(".productsDiv").append(h3);
+}
+else {
+  displayProduct();
+}
+
+function displayProduct() {
+  document.querySelector(".productsDiv").innerHTML = "";
+  cart.forEach((element, indx) => {
+    let productCard = document.createElement("div");
+    productCard.setAttribute("class", "productCard");
+
+    let topSec = document.createElement("div");
+    topSec.setAttribute("class", "topsec");
+
+    let img = document.createElement("img");
+    img.id = "cartImg";
+    img.src = element.url_1;
+
+    let subDiv = document.createElement("div");
+    subDiv.setAttribute("class", "subDiv");
+
+    let cartPname = document.createElement("p");
+    cartPname.id = "cartPname";
+    cartPname.innerText = element.prod_name;
+
+    let cartComp = document.createElement("p");
+    cartComp.id = "cartComp";
+    cartComp.innerText = element.mkf;
+
+    let middleSec = document.createElement("div");
+    middleSec.setAttribute("class", "middleSec");
+
+    let cartCut = document.createElement("span");
+    cartCut.innerText = "Rs." + element.best_price - 50;
+    cartCut.id = "cartCut";
+
+    let cartPrice = document.createElement("p");
+    cartPrice.id = "cartPrice";
+    cartPrice.innerText = "Rs." + element.best_price;
+
+    let cartQuan = document.createElement("div");
+    cartQuan.setAttribute("class", "cartQuan");
+
+    let cartPlus = document.createElement("button");
+    cartPlus.id = "cartPlus";
+    cartPlus.innerText = "+";
+
+
+    let cartMinus = document.createElement("button");
+    cartMinus.id = "cartMinus";
+    cartMinus.innerText = "-";
+
+
+    let cartQuantity = document.createElement("button");
+    cartQuantity.id = "cartQuantity";
+    cartQuantity.innerText = "QTY: " + element.quantity;
+
+    let endSec = document.createElement("div");
+    endSec.setAttribute("class", "endSec");
+
+    let delevery = document.createElement("p");
+    delevery.id = "delevery";
+    delevery.innerText = "Delivery between OCTOBER 17-OCTOBER 18";
+
+    let cartOther = document.createElement("div");
+    cartOther.setAttribute("class", "cartOther");
+
+    let cartLine = document.createElement("div");
+    cartLine.setAttribute("id", "cartLine");
+
+    let remove = document.createElement("button");
+    remove.id = "remove";
     remove.innerText = "REMOVE";
-    remove.addEventListener("click", function () {
-      removeFromCart(elem, index);
+    remove.addEventListener("click", () => {
+      removeFromStorage(indx);
     });
-    var later = document.createElement("button");
-    later.innerText = "SAVE FOR LATER";
-    later.addEventListener("click", function () {
-      Saveforlater(elem, index);
-    });
-    var hr = document.createElement("hr");
-    hr.setAttribute("class", "hr");
-    hr.style.color = "blue";
-    card321.append(remove, later);
-    card32.append(quantityValue, quantityIncre, quantityDecre, card321);
-    card3.append(card31, card32);
-    card2.append(details, details1, card3, hr);
-    card.append(card1, card2);
-    document.querySelector("#cartitems").append(card);
+
+    let btn = document.createElement("button");
+    btn.innerText = "SAVE FOR LATER";
+
+    cartOther.append(cartLine, remove, btn);
+    endSec.append(delevery, cartOther);
+
+    cartQuan.append(cartPlus, cartMinus, cartQuantity);
+    middleSec.append(cartPrice, cartQuan);
+    subDiv.append(cartPname, cartComp, middleSec, endSec);
+    topSec.append(img, subDiv);
+    let hr = document.createElement("hr");
+    hr.id = "hr";
+    productCard.append(topSec, hr);
+
+    document.querySelector(".productsDiv").append(productCard);
+    checkQuan(element, cartPlus, cartMinus, cartQuantity, indx, element.quantity);
   });
 }
 
-function addItems(elem) {
-  cart.push(elem);
+function removeFromStorage(indx) {
+  cart.splice(indx, 1);
   localStorage.setItem("cartitems", JSON.stringify(cart));
-  displayCart(cart);
-  console.log(cart);
+  displayProduct();
 }
 
-function delItems(elem, index) {
-  for (var i = cart.length - 1; i >= 0; i--) {
-    var ele = cart[i];
-    if (
-      ele.url_1 === elem.url_1 &&
-      ele.prod_name === elem.prod_name &&
-      ele.best_price === elem.best_price &&
-      ele.mrp === elem.mrp
-    ) {
-      break;
+function checkQuan(ele, cartPlus, cartMinus, cartQuantity, indx, quantity) {
+
+  plus(ele, cartPlus, indx, quantity, cartQuantity);
+  minus(ele, cartMinus, indx, quantity, cartQuantity);
+
+}
+function plus(ele, plus, indx, quantity, cartQuantity) {
+  plus.addEventListener("click", () => {
+    if (quantity === 5) {
+      alert("you can't add more than 5 products");
     }
+    else {
+      quantity++;
+      updateData(indx, quantity, ele);
+      cartQuantity.innerText = "QTY: " + cart[indx].quantity;
+      location.reload();
+    }
+  });
+}
+
+
+function minus(ele, minus, indx, quantity, cartQuantity) {
+  minus.addEventListener("click", () => {
+    if (quantity === 1) {
+      removeFromStorage(indx);
+      location.reload();
+    }
+    else {
+      quantity--;
+      updateData(indx, quantity, ele);
+      cartQuantity.innerText = "QTY: " + cart[indx].quantity;
+      location.reload();
+    }
+  });
+}
+
+function updateData(indx, quan, ele) {
+  cart.splice(indx, 1);
+  let obj = {
+    "id": ele.id,
+    "prod_name": ele.prod_name,
+    "best_price": ele.best_price,
+    "mrp": ele.mrp,
+    "mkf": ele.mkf,
+    "url_1": ele.url_1,
+    "quantity": quan
   }
-  cart.splice(i, 1);
+  cart.push(obj);
   localStorage.setItem("cartitems", JSON.stringify(cart));
-  displayCart(cart);
-  console.log(cart);
 }
 
-function removeFromCart(elem, index) {
-  event.target.parentNode.remove();
-  var newCartArr = [];
-  cart.forEach(function (ele) {
-    if (
-      ele.url_1 !== elem.url_1 ||
-      ele.name !== elem.name ||
-      ele.best_price !== elem.best_price ||
-      ele.mrp !== elem.mrp
-    ) {
-      newCartArr.push(ele);
-    }
+function calculateTotal() {
+  let total = 0;
+  cart.forEach(ele => {
+    total += ele.best_price * ele.quantity;
+  })
+
+  return total.toFixed(2);
+}
+document.getElementById("Carttotal").innerText = "Rs. " + calculateTotal();
+document.getElementById("finalTotal").innerText = "Rs. " + calculateTotal();
+document.getElementById("grandTotal").innerText = "Rs. " + calculateTotal();
+function promoClick(id1, id2, percentage) {
+  document.getElementById(id2).addEventListener("click", () => {
+    let promo = document.getElementById(id2).innerText;
+    document.getElementById("abc").value = promo;
+
+    let price = document.getElementById("Carttotal").innerText;
+    let tt = price.replace('Rs. ', '')
+    let temp = tt * percentage / 100;
+    document.getElementById("cartDis").innerText = "-Rs." + temp.toFixed(2);
+    document.getElementById("saving").innerText = "TOTAL SAVINGS RS. " + temp.toFixed(2);
+    console.log(calculateTotal());
+    document.getElementById("finalTotal").innerText = calculateTotal() - temp.toFixed(2);
+    document.getElementById("grandTotal").innerText = calculateTotal() - temp.toFixed(2);
   });
-  cart = newCartArr;
-  localStorage.setItem("cartitems", JSON.stringify(cart));
-  displayCart(cart);
 }
 
-var bbc = document.querySelector("#promo");
-bbc.addEventListener("click", (event) => {
-  if (bbc.open) {
-    document
-      .querySelector(".suraj")
-      .className.replace("fa fa-circle", "fa fa-check-circle");
+promoClick("dot", "promoo1", 25);
+document.getElementById("proceed").addEventListener("click", () => {
+  let status = localStorage.getItem("login_status");
+  if (status) {
+    location.href = "../cart&checkout/checkout.html";
+  }
+  else {
+    alert("login to continue..")
+    location.href = "../login_signup.html";
   }
 });
-var monkey = JSON.parse(localStorage.getItem("mobile"));
-if (monkey !== null) {
-  document.querySelector("#donkey").innerText = monkey;
-}
-
-document.querySelector("#last").addEventListener("click", myfunc7);
-function myfunc7(){
-  window.location.href="checkout.html";
-}
-// var k = JSON.parse(localStorage.getItem("otp"));
-// function myfunc7() {
-  // if (k == null) {
-  //   alert("You need to SignUp First");
-  //   window.location.href = "signUp.html";
-  // } else if (k !== null) {
-    // window.location.href = "checkout.html";
-  // }
-// }
