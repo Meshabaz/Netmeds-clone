@@ -384,7 +384,7 @@ function subscribeToNetmedsClone() {
     if (check.length >= 1) {
         document.querySelector(".errorsubs").style.display = "flex"
         document.querySelector(".success").style.display = "none"
-        alert("you alreay subscribed!");
+        // alert("you alreay subscribed!");
         // do
         // document.querySelector(".span_subscribe").classList.add("active");
         // document.querySelector(".span_subscribe").style.display = "block";
@@ -392,7 +392,7 @@ function subscribeToNetmedsClone() {
     } else {
         subscription_arr.push(subs_obj);
         localStorage.setItem("subscribed", subscription_arr)
-        alert("subscribed!")
+        // alert("subscribed!")
         // do
         document.querySelector(".errorsubs").style.display = "none"
         document.querySelector(".success").style.display = "flex"
