@@ -1,9 +1,8 @@
 * {
-    font-family: 'Acme', sans-serif;
-    font-family: 'Blaka Ink', cursive;
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Ubuntu', sans-serif;
 }
 
+/* @import url('https://fonts.googleapis.com/css2?family=Acme&family=Blaka+Ink&family=Fredoka+One&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
 
 .list,
@@ -340,13 +339,6 @@
     color: black;
 }
 
-#viewall {
-    /* float: right; */
-    font-size: 13px;
-    color: palevioletred;
-    /* border: 2px dashed black; */
-    /* padding: auto 500px; */
-}
 
 .paydiv {
     display: flex;
@@ -355,7 +347,7 @@
 
 .payment h2 {
     float: inline-start;
-    margin-right: 870px;
+    /* margin-right: 870px; */
 }
 
 .some {
@@ -365,6 +357,18 @@
     padding: 15px;
     justify-content: space-between;
     /* border: 1px solid red; */
+}
+
+.some :first-child {
+    width: 400px;
+    pointer-events: none;
+}
+
+#viewall {
+    width: 100px;
+    font-size: 16px;
+    color: palevioletred;
+    cursor: pointer;
 }
 
 #payoptiondiv {
@@ -472,14 +476,17 @@
 
 #no_3div2_1 button {
     width: 150px;
-    padding: 10px;
+    padding: 15px;
     margin: 20px 2px;
-    background-color: rgb(6, 191, 191);
+    /* background-color: rgb(6, 191, 191); */
     color: white;
     border: none;
     border-radius: 8px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
     font-size: 14px;
+    background-color: rgb(40, 172, 172);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
 }
 
 #no_3orderbtn {
@@ -521,5 +528,81 @@
         width: 100px;
     }
 }
+
+.membership {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: solid #000; */
+    border-top: 1.4px solid lightgray;
+    border-bottom: 1.4px solid lightgray;
+    margin: 70px auto;
+    margin-top: -130px;
+    padding: 30px;
+    padding-bottom: 50px;
+}
+
+.membership .membership_secA {
+    width: auto;
+    display: flex;
+    left: 30px;
+}
+
+.membership .membership_secA .img_div {
+    display: flex;
+    align-items: center;
+    /* border: solid #000; */
+    margin-right: 30px;
+}
+
+.membership .membership_secA .desc_div {
+    width: auto;
+    display: block;
+    margin: auto;
+    /* border: solid red; */
+}
+
+.membership .membership_secA .desc_div ul {
+    margin: auto 20px;
+    width: auto;
+    font-size: 14px;
+    color: gray;
+    /* border: solid green; */
+}
+
+.membership .membership_secB {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: solid #000; */
+}
+
+.membership .membership_secB .img_div {
+    width: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 17px;
+    color: rgb(241, 81, 134);
+    /* border: solid red; */
+}
+
+.membership .membership_secB .btndiv {
+    padding: 20px;
+}
+
+.membership .membership_secB .btndiv button {
+    padding: 15px;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    background-color: rgb(40, 172, 172);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}
+
+
 
 /*  */

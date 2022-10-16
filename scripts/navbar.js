@@ -132,17 +132,17 @@ function navbar() {
             <div id="menu">
                 <ul class="error">
                     <li><a href="./product_pages/product_pages_html/product_page_beauty_personalcare.html">COVID Essentials</a></li>
-                    <li><a href="">Diabetes</a></li>
-                    <li><a href="">Eyewear</a></li>
-                    <li><a href="">Ayush</a></li>
-                    <li><a href="">Ayurvedic</a></li>
-                    <li><a href="">Homeopathy</a></li>
-                    <li><a href="">Fitness</a></li>
-                    <li><a href="">Moms & Baby</a></li>
-                    <li><a href="">Devices</a></li>
-                    <li><a href="">Surgicals</a></li>
+                    <li><a href="./product_pages/product_pages_html/product_page_Diabities.html">Diabetes</a></li>
+                    <li><a href="./product_pages/product_pages_html/product_page_Eyewear.html">Eyewear</a></li>
+                    <li><a href="./product_pages/product_pages_html/product_page_Ayush.html">Ayush</a></li>
+                    <li><a href="./product_pages/product_pages_html/product_page_Ayurvedic.html">Ayurvedic</a></li>
+                    <li><a href="./product_pages/product_pages_html/product_page_Homeopathy.html">Homeopathy</a></li>
+                    <li><a href="./product_pages/product_pages_html/product_page_Fitness.html">Fitness</a></li>
+                    <li><a href="./product_pages/product_pages_html/product_page_Mom&Baby.html">Moms & Baby</a></li>
+                    <li><a href="./product_pages/product_pages_html/product_page_Devices.html">Devices</a></li>
+                    <li><a href="./product_pages/product_pages_html/product_page_Surgical.html">Surgicals</a></li>
                     <li><a href="">Sexual Wellness</a></li>
-                    <li><a href="">Treatment</a></li>
+                    <li><a href="./product_pages/product_pages_html/product_page_Treatments.html">Treatment</a></li>
                 </ul>
                 </div>
                 </div>`
