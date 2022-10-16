@@ -27,13 +27,18 @@ function showbrands(data) {
         div.className = "slide";
         const image = document.createElement("img");
         image.src = e.url_one;
+        image.addEventListener('click', () => {
+            select(e);
+            // console.log("send: ", e);
+        })
         // image.cla
-        const name = document.createElement("p");
+        const name = document.createElement("h3");
         name.innerText = e.prod_name;
         const price = document.createElement("p");
         price.innerText = `₹${e.mrp}`;
         const discount = document.createElement("p");
         discount.innerText = e.discount;
+        discount.classList = "discount";
         const addtocartbtn = document.createElement("button");
         addtocartbtn.classList = "slidecart_btn";
         addtocartbtn.innerHTML = "ADD TO CART";
@@ -88,18 +93,23 @@ function showlimited_time(data) {
     }
 
     data.forEach((e) => {
-        // console.log(e);
+        console.log(e);
         const div = document.createElement("div");
         div.className = "slide";
         const image = document.createElement("img");
         image.src = e.url_one;
+        image.addEventListener('click', () => {
+            select(e);
+            // console.log("send: ", e);
+        })
         // image.cla
-        const name = document.createElement("p");
+        const name = document.createElement("h3");
         name.innerText = e.prod_name;
         const price = document.createElement("p");
         price.innerText = `₹${e.mrp}`;
         const discount = document.createElement("p");
         discount.innerText = e.discount;
+        discount.classList = "discount";
         const addtocartbtn = document.createElement("button");
         addtocartbtn.classList = "slidecart_btn";
         addtocartbtn.innerHTML = "ADD TO CART";

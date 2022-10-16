@@ -133,13 +133,23 @@
     align-items: center;
     justify-content: center;
     /* margin: auto 0 10px 0; */
-    margin-left: -10px;
-    padding: 10px;
+    margin-left: -5px;
+    margin-right: 5px;
+    padding: 15px;
     border: none;
-    border-radius: 10px;
-    background-color: rgb(101, 203, 203);
-    color: #fff;
+    border-radius: 6px;
+    /* background-color: rgb(101, 203, 203);
+    color: #fff; */
     font-size: 16px;
+    color: white;
+    background-color: rgb(40, 172, 172);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.slidecart_btn:hover {
+    opacity: 1;
 }
 
 .limited_time>div img {
@@ -164,6 +174,14 @@
     border-radius: 10px;
 }
 
+.brands .discount,
+.limited_time .discount {
+    font-size: 16px;
+    margin-bottom: 5px;
+    margin-top: -3px;
+    color: rgb(76, 179, 29);
+}
+
 .brands>div {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
@@ -179,6 +197,15 @@
     cursor: pointer;
     outline: none;
 
+}
+
+.brands_list .pre-btn,
+.brands_list .nxt-btn,
+.limited_timelist .pre-btn,
+.limited_timelist .nxt-btn {
+    top: 250px;
+    width: 4%;
+    height: 10%;
 }
 
 /* (pre and next button syntax ends here) */
