@@ -113,6 +113,11 @@ body a:hover {
 
 }
 
+.withoutlogin,
+.withlogin {
+    cursor: pointer;
+}
+
 #right img:not(#sign_in, #precription_img) {
     width: 23px;
     filter: invert(100%);
