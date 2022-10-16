@@ -136,6 +136,7 @@ function minus(ele, minus, indx, quantity, cartQuantity) {
   minus.addEventListener("click", () => {
     if (quantity === 1) {
       removeFromStorage(indx);
+      location.reload();
     }
     else {
       quantity--;
