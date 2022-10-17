@@ -1,5 +1,7 @@
 import { description, keyBenifits, uses, information, others } from "../Product_Description_Page/description.js";
 import navbar from "../scripts/navbar.js";
+import { footer } from "../scripts/footer.js";
+document.getElementById("footer").innerHTML = footer();
 
 document.getElementById("navbar").innerHTML = navbar();
 

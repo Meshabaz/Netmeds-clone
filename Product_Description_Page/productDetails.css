@@ -7,6 +7,12 @@
     font-family: Lato;
 }
 
+/*Footer Css override start*/
+.section_B .footer_lists h4:not(.subscribe h4) {
+    margin-left: 8px;
+}
+
+/*Footer Css overide end*/
 #preLoader {
     top: 0;
     background: rgba(255, 255, 255, 0.6) url("https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif") no-repeat center center;
