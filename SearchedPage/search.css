@@ -7,6 +7,10 @@
     font-family: Lato;
 }
 
+.section_B .footer_lists h4:not(.subscribe h4) {
+    margin-left: 8px;
+}
+
 #noFound {
     font-family: Lato;
     font-size: 16px;
