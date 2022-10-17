@@ -230,3 +230,5 @@ document.getElementById("length").innerText = cart.length + " " + "items";
 document.getElementById("checkout").addEventListener("click", () => {
   location.href = "../cart&checkout/checkout.html";
 });
+
+

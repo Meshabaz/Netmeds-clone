@@ -180,7 +180,7 @@ body a:hover {
 .navbar li a .cart_counter {
     width: 24px;
     height: 17px;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     text-align: center;
     padding-top: 1px;
