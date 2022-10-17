@@ -247,3 +247,7 @@ function removeData(indx) {
 //ADD TO CART FUNCTIONALITY END
 
 document.querySelector("title").innerText = clicked.prod_name;
+
+
+
+

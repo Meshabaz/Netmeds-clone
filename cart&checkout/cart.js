@@ -215,7 +215,6 @@ document.getElementById("proceed").addEventListener("click", () => {
   }
 });
 
-
 function getQuantity(indx) {
   return cart[indx].quantity;
 }

@@ -18,3 +18,5 @@ document.getElementById("subFilterBox").innerHTML = categoryFilter();
 import productPages from "../utils/master_script_productPages.js";
 productPages(page);
 
+import { footer } from "../../scripts/footer.js"
+document.getElementById("navbar-footer").innerHTML=footer();

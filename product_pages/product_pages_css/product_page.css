@@ -1,3 +1,6 @@
+body{
+    font-family: 'Lato', sans-serif;
+}
 *{
     margin: 0;
     padding: 0;
@@ -25,7 +28,7 @@
  #mainprodbox{
      width: 100%;
      display: flex;
-     padding-bottom: 100px;
+     padding-bottom: px;
      background-color: #ebebec;
  }
 /* left box css */
@@ -57,7 +60,7 @@
  }
  
  #categoryfilterbox>h4, #filterbox>h4{
-     font-family: sans-serif;
+     font-family:sans-serif;
      font-weight: lighter ;
      overflow: hidden;
      text-overflow: ellipsis;
@@ -258,7 +261,7 @@ input[type="range"]::-moz-range-thumb{
  /* *******************************************    right box    ********************************************************* */
  #rightbox{
     width: 80%;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
  }
  #bannerimg{
     width: 100%;

@@ -25,6 +25,7 @@
     color: #fff;
     padding: 20px 10px;
     margin: 20px auto;
+    pointer-events: none;
 }
 
 .trending_container {
@@ -258,6 +259,10 @@
     padding: 10px;
 }
 
+.category .category_header h2 {
+    pointer-events: none;
+}
+
 .category .category_header a {
     text-decoration: none;
     color: #fff;
@@ -276,6 +281,7 @@
 }
 
 .category .category_body>div {
+    pointer-events: none;
     border-radius: 12px;
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -574,13 +580,16 @@
     width: auto;
     display: flex;
     left: 30px;
+    pointer-events: none;
 }
 
 .membership .membership_secA .img_div {
     display: flex;
-    align-items: center;
-    /* border: solid #000; */
-    margin-right: 30px;
+    margin-right: 40px;
+}
+
+.membership .membership_secA .img_div img {
+    margin-top: 20px;
 }
 
 .membership .membership_secA .desc_div {
@@ -616,6 +625,10 @@
     /* border: solid red; */
 }
 
+.membership .membership_secB .img_div span {
+    pointer-events: none;
+}
+
 .membership .membership_secB .btndiv {
     padding: 20px;
 }
@@ -628,6 +641,19 @@
     background-color: rgb(40, 172, 172);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: pointer;
+}
+
+@media(max-width:780px) {
+    .membership {
+        display: block;
+    }
+
+    .membership .membership_secA {
+        width: auto;
+        display: flex;
+        align-items: flex-start;
+        left: 30px;
+    }
 }
 
 

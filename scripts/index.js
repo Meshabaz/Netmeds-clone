@@ -7,7 +7,7 @@ import { footer } from "./footer.js";
 document.querySelector('.footer').innerHTML = footer();
 
 
-const url = "https://mr-raaz.github.io/NetmedsClone_data/landingPage_data.json";
+const url = 'https://mr-raaz.github.io/NetmedsClone_data/landingPage_data.json';
 // https://mr-raaz.github.io/NetmedsClone_data/landingPage_data.json
 getdata(url);
 
@@ -16,6 +16,7 @@ async function getdata(url) {
     let data = await res.json();
     showlimited_time(data.Limited_time_deals);
     showbrands(data.Brand_days);
+    console.log(data.Brand_days);
 }
 
 function showbrands(data) {
@@ -26,7 +27,7 @@ function showbrands(data) {
         const div = document.createElement("div");
         div.className = "slide";
         const image = document.createElement("img");
-        image.src = e.url_one;
+        image.src = e.url_1;
         image.addEventListener('click', () => {
             select(e);
             // console.log("send: ", e);
@@ -68,36 +69,17 @@ cardContainers.forEach((items, i) => {
 
 
 
-const user_name = localStorage.getItem("user_fname");
-const user_login_status = localStorage.getItem("login_status");
-console.log(user_name, user_login_status);
 
 function showlimited_time(data) {
     console.log(data);
-    if (user_login_status == 'true') {
-        document.querySelector(".withoutlogin").style.display = "none";
-        document.querySelector(".withlogin").innerText = `${user_name}`
-        document.querySelector(".withlogin").style.display = "block"
-        document.querySelector(".withlogin").addEventListener("click", () => {
-            window.location.href = "profile/profile.html";
-            // document.querySelector(".profile_links").location.href = "./profile/profile.html";
-        })
-    } else {
-        document.querySelector(".cart_counter").style.display = "none";
-        document.querySelector(".withlogin").innerText = ``;
-        document.querySelector(".withlogin").style.display = "none"
-        document.querySelector(".withoutlogin").style.display = "block";
-        document.querySelector(".withoutlogin").addEventListener("click", () => {
-            window.location.href = "login_signup.html";
-        })
-    }
 
     data.forEach((e) => {
         console.log(e);
         const div = document.createElement("div");
         div.className = "slide";
         const image = document.createElement("img");
-        image.src = e.url_one;
+        image.src = e.url_1;
+        console.log(e.url_1);
         image.addEventListener('click', () => {
             select(e);
             // console.log("send: ", e);
@@ -124,23 +106,47 @@ function showlimited_time(data) {
 
 // const countitemsaddedincart = 0;
 // const c = localStorage.getItem("countcartitrms");
-const cartArr = JSON.parse(localStorage.getItem("cartitems")) || [];
 // console.log("itemsAdded:", cartArr.length);
 // cartItemsCount = cartArr.length;
 // console.log(cartArr);
+const cartArr = JSON.parse(localStorage.getItem("cartitems")) || [];
+const user_name = localStorage.getItem("user_fname");
+const user_login_status = localStorage.getItem("login_status");
+console.log(user_name, user_login_status);
 function addtocart(e) {
     // alert("adding")
     console.log(e);
     if (user_login_status == 'true') {
-        // alert("Hello");
-        const c = cartArr.push(e);
+        document.querySelector(".cart_counter").style.display = "block"
+        const c = localStorage.getItem("countcartitems") || cartArr.push(e);
         document.querySelector(".cart_counter").innerHTML = c;
-        localStorage.setItem("countcartitrms", c)
+        localStorage.setItem("countcartitems", c)
         console.log(c);
-        localStorage.setItem("cartitems", json.stringify(cartArr));
+        localStorage.setItem("cartitems", JSON.stringify(cartArr));
     }
     else {
         alert("Please Login First!")
+    }
+}
+
+cartDetail();
+function cartDetail() {
+    if (user_login_status == 'true') {
+        document.querySelector(".withoutlogin").style.display = "none";
+        document.querySelector(".withlogin").innerText = `${user_name}`
+        document.querySelector(".withlogin").style.display = "block"
+        document.querySelector(".withlogin").addEventListener("click", () => {
+            window.location.href = "profile/profile.html";
+            // document.querySelector(".profile_links").location.href = "./profile/profile.html";
+        })
+    } else {
+        document.querySelector(".cart_counter").style.display = "none";
+        document.querySelector(".withlogin").innerText = ``;
+        document.querySelector(".withlogin").style.display = "none"
+        document.querySelector(".withoutlogin").style.display = "block";
+        document.querySelector(".withoutlogin").addEventListener("click", () => {
+            window.location.href = "login_signup.html";
+        })
     }
 }
 
