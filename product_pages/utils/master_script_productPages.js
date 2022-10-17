@@ -400,7 +400,7 @@ function productPages(pageName){
         discount.style.color=""
     }
     function hightolow(sorted){
-        console.log(sorted);
+      
         sorted.sort(function(a,b){
             return b.best_price-a.best_price;
         })
@@ -480,7 +480,7 @@ function productPages(pageName){
             prod[0].quantity = 1;
             cart.push(prod[0]);
         }
-        console.log(cart);
+       
         localStorage.setItem("cartitems",JSON.stringify(cart)); 
         let addcartbutton = document.querySelectorAll(".divbtn")
 
@@ -491,29 +491,17 @@ function productPages(pageName){
             }
         }
         let changedqty=0;
-        // if(index===-1){
-        //     changedqty=1;
-            
-        // }
-        // else
-        // {
-            
-            
-
-        // }
+        if(index===-1){
+            changedqty=1;
+        }
         changedqty = cart[index].quantity;
         changeAddtoCartbuttonOnclick(arr,i,addcartbutton, changedqty,btn);
-        console.log(changedqty);
-        
-        
     }
 
     function changeAddtoCartbuttonOnclick(arr,i,addcartbutton,changedqty,btn){
         for(let j=0; j<addcartbutton.length;j++){
             if(j===i){
-                console.log(btn);
                 btn.style.display="none"
-                
                 // console.log(addcartbutton[i]);
                 let change = addcartbutton[i];
                 // change.innerHTML="";
@@ -568,7 +556,6 @@ function productPages(pageName){
         }
         let changedqty = cart[index].quantity;
         changedqty++;
-        console.log(changedqty);
         if(changedqty<=5){
             cart[index].quantity = changedqty;
             localStorage.setItem("cartitems",JSON.stringify(cart));
@@ -577,7 +564,6 @@ function productPages(pageName){
             alert("Exceeded the maximum quantity limit per order!")
         }
         qtydiv.innerText=cart[index].quantity;
-        // console.log(index);
     }
 
     function minusqty(j,arr,addcartbutton,i,btn,plus,qtydiv,minus){
@@ -671,9 +657,7 @@ function productPages(pageName){
     let execute = false;
     function filterbrand(ele,ind,checked,value,input){
         let brandnamefilter = document.querySelectorAll(".checkbox-brandfilter")
-        console.log(brandnamefilter[ind]);
         execute=true;
-        console.log(input.checked);
         brandnameString="";
         if(checked===true){
             selectedBrandsForFilter.push(value);
@@ -698,7 +682,6 @@ function productPages(pageName){
 
         if(checked===true){
             selectedmkfForFilter.push(value);
-            console.log(selectedmkfForFilter);
             getData();
         }
         else{
@@ -719,14 +702,12 @@ function productPages(pageName){
         executeCategories=true;
         if(checked===true){
             selectedCategoriesForFilter.push(value);
-            console.log(selectedCategoriesForFilter);
             getData();
         }
         else{
             for(let i=0; i<selectedCategoriesForFilter.length; i++){
                 if(selectedCategoriesForFilter[i]===value){
                     selectedCategoriesForFilter.splice(i,1);
-                    console.log(selectedCategoriesForFilter);
                 }
             }
             getData();
