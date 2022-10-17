@@ -29,9 +29,9 @@
  | Name            | Contribution                                                                |
 | ----------------- | ------------------------------------------------------------------ |
 |<a href = "https://github.com/Meshabaz" > Md Shabaz Ansari </a>| Landing Page |
-| <a href = "https://github.com/Ritik73011" > Ritik Kumar Singh </a>| Product Description , Search Page |
+| <a href = "https://github.com/Ritik73011" > Ritik Kumar Singh </a>| Product Description , Search Page , Payment Page|
 |<a href = "https://github.com/nishantp15" > Nishant Prajapati </a> | Product Pages |
-|<a href = "https://github.com/Shiva4164" > Chandaragiri Shivaprasad </a>| Cart , Payment Page |
+|<a href = "https://github.com/Shiva4164" > Chandaragiri Shivaprasad </a>| Cart , Checkout Page |
 | <a href = "https://github.com/Mr-raaz" >Anshu Raj </a> | Login / Signup , Profile |
  
  <br>
