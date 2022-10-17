@@ -46,106 +46,17 @@ body {
   letter-spacing: 1px;
 }
 
-.productCard {
+.logo {
+  padding: 16px 16px 8px 24px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.productsDiv {
   background-color: white;
   border-radius: 8px;
-
-}
-
-.productCard img {
-  border-radius: 8px 0 0 0;
-  width: 60px;
-  height: 60px;
-}
-
-.productCard .topsec {
-  width: 100%;
-  display: flex;
   margin-top: 10px;
 }
-
-
-#cartPname {
-  font-size: 16px;
-  color: #151b39;
-  height: 48px;
-}
-
-#cartComp {
-  font-size: 12px;
-  color: rgba(21, 27, 57, .6);
-  margin-top: 4px;
-  font-style: italic;
-}
-
-.middleSec,
-.endSec {
-  display: flex;
-  justify-content: space-between;
-}
-
-#cartPrice {
-  color: #ef4281;
-  font-display: 16px;
-  font-weight: 700;
-  margin: 16px 0;
-}
-
-.subDiv {
-  width: 100%;
-  padding-left: 15px;
-  margin-top: 8px;
-}
-
-.cartQuan {
-  display: flex;
-  gap: 8px;
-  margin: 24px 16px;
-}
-
-.cartQuan>button {
-  padding: 6px 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#delevery {
-  color: #151b39;
-  font-size: 12px;
-  margin-bottom: 16px;
-}
-
-.cartOther {
-  display: flex;
-  gap: 16px;
-}
-
-.cartOther>button {
-  margin-bottom: 16px;
-  margin-right: 16px;
-  border: none;
-  font-size: 12px;
-  font-weight: 600;
-  color: rgba(21, 27, 57, .6);
-  border-radius: 4px;
-  padding: 6px 10px;
-}
-
-#remove {
-  cursor: pointer;
-}
-
-#cartCut {
-  text-decoration: line-through;
-  font-size: 12px;
-  margin-left: 5px;
-  color: rgba(21, 27, 57, .6);
-}
-
-/**/
-
-
 
 span {
   color: #007bff;
@@ -182,6 +93,7 @@ span {
 
 .totalSaving {
   margin: 24px 8px;
+  padding-bottom: 24px;
 }
 
 .totalSaving p {
@@ -230,13 +142,6 @@ span {
   padding: 16px;
 }
 
-.applyP {
-  font-size: 12px;
-  color: rgba(21, 27, 57, .6);
-  font-weight: 700;
-  padding: 16px 16px;
-}
-
 @media all and (min-width: 0px) and (max-width: 768px) {
   .cartMain {
     display: grid;
@@ -259,66 +164,97 @@ span {
     display: none;
   }
 
-  .endSec {
-    display: grid;
-  }
-
   .cartRight {
     width: 100%;
     max-width: 100%;
   }
 
-  #delevery {
-    margin-bottom: 8px;
+  .logo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
   }
+
+  #img1 {
+    height: 80px;
+  }
+
 }
 
-
-/**/
-.address {
-  height: 160px;
-  margin-top: 16px;
-  background-color: white;
-  border-radius: 8px;
-  padding: 16px;
-  overflow-y: scroll;
+.imgLogo img {
+  width: 42px;
+  height: 42px;
+  margin: auto;
+  display: block;
 }
 
-.cartAd {
+.imgLogo p {
+  font-size: 10px;
+  color: rgba(21, 27, 57, 0.6);
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.logo2 {
   display: flex;
   justify-content: space-between;
-  font-size: 12px;
-  font-weight: 700;
-  color: rgba(21, 27, 57, .6);
-  margin-bottom: 16px;
+  padding: 0 16px;
+  padding-bottom: 16px;
 }
 
-#allAd {
-  margin-top: 10px;
+.logo2 img {
+  width: 32px;
+  height: 32px;
   cursor: pointer;
 }
 
-#selectAd {
+.div1 {
+  display: flex;
+  gap: 24px;
+}
+
+.div1 p {
+  margin: auto;
+  font-size: 14px
+}
+
+.div2 {
   color: #ef4281;
+  font-size: 12px;
   cursor: pointer;
 }
 
-#userName {
-  font-size: 16px;
-  color: #151b39;
+#radio,
+#radio_cod {
+  margin: auto;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
 }
 
-#userAddress,
-#usercity,
-#userMobile {
-  font-size: 14px;
-  margin-top: 8px;
-  color: #151b39;
+#cod {
+  margin-top: 10px;
+  font-size: 12px;
+  color: rgba(21, 27, 57, .6);
 }
 
-/**/
+.button {
+  display: flex;
+  justify-content: end;
+  padding-right: 24px;
+}
 
-/*Alert*/
+#payBtn {
+  display: none;
+  margin-bottom: 16px;
+  border: none;
+  padding: 8px;
+  color: white;
+  background-color: #24aeb1;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 #popup_box {
   display: none;
   position: fixed;
@@ -332,53 +268,53 @@ span {
   padding: 16px;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+/**/
+.phonePay {
+  width: 320px;
+  height: 400px;
 }
 
-#city,
-#state {
-  width: 150px;
+.phonePay h1 {
+  top: 20;
+  text-align: center;
+  color: #830a96;
 }
 
-form {
-  padding: 8px;
-  margin-top: 10px;
-}
-
-form input {
-  padding: 8px;
+.phonePay p {
+  text-align: center;
+  color: #007bff;
   margin-top: 8px;
-  width: 300px;
+}
+
+.phonePay input {
   border: none;
-  border-bottom: 1px solid black;
-}
-
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
-#addFlex {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 16px;
-}
-
-#addFlex button {
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   padding: 8px;
+  margin: auto;
+  display: block;
+  margin-top: 60px;
+}
+
+.phonePay button {
+  padding: 8px;
+  margin: auto;
+  display: block;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
+  color: white;
+  background-color: #830a96;
+  margin-top: 24px;
   cursor: pointer;
 }
 
-#cancel {
+#ccc {
   background-color: red;
-  color: white;
 }
 
-#add {
-  background-color: green;
-  color: white;
+.phonePay img {
+  width: 100%;
+}
+
+.phonePay h2 {
+  text-align: center;
 }
