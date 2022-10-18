@@ -206,7 +206,7 @@ function promoClick(id1, id2, percentage) {
 promoClick("dot", "promoo1", 25);
 document.getElementById("proceed").addEventListener("click", () => {
   let status = localStorage.getItem("login_status");
-  if (status) {
+  if (status === "true") {
     location.href = "../cart&checkout/checkout.html";
   }
   else {
