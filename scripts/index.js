@@ -118,14 +118,15 @@ function addtocart(e) {
     console.log(e);
     if (user_login_status == 'true') {
         document.querySelector(".cart_counter").style.display = "block"
-        const c = localStorage.getItem("countcartitems") || cartArr.push(e);
+        const c = cartArr.push(e);
         document.querySelector(".cart_counter").innerHTML = c;
         localStorage.setItem("countcartitems", c)
         console.log(c);
         localStorage.setItem("cartitems", JSON.stringify(cartArr));
     }
     else {
-        alert("Please Login First!")
+        // alert("Please Login First!")
+        document.querySelector(".bg_pop_login_status").style.display = "flex"
     }
 }
 
@@ -220,15 +221,15 @@ function cartDetail() {
 //  // //
 document.querySelector("#checkbtnheader").addEventListener('click', () => {
     // alert("opening ?? OPEN BTN");
-    document.querySelector(".navbar").style.left = 0;
-    document.querySelector(".navbar").style.transition = "1s";
+    document.querySelector(".header_rigth_ul").style.right = 0;
+    document.querySelector(".header_rigth_ul").style.transition = "1s";
     document.querySelector("#checkbtnheader").style.display = "none";
     document.querySelector("#closebtnheader").style.display = "block";
 })
 document.querySelector("#closebtnheader").addEventListener('click', () => {
     // alert("closing ?? CLOSE BTN");
-    document.querySelector(".navbar").style.left = "-100%";
-    document.querySelector(".navbar").style.transition = "1s";
+    document.querySelector(".header_rigth_ul").style.right = "-100%";
+    document.querySelector(".header_rigth_ul").style.transition = "1s";
     document.querySelector("#checkbtnheader").style.display = "block";
     document.querySelector("#closebtnheader").style.display = "none";
 })
@@ -236,41 +237,41 @@ document.querySelector("#closebtnheader").addEventListener('click', () => {
 // // //
 
 
-// // //
-document.querySelector("#checkbtnnavigatons").addEventListener('click', () => {
-    // alert("opening nav2 ?? OPEN BTN");
-    document.querySelector(".mid_ul").style.left = 0;
-    document.querySelector(".mid_ul").style.transition = "1s";
-    document.querySelector("#checkbtnnavigatons").style.display = "none";
-    document.querySelector("#closebtnnavigatons").style.display = "block";
-})
+// // // //
+// document.querySelector("#checkbtnnavigatons").addEventListener('click', () => {
+//     // alert("opening nav2 ?? OPEN BTN");
+//     document.querySelector(".mid_ul").style.left = 0;
+//     document.querySelector(".mid_ul").style.transition = "1s";
+//     document.querySelector("#checkbtnnavigatons").style.display = "none";
+//     document.querySelector("#closebtnnavigatons").style.display = "block";
+// })
 
-document.querySelector("#closebtnnavigatons").addEventListener('click', () => {
-    // alert("closing nav2 ?? Close BTN");
-    document.querySelector(".mid_ul").style.left = "-100%";
-    document.querySelector(".mid_ul").style.transition = "1s";
-    document.querySelector("#closebtnnavigatons").style.display = "none";
-    document.querySelector("#checkbtnnavigatons").style.display = "block";
-})
+// document.querySelector("#closebtnnavigatons").addEventListener('click', () => {
+//     // alert("closing nav2 ?? Close BTN");
+//     document.querySelector(".mid_ul").style.left = "-100%";
+//     document.querySelector(".mid_ul").style.transition = "1s";
+//     document.querySelector("#closebtnnavigatons").style.display = "none";
+//     document.querySelector("#checkbtnnavigatons").style.display = "block";
+// })
 
 
-// // //
+// // // //
 
-document.querySelector("#checkbtn").addEventListener('click', () => {
-    // alert("opening");
-    document.querySelector(".error").style.left = 0;
-    document.querySelector(".error").style.transition = "0.5s";
-    document.querySelector("#checkbtn").style.display = "none";
-    document.querySelector("#closebtn").style.display = "block";
-})
+// document.querySelector("#checkbtn").addEventListener('click', () => {
+//     // alert("opening");
+//     document.querySelector(".error").style.left = 0;
+//     document.querySelector(".error").style.transition = "10s";
+//     document.querySelector("#checkbtn").style.display = "none";
+//     document.querySelector("#closebtn").style.display = "block";
+// })
 
-document.querySelector("#closebtn").addEventListener('click', () => {
-    // alert("closing");
-    document.querySelector(".error").style.left = "-100%";
-    document.querySelector(".error").style.transition = "1s";
-    document.querySelector("#checkbtn").style.display = "block";
-    document.querySelector("#closebtn").style.display = "none";
-})
+// document.querySelector("#closebtn").addEventListener('click', () => {
+//     // alert("closing");
+//     document.querySelector(".error").style.left = "-100%";
+//     document.querySelector(".error").style.transition = "1s";
+//     document.querySelector("#checkbtn").style.display = "block";
+//     document.querySelector("#closebtn").style.display = "none";
+// })
 
 
 
@@ -280,6 +281,7 @@ const search = document.querySelector("#inp");
 const suggbox = document.querySelector(".sugg_box");
 
 const dataurl = `https://mr-raaz.github.io/NetmedsClone_data/data.json`;
+// https://mr-raaz.github.io/NetmedsClone_data/landingPage_data.json
 // console.log(dataurl);
 getsugg(dataurl);
 async function getsugg(dataurl) {
@@ -367,7 +369,7 @@ document.querySelector("#inp").addEventListener("keypress", (e) => {
 
 
 // FOOTER SECTION JAVASCRIPT
-const subscription_arr = []
+const subscription_arr = [];
 function subscribeToNetmedsClone() {
     event.preventDefault();
     // alert("got")
@@ -377,33 +379,18 @@ function subscribeToNetmedsClone() {
     console.log(subs_obj);
     const check = subscription_arr.filter((e) => {
         return e.email == subs_obj.email;
-        // if (subs_obj.email === subscription_arr.e) {
-        //     alert("you alreay subscribed!")
-        // } else {
-        //     subscription_arr.push(subs_obj.email);
-        //     localStorage.setItem("subscribed", subscription_arr)
-        //     alert("subscribed!")
-        // }
     })
     console.log(check.length);
 
     if (check.length >= 1) {
         document.querySelector(".errorsubs").style.display = "flex"
         document.querySelector(".success").style.display = "none"
-        // alert("you alreay subscribed!");
-        // do
-        // document.querySelector(".span_subscribe").classList.add("active");
-        // document.querySelector(".span_subscribe").style.display = "block";
-        // document.querySelector(".error").classList.add("active");
     } else {
         subscription_arr.push(subs_obj);
-        localStorage.setItem("subscribed", subscription_arr)
-        // alert("subscribed!")
-        // do
+        localStorage.setItem("subscribed", subscription_arr);
+
         document.querySelector(".errorsubs").style.display = "none"
         document.querySelector(".success").style.display = "flex"
-        // document.querySelector(".success").classList.add("active");
-        // document.querySelector(".span_subscribe").classList.add("active");
     }
     document.querySelector(".Inp_Subscribe_Email").value = ""
 }
