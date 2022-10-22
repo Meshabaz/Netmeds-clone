@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Status</title>
+    <link rel="shortcut icon" href="https://www.netmeds.com/assets/gloryweb/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .order_paced_container {
+            margin-top: -10px;
+            display: flex;
+            justify-content: center;
+            height: 110vh;
+            width: 100%;
+        }
+
+        .Lower_section,
+        .res_cat_list,
+        .res_search {
+            display: none;
+        }
+
+        iframe {
+            width: 100%;
+            border: none;
+            overflow: none;
+        }
+
+        h1 {
+            position: absolute;
+            top: 170px;
+            left: 490px;
+            color: rgb(3, 182, 182);
+            text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .lastnavigation,
+        .navigatons {
+            width: 100%;
+            margin-left: -10px;
+            /* border: 1px solid saddlebrown; */
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar"></nav>
+    <link rel="stylesheet" href="styles/navbar.css">
+
+    <h1 id="process_order">Processing Your Order.....</h1>
+    <div class="order_paced_container">
+        <iframe src="https://embed.lottiefiles.com/animation/72243"></iframe>
+    </div>
+
+</body>
+
+</html>
+<script>
+
+    setTimeout(() => {
+        document.getElementById("process_order").innerText = "Order Placed Successfully";
+        document.getElementById("process_order").style.marginLeft = "-40px";
+    }, 3000);
+    setTimeout(() => {
+        window.location.href = "index.html";
+    }, 4000);
+
+</script>
+
+<script type="module">
+
+    import * as comp from "./components/navbar.js";
+
+    document.getElementById("main_navbar").innerHTML = comp.mainNavbar();
+
+
+    const cartArr = JSON.parse(localStorage.getItem("cartitems")) || [];
+    const user_name = localStorage.getItem("user_fname");
+    const user_login_status = localStorage.getItem("login_status");
+    console.log(user_name, user_login_status);
+
+    cartDetail();
+    function cartDetail() {
+        if (user_login_status == 'true') {
+            document.querySelector(".cart_counter").style.display = "block";
+            document.querySelector(".cart_counter").innerHTML = cartArr.length;
+            document.querySelector(".withoutlogin").style.display = "none";
+            document.querySelector(".withlogin").innerText = `${user_name}`
+            document.querySelector(".withlogin").style.display = "block"
+            document.querySelector(".withlogin").addEventListener("click", () => {
+                window.location.href = "profile.html";
+                // document.querySelector(".profile_links").location.href = "./profile/profile.html";
+            })
+        } else {
+            document.querySelector(".cart_counter").style.display = "none";
+            document.querySelector(".withlogin").innerText = ``;
+            document.querySelector(".withlogin").style.display = "none"
+            document.querySelector(".withoutlogin").style.display = "block";
+            document.querySelector(".withoutlogin").addEventListener("click", () => {
+                window.location.href = "login_signup.html";
+            })
+        }
+    }
+</script>

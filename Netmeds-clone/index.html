@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetMeds Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <!-- CRAUSAL FOR FIRST SLIDER START -->
+
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!-- CRAUSAL FOR FIRST SLIDER END -->
+
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+</head>
+<!-- <link rel="stylesheet" href="./styles/navbar.css"> -->
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="styles/footer.css">
+
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" /> -->
+
+<!-- CRAUSAL FOR GROUP SLIDER START -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+<!-- GOOGLE FONT -->
+<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet"> -->
+<!-- GOOGLE FONT -->
+<style>
+    .carousel-cell {
+        width: 100%;
+        height: 300px;
+        margin: 10px;
+        border-radius: 10px;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .carousel-cell:before {
+        display: block;
+    }
+
+    .carousel.is-fullscreen .carousel-cell {
+        height: 100%;
+    }
+
+    .carousel-cell img {
+        display: block;
+        max-height: 100%;
+    }
+
+    li:not(.navbar li) {
+        margin-left: -40px;
+    }
+</style>
+<!-- STYLE TAG FOR FIRST SLIDER END -->
+
+
+
+<body>
+    <div id="navbar"> </div>
+
+    <div class="carousel" data-flickity='{"autoPlay":true}'>
+        <div class="carousel-cell"
+            style="background-image: url('https://www.netmeds.com/images/cms/aw_rbslider/slides/1664555976_Home_Bannerklkkk.jpg') ;">
+        </div>
+        <div class="carousel-cell"
+            style="background-image: url('https://www.netmeds.com/images/cms/aw_rbslider/slides/1663166809_1680x320_copy.jpg') ;">
+        </div>
+        <div class="carousel-cell"
+            style="background-image: url('https://www.netmeds.com/images/cms/aw_rbslider/slides/1664556289_Home_Bannerfdssds.jpg') ;">
+        </div>
+        <div class="carousel-cell"
+            style="background-image: url('https://www.netmeds.com/images/cms/aw_rbslider/slides/1664979078_Home_Bannerlmkkkk.jpg') ;">
+        </div>
+    </div>
+
+    <div class="options">
+        <a href="product_pages_html/product_page_Ayurvedic.html">
+            <div id="optiondiv">
+                <div>
+                    <img src="https://www.netmeds.com/assets/gloryweb/images/icons/Wellnessnew.svg" alt="">
+                </div>
+                <div id="strdiv">
+                    <h3>Order Medicine</h3> <span id="strspan">Save upto 25% off</span>
+                </div>
+            </div>
+        </a>
+        <a href="product_pages_html/product_page_beauty_personalcare.html">
+            <div id="optiondiv">
+                <div>
+                    <img src="https://www.netmeds.com/assets/gloryweb/images/icons/Beautynew.svg" alt="">
+                </div>
+                <div id="strdiv">
+
+                    <h3>Beauty</h3> <span id="strspan">Save upto 40% off</span>
+                </div>
+            </div>
+        </a>
+        <a href="product_pages_html/product_page_BabyCare.html">
+            <div id="optiondiv">
+                <div>
+                    <img src="https://www.netmeds.com/assets/gloryweb/images/icons/ordermedicinnew.svg" alt="">
+                </div>
+                <div id="strdiv">
+                    <h3>Wellness</h3> <span id="strspan">Save upto 15% off</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="payment">
+
+        <div class="some">
+            <h2>Payment Partner Offers</h2>
+            <h2 id="viewall">View All ></h2>
+            <!-- <h5 id="viewall">View All <h5> -->
+        </div>
+        <div class="paydiv">
+            <a href="">
+                <div id="payoptiondiv">
+                    <div>
+                        <img src="https://www.netmeds.com/images/cms/offers/1657030565_Simpl_Icon.png" alt="">
+                    </div>
+                    <div id="paystrdiv">
+                        <h5>Get up to Rs. 1000 Simple Cashback*!..</h5>
+                        <span id="paystrspan">
+                            <p>
+                                Get up to Rs. 1000 Simpl
+                                Cashback (5%) on your FIRST-EVER payment via Simpl for ANY purchases* of AN..
+                            </p>
+                        </span>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div id="payoptiondiv">
+                    <div>
+                        <img src="https://www.netmeds.com/images/cms/offers/1654235738_Icon_256x256.png" alt="">
+                    </div>
+                    <div id="paystrdiv">
+
+                        <h5>Use Pay with Rewards, Get max. Rs. 1000 Cashback!..</h5>
+                        <span id="paystrspan">
+                            <p>
+                                Get assured
+                                cashback of max. Rs. 1000, when you pay using the “Pay with Rewards” payment option
+                                ..
+                            </p>
+                        </span>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div id="payoptiondiv">
+                    <div>
+                        <img src="https://www.netmeds.com/images/cms/offers/1616682689_paytm.png" alt="">
+                    </div>
+                    <div id="paystrdiv">
+                        <h5>Get up to Rs. 300 Paytm Cashback!..</h5>
+                        <span id="paystrspan">
+                            <p>
+                                Get Paytm Cashback of max. Rs.
+                                300 on a minimum purchase of ANY products* worth Rs. 599, when you pa..
+                            </p>
+
+                        </span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="no_3">
+        <div id="no_3div1">
+            <div id="no_3div1_1">
+                <h2>Previous Orders</h2>
+                <p>Your previously ordered products</p>
+                <button id="no_3orderbtn">
+                    View Orders <button id="no_3orderbtnspan">></button>
+                </button>
+            </div>
+            <div id="no_3div1_2">
+                <img src="https://www.netmeds.com/assets/gloryweb/images/icons/new-icons/previous_orders.svg" alt="">
+            </div>
+        </div>
+        <div id="no_3div2">
+            <div id="no_3div2_1">
+                <h2>Beauty Products</h2>
+                <p>Save Upto 40% off</p>
+                <a href="product_pages/product_pages_html/product_page_BodyCare.html">
+                    <button id="no_3orderbtn2">
+                        Explore Beauty
+                    </button>
+                </a>
+            </div>
+            <div id="no_3div2_2">
+                <img src="https://www.netmeds.com/assets/gloryweb/images/icons/new-icons/beauty_products.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category_header">
+            <h2>Personal Care</h2>
+            <a href="product_pages_html/product_page_Personal&HomeEssentials.html">
+                <p>View All ></p>
+            </a>
+        </div>
+        <br>
+        <div class="category_body">
+            <div>
+                <a href="product_pages_html/product_page_BodyCare.html">
+                    <img src="images/p1.jpg" alt="">
+                </a>
+                <h3>Body Care</h3>
+            </div>
+            <div>
+                <a href="product_pages_html/product_page_Mom&Baby.html">
+                    <img src="images/p5.jpg" alt="">
+                </a>
+                <h3>Mom & Baby</h3>
+            </div>
+            <div><a href="product_pages_html/product_page_Surgical.html">
+                    <img src="images/p2.jpg" alt="">
+                </a>
+                <h3>Skin Treatment</h3>
+            </div>
+            <div><a href="product_pages_html/product_page_beauty_personalcare.html">
+                    <img src="images/p3.jpg" alt="">
+                </a>
+                <h3>Face Wash & Cleanser</h3>
+            </div>
+            <div><a href="product_pages_html/product_page_Bath&Shower.html">
+                    <img src="images/p4.jpg" alt="">
+                </a>
+                <h3>Shower Gels & Body Wash</h3>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="Tlist">
+        <h2 class="trending_category">Trending Today</h2>
+        <button class="pre-btn" title="btn"><img src="images/img2.png" alt=""></button>
+        <button class="nxt-btn" title="btn"><img src="images/img1.png" alt=""></button>
+
+        <div class="trending_container">
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1663178001_Axiom_Mini_banner_web.jpg"
+                        alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1665135184_Revital_Mini_banner_web.jpg"
+                        alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1657045910_Mini-436-x-224-A.jpg"
+                        alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1663139989_436x224_copy.jpg" alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1660911310_Beato_Mini_banner_web.jpg"
+                        alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1656588409_Home_Page_Mini_Banner-436X224_w.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1662570473_Maxirich_Mini_banner_web_m45.jpg"
+                        alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1665137724_MOODS_Mini_banner_web.jpg"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <a href="profile/profile.html"></a> -->
+    <div class="list limited_timelist">
+        <button class="pre-btn" title="btn"><img src="images/img2.png" alt=""></button>
+        <button class="nxt-btn" title="btn"><img src="images/img1.png" alt=""></button>
+
+        <h2>Limited Time Deals</h2>
+        <div class="limited_time">
+        </div>
+    </div>
+
+    <div class="membership">
+        <section class="membership_secA">
+            <div class="img_div">
+                <img src="images/star.svg" alt="">
+            </div>
+            <div class="desc_div">
+                <h2>Netmeds First Membership</h2>
+                <ul>
+                    <li>Get special discounts and offers on Netmeds services.</li>
+                    <li>Get 2.5% NMS Cash on pre-paid, Medicine orders of ANY value!</li>
+
+                </ul>
+            </div>
+        </section>
+        <section class="membership_secB">
+            <div class="img_div">
+                <img src="https://www.netmeds.com/assets/version1665682643/gloryweb/images/icons/new-icons/flash.svg"
+                    alt="">
+                <span>
+                    Start at ₹299
+                </span>
+            </div>
+            <div class="btndiv">
+                <button class="explore_plans">Explore Plans</button>
+            </div>
+        </section>
+    </div>
+
+
+
+    <div class="list brands_list">
+        <button class="pre-btn" title="btn"><img src="images/img2.png" alt=""></button>
+        <button class="nxt-btn" title="btn"><img src="images/img1.png" alt=""></button>
+
+        <h2>Brand Days - Inlife Upto 60% off</h2>
+        <div class="brands"></div>
+    </div>
+
+    <div class="category">
+        <div class="category_header">
+            <h2>Shop by Category</h2>
+            <a href="product_pages_html/product_page_Ayurvedic.html">
+                <p>View All ></p>
+            </a>
+        </div>
+        <br>
+        <div class="category_body">
+            <div>
+                <img src="images/d1.jpg" alt="">
+                <h3>Dressing</h3>
+            </div>
+            <div>
+                <img src="images/d2.jpg" alt="">
+                <h3>Family Nutrition</h3>
+            </div>
+            <div>
+                <img src="images/d3.jpg" alt="">
+                <h3>Respiratory Supplies</h3>
+            </div>
+            <div>
+                <img src="images/d4.jpg" alt="">
+                <h3>Lotions & Creams</h3>
+            </div>
+            <div>
+                <img src="images/d5.jpg" alt="">
+                <h3>Homeopathy</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="Tlist">
+        <h2 class="trending_category">New On Netmeds</h2>
+        <button class="pre-btn" title="btn"><img src="images/img2.png" alt=""></button>
+        <button class="nxt-btn" title="btn"><img src="images/img1.png" alt=""></button>
+
+        <div class="trending_container">
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="images/n1.jpg" alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="images/n2.jpg" alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="images/n3.jpg" alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="images/n4.jpg" alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="images/n5.jpg" alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="images/n6.jpg" alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="images/n7.jpg" alt="">
+                </div>
+            </div>
+            <div class="trending_card">
+                <div class="trending_images">
+                    <img src="images/n8.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FOOTER SECTION STARTED -->
+    <footer class="footer"></footer>
+    <!-- FOOTER SECTION ENDED -->
+
+    <!-- POP-UP TO PREVENT EXPLORE-PLANS -->
+    <div class="bg_pop_subscription_status" style="display: none;">
+        <div class="pop_subscription_status">
+            <!-- <img class="my_logo" src="images/me.jpeg" alt=""> -->
+            <h2 style="pointer-events: none;">Please Get a Subscribtion First.. !</h2>
+            <img class="pop_up_guide_2_img" src="images/pop_up_guide_2.jpeg" alt="">
+            <section>
+                <button class="letsgodown">Let's Go</button>
+                <button class="close">Close</button>
+            </section>
+        </div>
+    </div>
+    <style>
+        .bg_pop_subscription_status {
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pop_subscription_status {
+            width: 500px;
+            height: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            opacity: 1;
+            border-radius: 8px;
+            text-align: center;
+            padding: 20px;
+            color: lightgray;
+        }
+
+        /* .pop_login_status .my_logo {
+            height: 90px;
+            border-radius: 50%;
+        } */
+
+        .pop_subscription_status .pop_up_guide_2_img {
+            width: 300px;
+            height: 250px;
+            border-radius: 0;
+        }
+
+        .pop_subscription_status section {
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 10px;
+            /* border: 1px solid red; */
+        }
+
+        .letsgodown {
+            width: 100px;
+            padding: 10px;
+            background-color: rgb(15, 222, 222);
+            color: white;
+            border-radius: 6px;
+            border: none;
+            display: block;
+            cursor: pointer;
+        }
+
+        .letsgodown:hover {
+            background-color: transparent;
+            color: rgb(15, 222, 222);
+        }
+
+        .close {
+            width: 100px;
+            padding: 10px;
+            background-color: rgb(15, 222, 222);
+            color: white;
+            border-radius: 6px;
+            border: none;
+            display: block;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            background-color: transparent;
+            color: rgb(15, 222, 222);
+        }
+    </style>
+    <script>
+        // EXPLORE-PLANE :
+        document.querySelector(".explore_plans").addEventListener('click', () => {
+
+            document.querySelector(".bg_pop_subscription_status").style.display = "flex";
+        })
+
+        document.querySelector(".letsgodown").addEventListener("click", () => {
+
+            window.scroll({ top: 100000, behavior: "smooth" });
+        })
+
+        document.querySelector(".close").addEventListener("click", () => {
+            document.querySelector(".bg_pop_subscription_status ").style.display = "none";
+        })
+    </script>
+    <!-- POP-UP TO PREVENT EXPLORE-PLANS -->
+
+
+    <!-- POP-UP LOADING -->
+    <div class="loading_status" style="display: none;">
+
+        <img class="loading" src="images/loading.svg" alt="">
+
+    </div>
+    <style>
+        .loading_status {
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+
+
+
+
+    <!-- POP-UP TO PREVENT LOGIN STATUS -->
+    <div class="bg_pop_login_status" style="display: none;">
+        <div class="pop_login_status">
+            <img class="my_logo" src="images/me.jpeg" alt="">
+            <h2 style="pointer-events: none;">Please SignIn / SignUp First.. !</h2>
+            <img class="pop_up_guide_img" src="images/pop_up_guide.jpeg" alt="">
+            <button class="gotit_signin">Got It</button>
+        </div>
+    </div>
+    <style>
+        .bg_pop_login_status {
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pop_login_status {
+            width: 400px;
+            height: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            opacity: 1;
+            border-radius: 8px;
+            text-align: center;
+            padding: 20px;
+            color: lightgray;
+        }
+
+        .pop_login_status .my_logo {
+            height: 90px;
+            border-radius: 50%;
+        }
+
+        .pop_login_status .pop_up_guide_img {
+            width: 300px;
+            height: 150px;
+            border-radius: 0;
+        }
+
+        .gotit_signin {
+            width: 100px;
+            padding: 10px;
+            background-color: rgb(15, 222, 222);
+            color: white;
+            border-radius: 6px;
+            border: none;
+            display: block;
+            margin: 10px 38%;
+            cursor: pointer;
+        }
+
+        .gotit_signin:hover {
+            background-color: transparent;
+            color: rgb(15, 222, 222);
+        }
+    </style>
+    <script>
+        document.querySelector(".gotit_signin").addEventListener("click", () => {
+            document.querySelector(".bg_pop_login_status").style.display = "none";
+        })
+    </script>
+    <!-- POP-UP TO PREVENT LOGIN STATUS -->
+
+
+
+</body>
+
+</html>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+
+<script>
+
+    // localStorage.setItem("Subscription_status", true);
+    const subscription_arr = JSON.parse(localStorage.getItem("subscribed")) || [];
+    function subscribeToNetmedsClone() {
+        event.preventDefault();
+        // alert("got")
+        let subs_obj = {
+            email: document.querySelector(".Inp_Subscribe_Email").value
+        }
+        console.log(subs_obj);
+        const check = subscription_arr.filter((e) => {
+            return e == subs_obj.email;
+        })
+        console.log(check.length);
+
+        if (check.length >= 1) {
+            document.querySelector(".loading_status").style.display = "flex";
+            setTimeout(() => {
+                // alert("you alreay subscribed!");
+                document.querySelector(".loading_status").style.display = "none";
+                document.querySelector(".errorsubs").style.display = "flex"
+                document.querySelector(".success").style.display = "none"
+            }, 2000)
+        } else {
+            document.querySelector(".loading_status").style.display = "flex";
+            setTimeout(() => {
+                document.querySelector(".loading_status").style.display = "none";
+                subscription_arr.push(subs_obj.email);
+                localStorage.setItem("subscribed", JSON.stringify(subscription_arr));
+                document.querySelector(".errorsubs").style.display = "none"
+                document.querySelector(".success").style.display = "flex"
+            }, 2000);
+
+        }
+        document.querySelector(".Inp_Subscribe_Email").value = ""
+    }
+</script>
+
+<script type="module" src="index.js"></script>
+
+
+
+<style>
+    /* body {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgba(237, 248, 247, 0.715);
+    overflow-x: none;
+    overflow-y: none;
+}
+
+
+
+ */
+
+
+
+    /* 
+
+.lastnavigation {
+    width: 100%;
+}
+
+.lastnavigation ul {
+    margin-left: 100px;
+}
+
+.lastnavigation #menu ul li {
+    display: inline-block;
+    margin-left: 16px;
+}
+
+.lastnavigation ul li {
+    height: 30px;
+    display: flex;
+    padding-top: 10px;
+    align-items: center;
+    list-style-type: none;
+}
+
+.lastnavigation ul li:hover {
+    background-color: rgb(7, 196, 196);
+}
+
+
+.lastnavigation ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: small;
+}
+
+.lastnavigation ul li a:hover {
+    color: #fff;
+    font-weight: 800px;
+}
+/*  */
+
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+    /* TOP-NAV */
+
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+
+    .header {
+        width: 100%;
+        height: 90px;
+        display: flex;
+        margin: auto;
+        background-color: rgb(6, 191, 191);
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+
+
+    #left {
+        width: 160px;
+        height: 50px;
+        display: inline-block;
+        position: absolute;
+        left: 34px;
+        top: 19px;
+        border-radius: 8px;
+        /* border: 1px solid black; */
+    }
+
+    #left:hover {
+        background-color: rgb(2, 100, 100);
+    }
+
+    @media(max-width: 540px) {
+
+        .header .left {
+            position: relative;
+        }
+
+        .header {
+            display: block;
+        }
+    }
+
+    /* MID-SEC START*/
+
+    #mid {
+        display: block;
+        width: 50%;
+        margin: 20px 220px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+    }
+
+
+
+    #mid input {
+        width: 100%;
+        padding: 17px;
+        border-radius: 8px;
+        outline: none;
+        border: none;
+        box-shadow: 0px 1px 5px 0;
+    }
+
+    #mid .sugg_box {
+        padding: 0px 50px;
+        max-height: 280px;
+        overflow-y: auto;
+        overflow-x: auto;
+        text-align: justify;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        margin-top: -2px;
+    }
+
+    .search_input.active .sugg_box {
+        padding: 10px 8px;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .sugg_box li {
+        list-style: none;
+        padding: 12px 25px;
+        width: 120%;
+        height: 30px;
+        margin: 10px -10px;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        display: none;
+    }
+
+    .search_input.active .sugg_box li {
+        display: block;
+    }
+
+
+    .sugg_box li:hover {
+        background: rgb(6, 191, 191);
+    }
+
+
+    #mid input::placeholder {
+        font-size: 15px;
+    }
+
+
+
+    /* MID-SEC ENDS*/
+
+
+    #right {
+        width: auto;
+        display: inline-block;
+        position: absolute;
+        right: 40px;
+        top: 18px;
+        border-radius: 8px;
+        /* border: 1px solid red; */
+    }
+
+    #right .header_rigth_ul {
+        width: 280px;
+        display: flex;
+        margin-top: 10px;
+        justify-content: space-between;
+        align-items: center;
+        /* border: 2px dashed black; */
+    }
+
+    #right .header_rigth_ul li {
+        /* border: 2px dashed yellow; */
+        list-style: none;
+    }
+
+    #right .header_rigth_ul li a {
+        width: 80px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+    }
+
+    #right .header_rigth_ul li .profile_links {
+        width: auto;
+        /* border: 2px solid black; */
+    }
+
+    .withoutlogin,
+    .withlogin {
+        cursor: pointer;
+    }
+
+    #right img {
+        width: 25px;
+        height: 30px;
+    }
+
+    #right img:not(#sign_in, #precription_img) {
+        width: 25px;
+        height: 30px;
+        filter: invert(100%);
+    }
+
+
+
+    #checkheader {
+        display: none;
+    }
+
+    #checkbtnheader,
+    #closebtnheader {
+        float: right;
+        font-size: 30px;
+        line-height: 50px;
+        margin: 10px 10px;
+        display: none;
+        color: white;
+    }
+
+    #closebtnheader {
+        display: none;
+    }
+
+    #closebtnheader {
+        display: none;
+    }
+
+
+    .withlogin {
+        display: none;
+    }
+
+    .header_rigth_ul li a .cart_counter {
+        width: 24px;
+        height: 17px;
+        justify-content: center;
+        text-align: center;
+        padding-top: 1px;
+        margin: -10px -10px;
+        background-color: rgb(243, 3, 3);
+        color: white;
+        font-weight: 600;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+
+
+    @media(max-width: 1200px) {
+        #checkbtnheader {
+            display: block;
+        }
+
+        #right .header_rigth_ul {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            margin-left: -40px;
+            top: 90px;
+            right: -100%;
+            z-index: 1;
+            padding: 30px 20px;
+            transition: 1s;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        #right .header_rigth_ul {
+            width: auto;
+            display: block;
+            margin: auto;
+        }
+
+        #right .header_rigth_ul li {
+            width: 200px;
+            padding: 10px;
+            margin: auto;
+        }
+
+
+
+        .header_rigth_ul li a .cart_counter {
+            width: 26px;
+            height: 22px;
+            display: flex;
+            text-align: start;
+            padding-top: -20px;
+            margin: -10px -10px;
+            background-color: rgb(231, 0, 0);
+            color: white;
+            font-weight: 600;
+            border-radius: 50%;
+        }
+
+    }
+
+
+    /* TOP-NAV-ENDS */
+
+
+
+    /* LAST-NAVBAR */
+    .lastnavigation {
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        /* border: 2px solid red; */
+    }
+
+    .lastnavigation .productpages_list {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 3px solid black; */
+    }
+
+    .lastnavigation .productpages_list .productpages_list_a {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* border: 2px solid red; */
+    }
+
+    .lastnavigation .productpages_list .productpages_list_b {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* border: 2px solid red; */
+    }
+
+    .lastnavigation .productpages_list li {
+        list-style: none;
+    }
+
+    .lastnavigation .productpages_list li a {
+        text-decoration: none;
+        color: black;
+        transition: 0.4;
+        font-size: 14px;
+    }
+
+    .lastnavigation .productpages_list li a:hover {
+        scale: 1.2;
+        font-size: 14px;
+        font-weight: 600;
+        color: rgb(6, 191, 191);
+    }
+
+    @media(max-width:1250px) {
+        .lastnavigation .productpages_list .productpages_list_b {
+            width: auto;
+            display: block;
+            margin: auto;
+            font-size: 14px;
+        }
+
+        .lastnavigation .productpages_list .productpages_list_a {
+            width: auto;
+            display: block;
+            margin: auto;
+            font-size: 14px;
+        }
+    }
+
+    @media(max-width:370px) {
+        .lastnavigation .productpages_list {
+            display: block;
+        }
+    }
+
+    /* MID-NAVBAR */
+    .navigatons {
+        width: 100%;
+        height: auto;
+        margin-top: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: rgb(6, 191, 191);
+        /* border: 2px dashed red; */
+    }
+
+    .navigatons .mid_nav_ul {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* border: 2px dashed black; */
+    }
+
+    .navigatons .mid_nav_ul ul a {
+        text-decoration: none;
+        color: white;
+    }
+
+    @media(max-width:913px) {
+        .header {
+            /* width: 80.2%; */
+            height: 140px;
+        }
+
+        .header #left {
+            width: 100px;
+        }
+
+        #mid {
+            display: block;
+            width: 30%;
+            height: fit-content;
+            margin: 70px 220px;
+            margin-bottom: 10px;
+        }
+
+        #mid input {
+            height: 10px;
+        }
+
+        #right {
+            right: 300px;
+        }
+
+        #checkbtnheader,
+        #closebtnheader {
+            font-size: 20px;
+        }
+
+        #right .header_rigth_ul {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            margin-left: -40px;
+            top: 140px;
+            right: -100%;
+            z-index: 1;
+            padding: 30px 20px;
+            transition: 1s;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .navigatons {
+            margin-top: 140px;
+        }
+
+        .category .category_body {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            /* padding: 10px; */
+        }
+    }
+
+    @media(max-width:450px) {
+        .header {
+            /* width: 80.2%; */
+            height: 140px;
+        }
+
+        .header #left {
+            width: 100px;
+        }
+
+        #mid {
+            display: block;
+            width: 30%;
+            height: fit-content;
+            margin: 70px 50px;
+            margin-bottom: 10px;
+        }
+
+        #right {
+            top: 5px;
+            right: 300px;
+        }
+
+        #right .header_rigth_ul {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            margin-left: -40px;
+            top: 140px;
+            right: -90%;
+            z-index: 1;
+            padding: 30px 20px;
+            transition: 1s;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .category .category_body {
+            display: block;
+            /* grid-template-columns: repeat(2, 1fr);
+            gap: 20px; */
+            /* padding: 10px; */
+        }
+    }
+
+
+    #medicine_list,
+    #healthcorner_list,
+    #beauty_list {
+        position: relative;
+        display: inline-block;
+    }
+
+    #medicine_dd_list,
+    #healthcorner_dd_list,
+    #beauty_dd_list {
+        display: none;
+        position: absolute;
+        z-index: 10;
+        margin: 30px;
+        width: 60%;
+        background-color: rgba(0, 0, 0, 0.7);
+        list-style-type: none;
+        font-size: small;
+    }
+
+
+
+    #medicine_dd_list a,
+    #healthcorner_dd_list a,
+    #beauty_dd_list a {
+        color: white;
+        padding: 12px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        font-size: 12px;
+    }
+
+    #medicine_dd_list a:hover,
+    #healthcorner_dd_list a:hover,
+    #beauty_dd_list a:hover {
+        background-color: white;
+        color: rgb(6, 191, 191);
+    }
+
+    #medicine_list:hover #medicine_dd_list,
+    #healthcorner_list:hover #healthcorner_dd_list,
+    #beauty_list:hover #beauty_dd_list {
+        display: block;
+        margin-top: 5px;
+    }
+
+
+    #medicine_list,
+    #healthcorner_list,
+    #beauty_list,
+    #labtest_list,
+    #wellness_list {
+        width: 160px;
+        display: inline-block;
+        justify-content: space-between;
+    }
+
+    #_1 {
+        padding-top: 7px;
+        margin-left: 7px;
+        font-size: small;
+    }
+
+    #_12 {
+        padding-top: 7px;
+        margin-left: 40px;
+        font-size: small;
+    }
+
+    #dropdownbtn {
+        width: 20px;
+        height: 15px;
+        filter: invert(100%);
+    }
+
+    #dropdownbtn:hover {
+        transform: scaleY(-1);
+    }
+
+
+    #checknavigatons {
+        display: none;
+    }
+
+    #checkbtnnavigatons,
+    #closebtnnavigatons {
+        float: right;
+        font-size: 30px;
+        line-height: 50px;
+        margin: -10px 43px;
+        display: none;
+        color: white;
+    }
+
+    #closebtnnavigatons {
+        display: none;
+    }
+
+    #checkbtnnavigatons {
+        display: none;
+    }
+
+    #logos {
+        height: 30px;
+        float: left;
+    }
+
+
+    @media(max-width:610px) {
+        .navigatons .mid_nav_ul {
+            display: block;
+        }
+
+        #logos {
+            height: 25px;
+            float: left;
+        }
+    }
+
+    /* .does {
+    height: 1000px;
+} */
+
+
+
+
+
+
+
+
+    /* 
+.navbar {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar li {
+    display: inline-block;
+}
+
+.navbar li a:not(.lastnavigation li a) {
+    height: 40px;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    font-size: 15px;
+    display: flex;
+} */
+
+
+
+    /* 
+@media(max-width: 670px) {
+    #checkbtnnavigatons {
+        display: block;
+    }
+
+    .navigatons ul {
+        width: 100%;
+        height: 100vh;
+        display: block;
+        background: rgb(101, 203, 203);
+        position: fixed;
+        margin-left: -40px;
+        top: 190px;
+        left: -100%;
+        z-index: 1;
+        padding: 30px 20px;
+        transition: .5s;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    #medicine_dd_list {
+        margin: 0 200px;
+        padding-left: 20px;
+    }
+
+    #medicine_dd_list li {
+        margin: -10px 10px;
+    }
+
+    #beauty_dd_list {
+        margin: 0 200px;
+        padding-left: 20px;
+    }
+
+    #beauty_dd_list li {
+        margin: -10px 10px;
+    }
+
+    #healthcorner_dd_list {
+        margin: 0 200px;
+        padding-left: 20px;
+    }
+
+    #healthcorner_dd_list li {
+        margin: -10px 10px;
+    }
+}
+*/
+</style>
